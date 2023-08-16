@@ -1,0 +1,43 @@
+:root
+{
+    --WeakPurple: #f2efff;
+    --StrongPurple: #9b7ff1;
+    --WeakOrange: #ffece6;
+    --StrongOrange: #fc614a;
+    --WeakRed: #ffc8bb;
+    --StrongRed: #d24240;
+    --Gold: #ffcb65;
+    --White: #ffffff;
+
+    --H1: 30px;
+    --H2: 25px;
+    --H3: 20px;
+    --Normal: 16px;
+    --IconSize: 24px;
+
+    --BoxShadow: 0px 0px 20px 0px rgba(0,0,0,0.05);
+
+    --LinearGradient: linear-gradient(
+        135deg,
+        #8BC6EC,
+        #9599E2
+    );
+}
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: var(--Normal);
+    font-family: 'Heebo', sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
+    outline: none;
+}
+ion-icon
+{
+    font-size: var(--IconSize);
+}
+ion-icon:hover
+{
+    cursor: pointer;
+}
