@@ -1,0 +1,235 @@
+.Container__Content--Progress--Details--Level
+{
+    height: 60px;
+    padding: 10px;
+    border-radius: var(--BorderRadius);
+    border: 2px solid transparent;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+    cursor: pointer;
+    transition: .3s ease-in-out border-color;
+}
+.Container__Content--Progress--Details--Level--Box
+{
+    min-width: 40px;
+    height: 40px;
+    padding: 5px;
+    border-radius: 50%;
+}
+.Container__Content--Progress--Details--Level--Box img{
+    width: 100%;
+    height: 100%;
+}
+.Container__Content--Progress--Details--Level--Details
+{
+    font-size: 14px;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+.Container__Content--Progress--Details--Level--Details--Text
+{
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+}
+.Container__Content--Progress--Details--Level--Details--Progress
+{
+    height: 10px;
+    border-radius: var(--BorderRadius);
+}
+.Container__Content--Progress--Details--Level--Details--Progress::-webkit-progress-value {
+    border-radius: var(--BorderRadius);
+}
+.Container__Content--Progress--Details--Level--Details--Progress::-webkit-progress-bar {
+    background-color: var(--White);
+    border-radius: var(--BorderRadius);
+}
+
+/* CLASS ADDED BY REACT */
+.Container__Content--Progress--Details--Level.Beginner
+{
+    background: var(--WeakOrange);
+}
+.Container__Content--Progress--Details--Level.Beginner:hover
+{
+    border-color: var(--StrongOrange);
+}
+.Container__Content--Progress--Details--Level.Feline
+{
+    background: var(--WeakPurple);
+}
+.Container__Content--Progress--Details--Level.Feline:hover
+{
+    border-color: var(--StrongPurple);
+}
+.Container__Content--Progress--Details--Level.Kitty
+{
+    background: var(--WeakBlue);
+}
+.Container__Content--Progress--Details--Level.Kitty:hover
+{
+    border-color: var(--StrongBlue);
+}
+.Container__Content--Progress--Details--Level.Races
+{
+    background: var(--WeakGreen);
+}
+.Container__Content--Progress--Details--Level.Races:hover
+{
+    border-color: var(--StrongGreen);
+}
+.Container__Content--Progress--Details--Level.Curiosities
+{
+    background: var(--WeakGray);
+}
+.Container__Content--Progress--Details--Level.Curiosities:hover
+{
+    border-color: var(--StrongGray);
+}
+.Container__Content--Progress--Details--Level.Health
+{
+    background: var(--WeakRed);
+}
+.Container__Content--Progress--Details--Level.Health:hover
+{
+    border-color: var(--StrongRed);
+}
+.Container__Content--Progress--Details--Level.Myths
+{
+    background: var(--WeakLila);
+}
+.Container__Content--Progress--Details--Level.Myths:hover
+{
+    border-color: var(--StrongLila);
+}
+.Container__Content--Progress--Details--Level.Master
+{
+    background: var(--WeakGold);
+}
+.Container__Content--Progress--Details--Level.Master:hover
+{
+    border-color: var(--Gold);
+}
+.Container__Content--Progress--Details--Level.Beginner 
+.Container__Content--Progress--Details--Level--Box
+{
+    background: var(--StrongOrange);
+}
+.Container__Content--Progress--Details--Level.Feline 
+.Container__Content--Progress--Details--Level--Box
+{
+    background: var(--StrongPurple);
+}
+.Container__Content--Progress--Details--Level.Kitty 
+.Container__Content--Progress--Details--Level--Box
+{
+    background: var(--StrongBlue);
+}
+.Container__Content--Progress--Details--Level.Races 
+.Container__Content--Progress--Details--Level--Box
+{
+    background: var(--StrongGreen);
+}
+.Container__Content--Progress--Details--Level.Curiosities 
+.Container__Content--Progress--Details--Level--Box
+{
+    background: var(--StrongGray);
+}
+.Container__Content--Progress--Details--Level.Health 
+.Container__Content--Progress--Details--Level--Box
+{
+    background: var(--StrongRed);
+}
+.Container__Content--Progress--Details--Level.Myths 
+.Container__Content--Progress--Details--Level--Box
+{
+    background: var(--StrongLila);
+}
+.Container__Content--Progress--Details--Level.Master 
+.Container__Content--Progress--Details--Level--Box
+{
+    background: var(--Gold);
+}
+.Container__Content--Progress--Details--Level.Beginner 
+.Container__Content--Progress--Details--Level--Details--Text
+{
+    color: var(--StrongOrange);
+}
+.Container__Content--Progress--Details--Level.Feline 
+.Container__Content--Progress--Details--Level--Details--Text
+{
+    color: var(--StrongPurple);
+}
+.Container__Content--Progress--Details--Level.Kitty 
+.Container__Content--Progress--Details--Level--Details--Text
+{
+    color: var(--StrongBlue);
+}
+.Container__Content--Progress--Details--Level.Races 
+.Container__Content--Progress--Details--Level--Details--Text
+{
+    color: var(--StrongGreen);
+}
+.Container__Content--Progress--Details--Level.Curiosities 
+.Container__Content--Progress--Details--Level--Details--Text
+{
+    color: var(--StrongGray);
+}
+.Container__Content--Progress--Details--Level.Health 
+.Container__Content--Progress--Details--Level--Details--Text
+{
+    color: var(--StrongRed);
+}
+.Container__Content--Progress--Details--Level.Health 
+.Container__Content--Progress--Details--Level--Details--Text
+{
+    color: var(--StrongRed);
+}
+.Container__Content--Progress--Details--Level.Myths 
+.Container__Content--Progress--Details--Level--Details--Text
+{
+    color: var(--StrongLila);
+}
+.Container__Content--Progress--Details--Level.Master 
+.Container__Content--Progress--Details--Level--Details--Text
+{
+    color: var(--Gold);
+}
+.Container__Content--Progress--Details--Level.Beginner 
+.Container__Content--Progress--Details--Level--Details--Progress::-webkit-progress-value {
+    background-color: var(--StrongOrange);
+}
+.Container__Content--Progress--Details--Level.Feline 
+.Container__Content--Progress--Details--Level--Details--Progress::-webkit-progress-value {
+    background-color: var(--StrongPurple);
+}
+.Container__Content--Progress--Details--Level.Kitty 
+.Container__Content--Progress--Details--Level--Details--Progress::-webkit-progress-value {
+    background-color: var(--StrongBlue);
+}
+.Container__Content--Progress--Details--Level.Races 
+.Container__Content--Progress--Details--Level--Details--Progress::-webkit-progress-value {
+    background-color: var(--StrongGreen);
+}
+.Container__Content--Progress--Details--Level.Curiosities 
+.Container__Content--Progress--Details--Level--Details--Progress::-webkit-progress-value {
+    background-color: var(--StrongGray);
+}
+.Container__Content--Progress--Details--Level.Health 
+.Container__Content--Progress--Details--Level--Details--Progress::-webkit-progress-value {
+    background-color: var(--StrongRed);
+}
+.Container__Content--Progress--Details--Level.Myths 
+.Container__Content--Progress--Details--Level--Details--Progress::-webkit-progress-value {
+    background-color: var(--StrongLila);
+}
+.Container__Content--Progress--Details--Level.Master 
+.Container__Content--Progress--Details--Level--Details--Progress::-webkit-progress-value {
+    background-color: var(--Gold);
+}

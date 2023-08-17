@@ -1,8 +1,9 @@
 // HOOKS
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 // COMPONENTS
 import { Login } from './components/Login'
+import { Content } from './components/Content'
 
 // STYLES
 import './styles/General.css'
@@ -11,7 +12,11 @@ import './styles/Responsive/Container.css'
 
 export function App () {
   
-  const [isLogin, setItLogin] = useState(true)
+  const [isLogin, setItLogin] = useState(false)
+
+  useEffect(() => {
+    localStorage.getItem('userName') ? setItLogin(!isLogin) : false
+  },[])
 
   const updateStateIsLogin = () => {
     setItLogin(!isLogin)
@@ -21,8 +26,8 @@ export function App () {
     <main className='Container'>
       {
         isLogin 
-        ? <Login updateStateIsLogin={updateStateIsLogin}/>
-        : <h1>No estoy en el login</h1>
+        ? <Content />
+        : <Login updateStateIsLogin={updateStateIsLogin}/>
       }
     </main>
   )

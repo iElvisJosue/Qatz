@@ -2,11 +2,21 @@
 {
     --WeakPurple: #f2efff;
     --StrongPurple: #9b7ff1;
+    --WeakBlue: #ecf6ff;
+    --StrongBlue: #1293fd;
     --WeakOrange: #ffece6;
+    --WeakGreen: #edf9df;
+    --StrongGreen: #66bd49;
     --StrongOrange: #fc614a;
-    --WeakRed: #ffc8bb;
+    --WeakRed: #fdede9;
     --StrongRed: #d24240;
-    --Gold: #ffcb65;
+    --WeakGray: #eae5e5;
+    --StrongGray: #767676;
+    --WeakLila:  #fbe8ff;
+    --StrongLila:  #bb7fc3;
+
+    --WeakGold: #fff4f4;
+    --Gold: #f6bb45;
     --White: #ffffff;
 
     --H1: 30px;
@@ -16,6 +26,7 @@
     --IconSize: 24px;
 
     --BoxShadow: 0px 0px 20px 0px rgba(0,0,0,0.05);
+    --BorderRadius: 10px;
 
     --LinearGradient: linear-gradient(
         135deg,

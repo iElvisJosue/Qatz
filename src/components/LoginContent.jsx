@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { setUserScores, setUserLevelProgress } from './Const'
 import { imagesCats, checkValueInput } from './Const'
 
 export function LoginContent({ updateStateIsLogin }){
@@ -27,9 +28,11 @@ export function LoginContent({ updateStateIsLogin }){
         : inputValidateWrong(inputUsername, inputUsernameValue)
     }
     const inputValidateCorrect = inputUsernameValue => {
-        const userData = [inputUsernameValue, imageProfile]
-        localStorage.setItem(`${inputUsernameValue}Profile`, JSON.stringify(userData))
+        localStorage.setItem('userName', inputUsernameValue)
+        localStorage.setItem('userImage', imageProfile)
         updateStateIsLogin()
+        setUserScores()
+        setUserLevelProgress()
     }
     const inputValidateWrong = (inputUsername, inputUsernameValue) => {
         inputUsername.value = 'Solo letras y/o números 🚫'
