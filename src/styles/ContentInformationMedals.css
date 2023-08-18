@@ -1,0 +1,90 @@
+.Container__Content--Information--Medals {
+  height: 130px;
+  padding: 20px;
+  background: var(--White);
+  border-radius: var(--BorderRadius);
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  transition: 0.5s ease all;
+}
+.Container__Content--Information--Medals.Show {
+  height: 300px;
+}
+.Container__Content--Information--Medals--Header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.Container__Content--Information--Medals--Header--Title {
+  font-size: var(--H3);
+  color: var(--StrongPurple);
+  font-weight: 800;
+  transform-origin: left;
+
+  animation: loadingContentMedals 1s forwards;
+}
+.Container__Content--Information--Medals--Header--See {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  color: var(--StrongPurple);
+  transform: scale(0);
+
+  animation: loadingContentMedals 1s 0.1s forwards;
+}
+.Container__Content--Information--Medals--Achieved {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.Container__Content--Information--Medals--Achieved--Box {
+  grid-column: span 1;
+  min-width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px dashed var(--StrongPurple);
+  transform: scale(0);
+  filter: grayscale(1);
+  transform-origin: left;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  animation: loadingContentMedals 1s forwards;
+}
+.Container__Content--Information--Medals--Achieved--Box.Achieved {
+  filter: grayscale(0);
+}
+.Container__Content--Information--Medals--Achieved--Box img {
+  width: 100%;
+  height: 100%;
+}
+.Container__Content--Information--Medals--Achieved--Box:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.Container__Content--Information--Medals--Achieved--Box:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.Container__Content--Information--Medals--Achieved--Box:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.Container__Content--Information--Medals--Achieved--Box:nth-child(4) {
+  animation-delay: 0.8s;
+}
+@keyframes loadingContentMedals {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

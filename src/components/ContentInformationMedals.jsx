@@ -1,5 +1,45 @@
-export function ContentInformationMedals(){
-    return(
-        <h1>SECCIÓN DE MEDALLAS</h1>
-    )
+import { useState } from "react";
+import { imagesMedals } from "./Const";
+
+import "../styles/ContentInformationMedals.css";
+
+export function ContentInformationMedals({ contentDataUser }) {
+  const totalMedals = Object.entries(contentDataUser.userMedals);
+  const sortTotalMedals = totalMedals.sort((a, b) => b[1] - a[1]);
+  const contentMedals = sortTotalMedals.map((e, index) => {
+    const classMedal = e[1]
+      ? "Container__Content--Information--Medals--Achieved--Box Achieved"
+      : "Container__Content--Information--Medals--Achieved--Box";
+    return (
+      <picture key={index} className={classMedal}>
+        <img src={imagesMedals[index]} alt="Medalla" />
+      </picture>
+    );
+  });
+
+  const [seeMedals, setSeeMedals] = useState(false);
+
+  const nameIconSee = seeMedals ? "chevron-up-outline" : "chevron-down-outline";
+  const classContentMedals = seeMedals
+    ? "Container__Content--Information--Medals Show"
+    : "Container__Content--Information--Medals";
+
+  return (
+    <div className={classContentMedals}>
+      <span className="Container__Content--Information--Medals--Header">
+        <p className="Container__Content--Information--Medals--Header--Title">
+          Tus medallas
+        </p>
+        <button
+          className="Container__Content--Information--Medals--Header--See"
+          onClick={() => setSeeMedals(!seeMedals)}
+        >
+          <ion-icon name={nameIconSee}></ion-icon>
+        </button>
+      </span>
+      <span className="Container__Content--Information--Medals--Achieved">
+        {contentMedals}
+      </span>
+    </div>
+  );
 }

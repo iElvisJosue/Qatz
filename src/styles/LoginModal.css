@@ -1,46 +1,40 @@
-.Container__Login__Modal
-{
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background-color: var(--White);
-    padding: 40px 20px 20px 20px;
-    opacity: 0;
-    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
+.Container__Login__Modal {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: var(--White);
+  padding: 40px 20px 20px 20px;
+  opacity: 0;
 
-    transition: .5s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
+  transition: 0.5s ease-in-out;
 }
-.Container__Login__Modal.Show
-{
-    left: 0;
-    opacity: 1;
+.Container__Login__Modal.Show {
+  left: 0;
+  opacity: 1;
 }
-.Container__Login__Modal--Title
-{
-    color: var(--White);
-    font-size: var(--H2);
-    text-align: center;
-    font-weight: 800;
-    transition: .5s ease color;
+.Container__Login__Modal--Title {
+  color: var(--White);
+  font-size: var(--H2);
+  text-align: center;
+  font-weight: 800;
+  transition: 0.5s ease color;
 }
-.Container__Login__Modal.Show .Container__Login__Modal--Title
-{
-    color: var(--StrongPurple);
+.Container__Login__Modal.Show .Container__Login__Modal--Title {
+  color: var(--StrongPurple);
 }
-.Container__Login__Modal--Details
-{
-    color: var(--White);
-    text-align: center;
-    transition: .5s ease color;
+.Container__Login__Modal--Details {
+  color: var(--White);
+  text-align: center;
+  transition: 0.5s ease color;
 }
-.Container__Login__Modal.Show .Container__Login__Modal--Details
-{
-    color: var(--StrongPurple);
+.Container__Login__Modal.Show .Container__Login__Modal--Details {
+  color: var(--StrongPurple);
 }

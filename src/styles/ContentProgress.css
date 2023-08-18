@@ -1,30 +1,26 @@
-.Container__Content--Progress--Details
-{
-    position: relative;
-    height: auto;
-    padding: 15px 20px 20px 20px;
-    background: var(--White);
-    border-radius: var(--BorderRadius);
+.Container__Content--Progress--Details {
+  height: auto;
+  padding: 15px 20px 20px 20px;
+  background: var(--White);
+  border-radius: var(--BorderRadius);
 
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.Container__Content--Progress--Details--Title {
+  font-size: var(--H3);
+  color: var(--StrongPurple);
+  font-weight: 800;
+  transform-origin: left;
 
-    animation: loadingContentProgress 1s;
+  animation: loadingDetailsTitle 1s forwards;
 }
-@keyframes loadingContentProgress{
-    0%{
-        bottom: -100px;
-        opacity: 0;
-    }
-    100%{
-        bottom: 0;
-        opacity: 1;
-    }
-}
-.Container__Content--Progress--Details--Title
-{
-    font-size: var(--H3);
-    color: var(--StrongPurple);
-    font-weight: 800;
+@keyframes loadingDetailsTitle {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
 }

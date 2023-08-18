@@ -1,12 +1,11 @@
-.Container
-{
-    width: 1440px;
-    min-height: 100vh;
-    height: auto;
-    margin: auto;
-    background-image: var(--LinearGradient);
+.Container {
+  width: 1440px;
+  min-height: 100vh;
+  height: auto;
+  margin: auto;
+  background-image: var(--LinearGradient);
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
