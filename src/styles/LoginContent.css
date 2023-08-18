@@ -6,7 +6,6 @@
   overflow: hidden;
 
   background: var(--White);
-  border-radius: var(--BorderRadius);
   box-shadow: var(--BoxShadow);
 
   display: flex;
