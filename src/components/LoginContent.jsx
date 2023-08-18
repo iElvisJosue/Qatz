@@ -2,6 +2,8 @@ import { useState } from "react";
 import { setDataUser } from "./Const";
 import { imagesCats, checkValueInput } from "./Const";
 
+import "../styles/LoginContent.css";
+
 export function LoginContent({ updateStateIsLogin }) {
   const [imageProfile, setImageProfile] = useState(0);
   const [inputUsernameValidate, setInputUsernameValidate] = useState(true);
@@ -22,6 +24,7 @@ export function LoginContent({ updateStateIsLogin }) {
   };
   const checkKeyPressed = (e) => {
     if (e.keyCode === 32) e.preventDefault();
+    if (e.keyCode === 13) inputValidate();
   };
   const inputValidate = () => {
     const inputUsername = document.querySelector(".Container__InputsText");

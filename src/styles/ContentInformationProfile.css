@@ -1,11 +1,21 @@
 .Container__Content--Information--Profile {
-  height: auto;
+  min-height: 200px;
+  height: 200px;
   padding: 20px;
   background: var(--White);
   border-radius: var(--BorderRadius);
   overflow: hidden;
+  -webkit-box-shadow: var(--BoxShadow);
+  box-shadow: var(--BoxShadow);
+
+  display: -webkit-box;
+
+  display: -ms-flexbox;
 
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   gap: 20px;
 }
@@ -26,19 +36,40 @@
   border: none;
   color: var(--White);
 
+  display: -webkit-box;
+
+  display: -ms-flexbox;
+
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+
+  -webkit-transition: 0.3s ease-in-out all;
 
   transition: 0.3s ease-in-out all;
 }
 .Container__Content--Information--Profile--Button--Settings {
+  -webkit-transform-origin: right;
   transform-origin: right;
+  -webkit-animation: loadingContentProfile 1s forwards;
   animation: loadingContentProfile 1s forwards;
   z-index: 2;
 }
 .Container__Content--Information--Profile--Button--Settings ion-icon {
+  -webkit-animation: settingRotation 5s linear infinite;
   animation: settingRotation 5s linear infinite;
+}
+@-webkit-keyframes settingRotation {
+  0% {
+    rotate: 0;
+  }
+  100% {
+    rotate: 360deg;
+  }
 }
 @keyframes settingRotation {
   0% {
@@ -54,11 +85,13 @@
 }
 .Container__Content--Information--Profile--Button--Update.Show {
   z-index: 1;
+  -webkit-transform: translateY(40px);
   transform: translateY(40px);
   background-color: var(--StrongPurple);
 }
 .Container__Content--Information--Profile--Button--Delete.Show {
   z-index: 1;
+  -webkit-transform: translateY(80px);
   transform: translateY(80px);
   background-color: var(--StrongPurple);
 }
@@ -70,10 +103,19 @@
   color: var(--StrongPurple);
 }
 .Container__Content--Information--Profile--Image {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-transform: scale(0);
   transform: scale(0);
+
+  -webkit-animation: loadingContentProfile 1s 0.4s forwards;
 
   animation: loadingContentProfile 1s 0.4s forwards;
 }
@@ -86,6 +128,8 @@
   border-radius: 50%;
   border: 5px solid var(--StrongPurple);
   background-image: var(--LinearGradient);
+
+  display: -ms-grid;
 
   display: grid;
   place-items: center;
@@ -107,16 +151,32 @@
 .Container__Content--Information--Profile--Username {
   text-align: center;
   color: var(--StrongPurple);
+  -webkit-transform: scale(0);
   transform: scale(0);
+
+  -webkit-animation: loadingContentProfile 1s 0.8s forwards;
 
   animation: loadingContentProfile 1s 0.8s forwards;
 }
-@keyframes loadingContentProfile {
+@-webkit-keyframes loadingContentProfile {
   0% {
+    -webkit-transform: scale(0);
     transform: scale(0);
   }
   100% {
     opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes loadingContentProfile {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
     transform: scale(1);
   }
 }

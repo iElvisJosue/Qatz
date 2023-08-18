@@ -1,0 +1,9 @@
+@media (width <=330px) {
+  .Container__Login__Modal--Title {
+    font-size: var(--Normal);
+  }
+
+  .Container__Login__Modal--Details {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,83 @@
+.Container__Content--Information--Profile--Delete {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transition: 0.5s ease-in-out all;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: -1;
+}
+.Container__Content--Information--Profile--Delete.Show {
+  opacity: 1;
+  z-index: 1000;
+}
+
+.Container__Content--Information--Profile--Delete--Modal {
+  width: 350px;
+  height: auto;
+  padding: 20px;
+  background-color: var(--White);
+  box-shadow: var(--BoxShadow);
+  border-radius: var(--BorderRadius);
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.Container__Content--Information--Profile--Delete--Modal--Title {
+  font-size: var(--H3);
+  color: var(--StrongRed);
+  text-align: center;
+}
+.Container__Content--Information--Profile--Delete--Modal--Image {
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+.Container__Content--Information--Profile--Delete--Modal--Image img {
+  width: 100px;
+  height: 100px;
+}
+.Container__Content--Information--Profile--Delete--Modal--Details {
+  color: var(--StrongGray);
+  text-align: center;
+}
+.Container__Content--Information--Profile--Delete--Modal--Buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.Container__Content--Information--Profile--Delete--Modal--Buttons--Cancel,
+.Container__Content--Information--Profile--Delete--Modal--Buttons--Confirm {
+  width: 50%;
+  height: 40px;
+  font-weight: 600;
+  border: 2px solid transparent;
+  cursor: pointer;
+
+  transition: 0.5s ease-in-out all;
+}
+.Container__Content--Information--Profile--Delete--Modal--Buttons--Cancel {
+  background-color: var(--StrongRed);
+  color: var(--White);
+}
+.Container__Content--Information--Profile--Delete--Modal--Buttons--Cancel:hover {
+  background-color: var(--White);
+  border-color: var(--StrongRed);
+  color: var(--StrongRed);
+}
+.Container__Content--Information--Profile--Delete--Modal--Buttons--Confirm {
+  background-color: var(--WeakGray);
+  color: var(--StrongGray);
+}
+.Container__Content--Information--Profile--Delete--Modal--Buttons--Confirm:hover {
+  background-color: var(--White);
+  border-color: var(--StrongGray);
+}

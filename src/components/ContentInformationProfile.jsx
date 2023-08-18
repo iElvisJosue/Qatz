@@ -1,10 +1,15 @@
 import { useState } from "react";
 import { imagesCats } from "./Const";
+import { ContentInformationProfileDelete } from "./ContentInformationProfileDelete";
 
 import "../styles/ContentInformationProfile.css";
 
-export function ContentInformationProfile({ contentDataUser }) {
+export function ContentInformationProfile({
+  contentDataUser,
+  updateStateIsLogin,
+}) {
   const [settings, setSettings] = useState(false);
+  const [seeModalDelete, setSeeModalDelete] = useState(false);
 
   const userName = contentDataUser.userName;
   const userImage = contentDataUser.userImage;
@@ -18,16 +23,31 @@ export function ContentInformationProfile({ contentDataUser }) {
       (total, value) => total + value,
       0
     );
-
+  const hiddenModalDelete = () => {
+    setSeeModalDelete(false);
+  };
+  const deleteProfile = () => {
+    localStorage.removeItem("dataUser");
+    updateStateIsLogin(false);
+  };
   const classButtonUpdate = settings
     ? "Container__Content--Information--Profile--Button--Update Show"
     : "Container__Content--Information--Profile--Button--Update";
   const classButtonDelete = settings
     ? "Container__Content--Information--Profile--Button--Delete Show"
     : "Container__Content--Information--Profile--Button--Delete";
+  const classModalDeleteProfile = seeModalDelete
+    ? "Container__Content--Information--Profile--Delete Show"
+    : "Container__Content--Information--Profile--Delete";
 
   return (
-    <div className="Container__Content--Information--Profile">
+    <section className="Container__Content--Information--Profile">
+      <ContentInformationProfileDelete
+        classModalDeleteProfile={classModalDeleteProfile}
+        deleteProfile={deleteProfile}
+        hiddenModalDelete={hiddenModalDelete}
+      />
+
       <span className="Container__Content--Information--Profile--Button">
         <button
           className="Container__Content--Information--Profile--Button--Settings"
@@ -38,7 +58,10 @@ export function ContentInformationProfile({ contentDataUser }) {
         <button className={classButtonUpdate}>
           <ion-icon name="create-outline"></ion-icon>
         </button>
-        <button className={classButtonDelete}>
+        <button
+          className={classButtonDelete}
+          onClick={() => setSeeModalDelete(true)}
+        >
           <ion-icon name="trash-outline"></ion-icon>
         </button>
       </span>
@@ -53,6 +76,6 @@ export function ContentInformationProfile({ contentDataUser }) {
       <p className="Container__Content--Information--Profile--Username">
         ¡Hola, <b>{userName}</b>! Bienvenido/a ✨
       </p>
-    </div>
+    </section>
   );
 }

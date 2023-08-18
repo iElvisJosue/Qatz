@@ -25,7 +25,7 @@ export function ContentInformationMedals({ contentDataUser }) {
     : "Container__Content--Information--Medals";
 
   return (
-    <div className={classContentMedals}>
+    <section className={classContentMedals}>
       <span className="Container__Content--Information--Medals--Header">
         <p className="Container__Content--Information--Medals--Header--Title">
           Tus medallas
@@ -40,6 +40,6 @@ export function ContentInformationMedals({ contentDataUser }) {
       <span className="Container__Content--Information--Medals--Achieved">
         {contentMedals}
       </span>
-    </div>
+    </section>
   );
 }

@@ -2,9 +2,7 @@ import { useState } from "react";
 import { LoginContent } from "./LoginContent";
 import { LoginModal } from "./LoginModal";
 
-import "../styles/LoginContent.css";
-import "../styles/LoginModal.css";
-import "../styles/Responsive/Login.css";
+import "../styles/Login.css";
 
 export function Login({ updateStateIsLogin }) {
   const [seeHelpModal, setHelpModal] = useState(false);
@@ -21,7 +19,7 @@ export function Login({ updateStateIsLogin }) {
       >
         <ion-icon name={iconModal}></ion-icon>
       </button>
-      <LoginContent updateStateIsLogin={updateStateIsLogin} />
+      <LoginContent updateStateIsLogin={() => updateStateIsLogin(true)} />
       <LoginModal seeHelpModal={seeHelpModal} />
     </section>
   );

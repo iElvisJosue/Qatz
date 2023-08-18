@@ -1,8 +1,8 @@
 import { levelDetails } from "./Const";
 
-import "../styles/ContentProgressLevels.css";
+import "../styles/ContentInformationProgressLevel.css";
 
-export function ContentProgressLevel({
+export function ContentInformationProgressLevel({
   level,
   nameProgressLevel,
   contentDataUser,
@@ -18,7 +18,7 @@ export function ContentProgressLevel({
     const totalProgress = (currentProgress / maxQuestions) * 100;
     return Math.round(totalProgress);
   };
-  const classNameLevel = `Container__Content--Progress--Details--Level ${levelDetails[level].levelClass}`;
+  const classNameLevel = `Container__Content--Information--Progress--Level ${levelDetails[level].levelClass}`;
 
   return (
     <div
@@ -27,18 +27,18 @@ export function ContentProgressLevel({
         updateDataUser(nameProgressLevel, currentProgressLevel, level)
       }
     >
-      <picture className="Container__Content--Progress--Details--Level--Box">
+      <picture className="Container__Content--Information--Progress--Level--Box">
         <img
           src={levelDetails[level].levelImage}
           alt={levelDetails[level].levelAlt}
         />
       </picture>
-      <div className="Container__Content--Progress--Details--Level--Details">
-        <p className="Container__Content--Progress--Details--Level--Details--Text">
+      <div className="Container__Content--Information--Progress--Level--Details">
+        <p className="Container__Content--Information--Progress--Level--Details--Text">
           {levelDetails[level].levelName} <span>{calculatePercentage()}%</span>
         </p>
         <progress
-          className="Container__Content--Progress--Details--Level--Details--Progress"
+          className="Container__Content--Information--Progress--Level--Details--Progress"
           max={levelDetails[level].levelQuestions}
           value={currentProgressLevel}
         ></progress>

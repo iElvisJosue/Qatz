@@ -1,0 +1,51 @@
+.Container__Login {
+  position: relative;
+  width: 500px;
+  height: auto;
+  padding: 40px 20px 20px 20px;
+  overflow: hidden;
+
+  background: var(--White);
+  -webkit-box-shadow: var(--BoxShadow);
+  box-shadow: var(--BoxShadow);
+
+  display: -webkit-box;
+
+  display: -ms-flexbox;
+
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 20px;
+
+  -webkit-animation: loadingContainerLogin 1s;
+
+  animation: loadingContainerLogin 1s;
+}
+.Container__Login--Help {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  background: var(--StrongPurple);
+  border: none;
+  cursor: pointer;
+  color: var(--White);
+
+  display: -webkit-box;
+
+  display: -ms-flexbox;
+
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+
+  z-index: 999;
+}

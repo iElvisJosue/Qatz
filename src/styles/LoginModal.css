@@ -8,11 +8,24 @@
   padding: 40px 20px 20px 20px;
   opacity: 0;
 
+  display: -webkit-box;
+
+  display: -ms-flexbox;
+
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   gap: 20px;
+
+  -webkit-transition: 0.5s ease-in-out;
 
   transition: 0.5s ease-in-out;
 }
@@ -25,6 +38,7 @@
   font-size: var(--H2);
   text-align: center;
   font-weight: 800;
+  -webkit-transition: 0.5s ease color;
   transition: 0.5s ease color;
 }
 .Container__Login__Modal.Show .Container__Login__Modal--Title {
@@ -33,6 +47,7 @@
 .Container__Login__Modal--Details {
   color: var(--White);
   text-align: center;
+  -webkit-transition: 0.5s ease color;
   transition: 0.5s ease color;
 }
 .Container__Login__Modal.Show .Container__Login__Modal--Details {

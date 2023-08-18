@@ -1,3 +1,6 @@
+import "../styles/LoginModal.css";
+import "../styles/Responsive/LoginModal.css";
+
 export function LoginModal({ seeHelpModal }) {
   const classLoginModal = seeHelpModal
     ? "Container__Login__Modal Show"

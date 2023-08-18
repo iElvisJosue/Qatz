@@ -4,22 +4,32 @@
   height: auto;
   background-color: var(--WeakPurple);
 
+  display: -ms-grid;
+
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 }
-.Container__Content--Progress {
-  grid-column: span 1;
-  padding: 10px;
-}
 .Container__Content--Game {
-  grid-column: span 2;
+  -ms-grid-column-span: 3;
+  grid-column: span 3;
   padding: 10px;
 }
 .Container__Content--Information {
   padding: 10px;
+  -ms-grid-column-span: 1;
   grid-column: span 1;
+  min-width: 360px;
+  height: 100vh;
+  overflow-y: auto;
+
+  display: -webkit-box;
+
+  display: -ms-flexbox;
 
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   gap: 20px;
 }

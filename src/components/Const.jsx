@@ -8,6 +8,14 @@ export const imagesCats = [
   "../../public/Profile/Cat__7.png",
   "../../public/Profile/Cat__8.png",
   "../../public/Profile/Cat__9.png",
+  "../../public/Profile/Cat__10.png",
+  "../../public/Profile/Cat__11.png",
+  "../../public/Profile/Cat__12.png",
+  "../../public/Profile/Cat__13.png",
+  "../../public/Profile/Cat__14.png",
+  "../../public/Profile/Cat__15.png",
+  "../../public/Profile/Cat__16.png",
+  "../../public/Profile/Cat__17.png",
 ];
 
 export const imagesMedals = [
@@ -51,18 +59,18 @@ export const setDataUser = (userName, userImage) => {
       progressMaster: 0,
     },
     userMedals: {
-      medalBeginner: true,
+      medalBeginner: false,
       medalFeline: false,
-      medalKitty: true,
+      medalKitty: false,
       medalRaces: false,
       medalCuriosities: false,
-      medalHealth: true,
+      medalHealth: false,
       medalMyths: false,
       medalMaster: false,
       medalEnthusiastic: false,
       medalAmazing: false,
       medalExpert: false,
-      medalKingQueen: true,
+      medalKingQueen: false,
     },
     medalsDescription: {
       descriptionBeginner:
