@@ -11,7 +11,6 @@ export function ContentInformationProfile({
   updateStateIsLogin,
   hiddenMenu,
 }) {
-  console.log(contentDataUser);
   const [settings, setSettings] = useState(false);
   const [seeModalDelete, setSeeModalDelete] = useState(false);
 

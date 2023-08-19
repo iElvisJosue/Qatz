@@ -176,6 +176,114 @@ export function setDataUser(userName, userImage) {
   localStorage.setItem("dataUser", JSON.stringify(dataUser));
 }
 
+export function setUserScores() {
+  const userScores = {
+    user1: {
+      userName: "GatoAmigo",
+      userImage: 0,
+      userScore: 500,
+    },
+    user2: {
+      userName: "Ronroneo",
+      userImage: 1,
+      userScore: 520,
+    },
+    user3: {
+      userName: "MiauFelino",
+      userImage: 2,
+      userScore: 420,
+    },
+    user4: {
+      userName: "BigotesCat",
+      userImage: 3,
+      userScore: 300,
+    },
+    user5: {
+      userName: "GarraSuave",
+      userImage: 4,
+      userScore: 120,
+    },
+    user6: {
+      userName: "GatitoPardo",
+      userImage: 5,
+      userScore: 510,
+    },
+    user7: {
+      userName: "PurrfectCat",
+      userImage: 6,
+      userScore: 490,
+    },
+    user8: {
+      userName: "PataVeloz",
+      userImage: 7,
+      userScore: 540,
+    },
+    user9: {
+      userName: "PelusaMiau",
+      userImage: 8,
+      userScore: 280,
+    },
+    user10: {
+      userName: "MeowMaster",
+      userImage: 9,
+      userScore: 500,
+    },
+    user11: {
+      userName: "HolaMiau",
+      userImage: 10,
+      userScore: 80,
+    },
+    user12: {
+      userName: "RonrónFino",
+      userImage: 11,
+      userScore: 310,
+    },
+    user13: {
+      userName: "GatoGris",
+      userImage: 12,
+      userScore: 150,
+    },
+    user14: {
+      userName: "MiauChispa",
+      userImage: 13,
+      userScore: 530,
+    },
+    user15: {
+      userName: "ColaEsponja",
+      userImage: 14,
+      userScore: 440,
+    },
+    user16: {
+      userName: "GarraÁgil",
+      userImage: 15,
+      userScore: 550,
+    },
+    user17: {
+      userName: "GatitoSano",
+      userImage: 15,
+      userScore: 470,
+    },
+    user18: {
+      userName: "Ronroneador",
+      userImage: 15,
+      userScore: 400,
+    },
+  };
+  localStorage.setItem("userScores", JSON.stringify(userScores));
+}
+
+export function addNewUserScores(userName, userImage) {
+  const userScores = JSON.parse(localStorage.getItem("userScores"));
+  const totalUserScores = Object.keys(userScores).length;
+  const nameUser = `user${totalUserScores + 1}`;
+  userScores[nameUser] = {
+    userName,
+    userImage,
+    userScore: 0,
+  };
+  localStorage.setItem("userScores", JSON.stringify(userScores));
+}
+
 export function checkValueInput(e) {
   const regExpUserName = /^[a-zA-Z0-9]+$/;
   return regExpUserName.test(e) ? e : false;

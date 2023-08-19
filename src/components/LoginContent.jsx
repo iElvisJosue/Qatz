@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { setDataUser } from "./Const";
+import { setDataUser, addNewUserScores } from "./Const";
 import { imagesCats, checkValueInput } from "./Const";
 
 import "../styles/LoginContent.css";
@@ -37,6 +37,7 @@ export function LoginContent({ updateStateIsLogin }) {
   }
   function inputValidateCorrect(inputUsernameValue) {
     setDataUser(inputUsernameValue, imageProfile);
+    addNewUserScores(inputUsernameValue, imageProfile);
     updateStateIsLogin();
   }
   function inputValidateWrong(inputUsername, inputUsernameValue) {
@@ -84,7 +85,7 @@ export function LoginContent({ updateStateIsLogin }) {
         className={inputClassName}
         placeholder="Escribe aquí.."
         onKeyDown={checkKeyPressed}
-        maxLength={25}
+        maxLength={12}
         disabled={inputDisabled}
       />
       <span className="Container__Login__Content--Continue">

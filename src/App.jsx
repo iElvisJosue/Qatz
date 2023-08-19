@@ -4,8 +4,7 @@ import { useState, useEffect } from "react";
 // COMPONENTS
 import { Login } from "./components/Login";
 import { Content } from "./components/Content";
-import { levelDetails } from "./components/Const";
-// import { Navbar } from "./components/Navbar";
+import { setUserScores, levelDetails } from "./components/Const";
 import { Menu } from "./components/Menu";
 
 // STYLES
@@ -18,6 +17,7 @@ export function App() {
   const [contentDataUser, updateContentDataUser] = useState([]);
 
   useEffect(() => {
+    checkScoresExist();
     checkUserExist();
   }, []);
 
@@ -37,6 +37,10 @@ export function App() {
   const updateStateIsLogin = (response) => {
     setIsLogin(response);
     response ? checkUserExist() : false;
+  };
+
+  const checkScoresExist = () => {
+    localStorage.getItem("userScores") ? true : setUserScores();
   };
 
   const checkUserExist = () => {
