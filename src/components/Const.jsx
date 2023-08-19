@@ -16,6 +16,7 @@ export const imagesCats = [
   "../../public/Profile/Cat__15.png",
   "../../public/Profile/Cat__16.png",
   "../../public/Profile/Cat__17.png",
+  "../../public/Profile/Cat__18.png",
 ];
 
 export const imagesMedals = [
