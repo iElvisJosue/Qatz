@@ -32,8 +32,66 @@ export const imagesMedals = [
   "../../public/Medals/Experto.png",
   "../../public/Medals/ReyReina.png",
 ];
+export const levelDetails = [
+  {
+    levelImage: "../../public/Levels/Novato.png",
+    levelAlt: "Imagen del nivel Novato",
+    levelName: "Novato",
+    levelClass: "Beginner",
+    levelQuestions: 5,
+  },
+  {
+    levelImage: "../../public/Levels/Curioso.png",
+    levelAlt: "Imagen del nivel Felino Curioso",
+    levelName: "Felino Curioso",
+    levelClass: "Feline",
+    levelQuestions: 6,
+  },
+  {
+    levelImage: "../../public/Levels/Experto.png",
+    levelAlt: "Imagen del nivel Gatito Experto",
+    levelName: "Gatito Experto",
+    levelClass: "Kitty",
+    levelQuestions: 7,
+  },
+  {
+    levelImage: "../../public/Levels/Razas.png",
+    levelAlt: "Imagen del nivel Amante de Razas",
+    levelName: "Amante de Razas",
+    levelClass: "Races",
+    levelQuestions: 7,
+  },
+  {
+    levelImage: "../../public/Levels/Curiosidades.png",
+    levelAlt: "Imagen del nivel Curiosidades Felinas",
+    levelName: "Curiosidades Felinas",
+    levelClass: "Curiosities",
+    levelQuestions: 6,
+  },
+  {
+    levelImage: "../../public/Levels/Salud.png",
+    levelAlt: "Imagen del nivel Salud Gatuna",
+    levelName: "Salud Gatuna",
+    levelClass: "Health",
+    levelQuestions: 8,
+  },
+  {
+    levelImage: "../../public/Levels/Mitos.png",
+    levelAlt: "Imagen del nivel Mitos y Leyendas",
+    levelName: "Mitos y Leyendas",
+    levelClass: "Myths",
+    levelQuestions: 6,
+  },
+  {
+    levelImage: "../../public/Levels/Maestro.png",
+    levelAlt: "Imagen del nivel Maestro Felino",
+    levelName: "Maestro Felino",
+    levelClass: "Master",
+    levelQuestions: 10,
+  },
+];
 
-export const setDataUser = (userName, userImage) => {
+export function setDataUser(userName, userImage) {
   const dataUser = {
     userName,
     userImage,
@@ -97,70 +155,9 @@ export const setDataUser = (userName, userImage) => {
     },
   };
   localStorage.setItem("dataUser", JSON.stringify(dataUser));
-};
-export const levelDetails = [
-  {
-    levelImage: "../../public/Levels/Novato.png",
-    levelAlt: "Imagen del nivel Novato",
-    levelName: "Novato",
-    levelClass: "Beginner",
-    levelQuestions: 5,
-  },
-  {
-    levelImage: "../../public/Levels/Curioso.png",
-    levelAlt: "Imagen del nivel Felino Curioso",
-    levelName: "Felino Curioso",
-    levelClass: "Feline",
-    levelQuestions: 6,
-  },
-  {
-    levelImage: "../../public/Levels/Experto.png",
-    levelAlt: "Imagen del nivel Gatito Experto",
-    levelName: "Gatito Experto",
-    levelClass: "Kitty",
-    levelQuestions: 7,
-  },
-  {
-    levelImage: "../../public/Levels/Razas.png",
-    levelAlt: "Imagen del nivel Amante de Razas",
-    levelName: "Amante de Razas",
-    levelClass: "Races",
-    levelQuestions: 7,
-  },
-  {
-    levelImage: "../../public/Levels/Curiosidades.png",
-    levelAlt: "Imagen del nivel Curiosidades Felinas",
-    levelName: "Curiosidades Felinas",
-    levelClass: "Curiosities",
-    levelQuestions: 6,
-  },
-  {
-    levelImage: "../../public/Levels/Salud.png",
-    levelAlt: "Imagen del nivel Salud Gatuna",
-    levelName: "Salud Gatuna",
-    levelClass: "Health",
-    levelQuestions: 8,
-  },
-  {
-    levelImage: "../../public/Levels/Mitos.png",
-    levelAlt: "Imagen del nivel Mitos y Leyendas",
-    levelName: "Mitos y Leyendas",
-    levelClass: "Myths",
-    levelQuestions: 6,
-  },
-  {
-    levelImage: "../../public/Levels/Maestro.png",
-    levelAlt: "Imagen del nivel Maestro Felino",
-    levelName: "Maestro Felino",
-    levelClass: "Master",
-    levelQuestions: 10,
-  },
-];
+}
 
-export const checkValueInput = (e) => {
+export function checkValueInput(e) {
   const regExpUserName = /^[a-zA-Z0-9]+$/;
-  if (regExpUserName.test(e)) {
-    return e;
-  }
-  return false;
-};
+  return regExpUserName.test(e) ? e : false;
+}

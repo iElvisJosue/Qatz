@@ -4,8 +4,6 @@
   height: auto;
   background-color: var(--WeakPurple);
 
-  display: -ms-grid;
-
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 }
