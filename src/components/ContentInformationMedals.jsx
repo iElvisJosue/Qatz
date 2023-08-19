@@ -5,6 +5,9 @@ import "../styles/ContentInformationMedals.css";
 import "../styles/Responsive/ContentInformationMedals.css";
 
 export function ContentInformationMedals({ contentDataUser }) {
+  const [seeMedals, setSeeMedals] = useState(false);
+  const [seeModalMedals, setSeeModalMedals] = useState(false);
+
   const totalMedals = Object.entries(contentDataUser.userMedals);
   const sortTotalMedals = totalMedals.sort((a, b) => b[1] - a[1]);
   const contentMedals = sortTotalMedals.map((e, index) => {
@@ -12,13 +15,20 @@ export function ContentInformationMedals({ contentDataUser }) {
       ? "Container__Content--Information--Medals--Achieved--Box Achieved"
       : "Container__Content--Information--Medals--Achieved--Box";
     return (
-      <picture key={index} className={classMedal}>
+      <picture
+        key={index}
+        id={index}
+        className={classMedal}
+        onClick={showModalMedals}
+      >
         <img src={imagesMedals[index]} alt="Medalla" />
       </picture>
     );
   });
 
-  const [seeMedals, setSeeMedals] = useState(false);
+  function showModalMedals() {
+    setSeeModalMedals(true);
+  }
 
   const nameIconSee = seeMedals ? "chevron-up-outline" : "chevron-down-outline";
   const classContentMedals = seeMedals

@@ -12,21 +12,21 @@ export function LoginContent({ updateStateIsLogin }) {
 
   const imageCatSelected = imagesCats[imageProfile];
 
-  const previousImage = () => {
+  function previousImage() {
     imageProfile > 0
       ? setImageProfile(imageProfile - 1)
       : setImageProfile(totalImagesCats);
-  };
-  const nextImage = () => {
+  }
+  function nextImage() {
     imageProfile < totalImagesCats
       ? setImageProfile(imageProfile + 1)
       : setImageProfile(0);
-  };
-  const checkKeyPressed = (e) => {
+  }
+  function checkKeyPressed(e) {
     if (e.keyCode === 32) e.preventDefault();
     if (e.keyCode === 13) inputValidate();
-  };
-  const inputValidate = () => {
+  }
+  function inputValidate() {
     const inputUsername = document.querySelector(".Container__InputsText");
     const inputUsernameValue = inputUsername.value;
     const responseInputValidate = checkValueInput(inputUsernameValue);
@@ -34,12 +34,12 @@ export function LoginContent({ updateStateIsLogin }) {
     responseInputValidate
       ? inputValidateCorrect(inputUsernameValue)
       : inputValidateWrong(inputUsername, inputUsernameValue);
-  };
-  const inputValidateCorrect = (inputUsernameValue) => {
+  }
+  function inputValidateCorrect(inputUsernameValue) {
     setDataUser(inputUsernameValue, imageProfile);
     updateStateIsLogin();
-  };
-  const inputValidateWrong = (inputUsername, inputUsernameValue) => {
+  }
+  function inputValidateWrong(inputUsername, inputUsernameValue) {
     inputUsername.value = "Solo letras y/o números 🚫";
     setInputUsernameValidate(false);
 
@@ -47,7 +47,7 @@ export function LoginContent({ updateStateIsLogin }) {
       inputUsername.value = inputUsernameValue;
       setInputUsernameValidate(true);
     }, 2000);
-  };
+  }
 
   const inputClassName = inputUsernameValidate
     ? "Container__InputsText"

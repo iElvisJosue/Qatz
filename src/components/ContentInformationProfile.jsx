@@ -18,21 +18,23 @@ export function ContentInformationProfile({
   const userImage = contentDataUser.userImage;
   const userProgressLevels = contentDataUser.userProgressLevel;
 
-  const showSettings = () => {
+  function showSettings() {
     setSettings(!settings);
-  };
-  const getTotalScore = () =>
-    Object.values(userProgressLevels).reduce(
+  }
+  function getTotalScore() {
+    return Object.values(userProgressLevels).reduce(
       (total, value) => total + value,
       0
     );
-  const hiddenModalDelete = () => {
+  }
+  function hiddenModalDelete() {
     setSeeModalDelete(false);
-  };
-  const deleteProfile = () => {
+  }
+  function deleteProfile() {
     localStorage.removeItem("dataUser");
     updateStateIsLogin(false);
-  };
+  }
+
   const classButtonUpdate = settings
     ? "Container__Content--Information--Profile--Button--Update Show"
     : "Container__Content--Information--Profile--Button--Update";

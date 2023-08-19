@@ -12,13 +12,14 @@ export function ContentInformationProgressLevel({
   const currentProgressLevel =
     contentDataUser.userProgressLevel[nameProgressLevel];
 
-  const calculatePercentage = () => {
+  const classNameLevel = `Container__Content--Information--Progress--Level ${levelDetails[level].levelClass}`;
+
+  function calculatePercentage() {
     const maxQuestions = levelTotalQuestions;
     const currentProgress = currentProgressLevel;
     const totalProgress = (currentProgress / maxQuestions) * 100;
     return Math.round(totalProgress);
-  };
-  const classNameLevel = `Container__Content--Information--Progress--Level ${levelDetails[level].levelClass}`;
+  }
 
   return (
     <div

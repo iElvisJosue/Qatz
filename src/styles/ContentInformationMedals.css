@@ -58,6 +58,7 @@
   transform: scale(0);
   filter: grayscale(1);
   transform-origin: left;
+  cursor: pointer;
 
   display: flex;
   align-items: center;
