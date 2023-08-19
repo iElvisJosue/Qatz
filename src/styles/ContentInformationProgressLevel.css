@@ -4,27 +4,15 @@
   border-radius: var(--BorderRadius);
   border: 2px solid transparent;
 
-  display: -webkit-box;
-
-  display: -ms-flexbox;
-
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
   gap: 10px;
-
-  cursor: pointer;
-  -webkit-transition: 0.3s ease-in-out border-color;
-  transition: 0.3s ease-in-out border-color;
-
   opacity: 0;
-  -webkit-animation: loadingProgressDetails 1s forwards;
+  cursor: pointer;
+
   animation: loadingProgressDetails 1s forwards;
-  -webkit-transform-origin: left;
+  transition: 0.3s ease-in-out border-color;
   transform-origin: left;
 }
 .Container__Content--Information--Progress--Level--Box {
@@ -41,22 +29,11 @@
   font-size: 14px;
   width: 100%;
 
-  display: -webkit-box;
-
-  display: -ms-flexbox;
-
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 .Container__Content--Information--Progress--Level--Details--Text {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
   font-weight: 600;
 }
@@ -76,7 +53,6 @@
 /* CLASS ADDED BY REACT */
 .Container__Content--Information--Progress--Level.Beginner {
   background: var(--WeakOrange);
-  -webkit-animation-delay: 0.1s;
   animation-delay: 0.1s;
 }
 .Container__Content--Information--Progress--Level.Beginner:hover {
@@ -84,7 +60,6 @@
 }
 .Container__Content--Information--Progress--Level.Feline {
   background: var(--WeakPurple);
-  -webkit-animation-delay: 0.2s;
   animation-delay: 0.2s;
 }
 .Container__Content--Information--Progress--Level.Feline:hover {
@@ -92,7 +67,6 @@
 }
 .Container__Content--Information--Progress--Level.Kitty {
   background: var(--WeakBlue);
-  -webkit-animation-delay: 0.3s;
   animation-delay: 0.3s;
 }
 .Container__Content--Information--Progress--Level.Kitty:hover {
@@ -100,7 +74,6 @@
 }
 .Container__Content--Information--Progress--Level.Races {
   background: var(--WeakGreen);
-  -webkit-animation-delay: 0.4s;
   animation-delay: 0.4s;
 }
 .Container__Content--Information--Progress--Level.Races:hover {
@@ -108,7 +81,6 @@
 }
 .Container__Content--Information--Progress--Level.Curiosities {
   background: var(--WeakGray);
-  -webkit-animation-delay: 0.5s;
   animation-delay: 0.5s;
 }
 .Container__Content--Information--Progress--Level.Curiosities:hover {
@@ -116,7 +88,6 @@
 }
 .Container__Content--Information--Progress--Level.Health {
   background: var(--WeakRed);
-  -webkit-animation-delay: 0.6s;
   animation-delay: 0.6s;
 }
 .Container__Content--Information--Progress--Level.Health:hover {
@@ -124,7 +95,6 @@
 }
 .Container__Content--Information--Progress--Level.Myths {
   background: var(--WeakLila);
-  -webkit-animation-delay: 0.7s;
   animation-delay: 0.7s;
 }
 .Container__Content--Information--Progress--Level.Myths:hover {
@@ -132,7 +102,6 @@
 }
 .Container__Content--Information--Progress--Level.Master {
   background: var(--WeakGold);
-  -webkit-animation-delay: 0.8s;
   animation-delay: 0.8s;
 }
 .Container__Content--Information--Progress--Level.Master:hover {
@@ -240,22 +209,18 @@
 }
 @-webkit-keyframes loadingProgressDetails {
   0% {
-    -webkit-transform: scale(0);
     transform: scale(0);
   }
   100% {
-    -webkit-transform: scale(1);
     transform: scale(1);
     opacity: 1;
   }
 }
 @keyframes loadingProgressDetails {
   0% {
-    -webkit-transform: scale(0);
     transform: scale(0);
   }
   100% {
-    -webkit-transform: scale(1);
     transform: scale(1);
     opacity: 1;
   }

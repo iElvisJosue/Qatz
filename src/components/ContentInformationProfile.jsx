@@ -3,10 +3,13 @@ import { imagesCats } from "./Const";
 import { ContentInformationProfileDelete } from "./ContentInformationProfileDelete";
 
 import "../styles/ContentInformationProfile.css";
+import "../styles/Responsive/ContentInformationProfile.css";
 
 export function ContentInformationProfile({
+  showMenu,
   contentDataUser,
   updateStateIsLogin,
+  hiddenMenu,
 }) {
   const [settings, setSettings] = useState(false);
   const [seeModalDelete, setSeeModalDelete] = useState(false);
@@ -49,6 +52,16 @@ export function ContentInformationProfile({
       />
 
       <span className="Container__Content--Information--Profile--Button">
+        {showMenu ? (
+          <button
+            className="Container__Content--Information--Profile--Button--Close"
+            onClick={hiddenMenu}
+          >
+            <ion-icon name="close"></ion-icon>
+          </button>
+        ) : (
+          false
+        )}
         <button
           className="Container__Content--Information--Profile--Button--Settings"
           onClick={showSettings}

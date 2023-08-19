@@ -5,6 +5,8 @@ import { useState, useEffect } from "react";
 import { Login } from "./components/Login";
 import { Content } from "./components/Content";
 import { levelDetails } from "./components/Const";
+// import { Navbar } from "./components/Navbar";
+import { Menu } from "./components/Menu";
 
 // STYLES
 import "./styles/General.css";
@@ -48,11 +50,18 @@ export function App() {
   return (
     <main className="Container">
       {isLogin ? (
-        <Content
-          contentDataUser={contentDataUser}
-          updateDataUser={updateDataUser}
-          updateStateIsLogin={updateStateIsLogin}
-        />
+        <>
+          <Menu
+            contentDataUser={contentDataUser}
+            updateDataUser={updateDataUser}
+            updateStateIsLogin={updateStateIsLogin}
+          />
+          <Content
+            contentDataUser={contentDataUser}
+            updateDataUser={updateDataUser}
+            updateStateIsLogin={updateStateIsLogin}
+          />
+        </>
       ) : (
         <Login updateStateIsLogin={updateStateIsLogin} />
       )}

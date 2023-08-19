@@ -3,7 +3,6 @@
     width: 100%;
   }
 }
-
 @media (width <=500px) {
   .Container {
     background: var(--White);

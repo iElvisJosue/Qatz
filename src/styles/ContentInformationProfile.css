@@ -5,17 +5,9 @@
   background: var(--White);
   border-radius: var(--BorderRadius);
   overflow: hidden;
-  -webkit-box-shadow: var(--BoxShadow);
   box-shadow: var(--BoxShadow);
 
-  display: -webkit-box;
-
-  display: -ms-flexbox;
-
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
   gap: 20px;
 }
@@ -23,6 +15,27 @@
   position: relative;
   width: 100%;
   height: auto;
+}
+.Container__Content--Information--Profile--Button--Close {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 40px;
+  height: 40px;
+  background: var(--StrongPurple);
+  border: none;
+  color: var(--White);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: 0.3s ease-in-out all;
+}
+.Container__Content--Information--Profile--Button--Close:hover {
+  cursor: pointer;
+  background: var(--White);
+  color: var(--StrongPurple);
 }
 .Container__Content--Information--Profile--Button--Settings,
 .Container__Content--Information--Profile--Button--Update,
@@ -36,31 +49,18 @@
   border: none;
   color: var(--White);
 
-  display: -webkit-box;
-
-  display: -ms-flexbox;
-
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
-
-  -webkit-transition: 0.3s ease-in-out all;
 
   transition: 0.3s ease-in-out all;
 }
 .Container__Content--Information--Profile--Button--Settings {
-  -webkit-transform-origin: right;
   transform-origin: right;
-  -webkit-animation: loadingContentProfile 1s forwards;
   animation: loadingContentProfile 1s forwards;
   z-index: 2;
 }
 .Container__Content--Information--Profile--Button--Settings ion-icon {
-  -webkit-animation: settingRotation 5s linear infinite;
   animation: settingRotation 5s linear infinite;
 }
 @-webkit-keyframes settingRotation {
@@ -85,13 +85,11 @@
 }
 .Container__Content--Information--Profile--Button--Update.Show {
   z-index: 1;
-  -webkit-transform: translateY(40px);
   transform: translateY(40px);
   background-color: var(--StrongPurple);
 }
 .Container__Content--Information--Profile--Button--Delete.Show {
   z-index: 1;
-  -webkit-transform: translateY(80px);
   transform: translateY(80px);
   background-color: var(--StrongPurple);
 }
@@ -103,19 +101,10 @@
   color: var(--StrongPurple);
 }
 .Container__Content--Information--Profile--Image {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-transform: scale(0);
   transform: scale(0);
-
-  -webkit-animation: loadingContentProfile 1s 0.4s forwards;
 
   animation: loadingContentProfile 1s 0.4s forwards;
 }
@@ -151,32 +140,25 @@
 .Container__Content--Information--Profile--Username {
   text-align: center;
   color: var(--StrongPurple);
-  -webkit-transform: scale(0);
   transform: scale(0);
-
-  -webkit-animation: loadingContentProfile 1s 0.8s forwards;
 
   animation: loadingContentProfile 1s 0.8s forwards;
 }
 @-webkit-keyframes loadingContentProfile {
   0% {
-    -webkit-transform: scale(0);
     transform: scale(0);
   }
   100% {
     opacity: 1;
-    -webkit-transform: scale(1);
     transform: scale(1);
   }
 }
 @keyframes loadingContentProfile {
   0% {
-    -webkit-transform: scale(0);
     transform: scale(0);
   }
   100% {
     opacity: 1;
-    -webkit-transform: scale(1);
     transform: scale(1);
   }
 }

@@ -3,3 +3,14 @@
     width: 100%;
   }
 }
+@media (width <= 1000px) {
+  .Container__Content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .Container__Content--Game {
+    grid-column: span 3;
+  }
+  .Container__Content--Information {
+    display: none;
+  }
+}

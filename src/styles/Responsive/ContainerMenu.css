@@ -1,0 +1,19 @@
+@media (width > 1000px) {
+  .Container__Menu--Button {
+    transform: scale(0) !important;
+  }
+  .Container__Menu--Content {
+    opacity: 0 !important;
+    z-index: -1 !important;
+  }
+  .Container__Menu--Content--Details {
+    right: -100% !important;
+  }
+}
+@media (width <= 450px) {
+  .Container__Menu--Content--Details {
+    width: 100%;
+    padding: 0;
+    background-color: var(--White);
+  }
+}

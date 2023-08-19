@@ -15,8 +15,9 @@ export function Content({
       <div className="Container__Content--Game">
         <h1>Contenido principal</h1>
       </div>
-      <aside className="Container__Content--Information">
+      <div className="Container__Content--Information">
         <ContentInformationProfile
+          showMenu={false}
           contentDataUser={contentDataUser}
           updateStateIsLogin={updateStateIsLogin}
         />
@@ -25,7 +26,7 @@ export function Content({
           contentDataUser={contentDataUser}
           updateDataUser={updateDataUser}
         />
-      </aside>
+      </div>
     </section>
   );
 }

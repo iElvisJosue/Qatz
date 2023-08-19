@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ContentInformationProgressLevel } from "./ContentInformationProgressLevel";
 
 import "../styles/ContentInformationProgress.css";
+import "../styles/Responsive/ContentInformationProgress.css";
 
 export function ContentInformationProgress({
   contentDataUser,

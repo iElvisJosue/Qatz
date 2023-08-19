@@ -33,7 +33,7 @@
 }
 .Container__Content--Information--Profile--Delete--Modal--Title {
   font-size: var(--H3);
-  color: var(--StrongRed);
+  color: var(--StrongPurple);
   text-align: center;
 }
 .Container__Content--Information--Profile--Delete--Modal--Image {
@@ -65,13 +65,13 @@
   transition: 0.5s ease-in-out all;
 }
 .Container__Content--Information--Profile--Delete--Modal--Buttons--Cancel {
-  background-color: var(--StrongRed);
+  background-color: var(--StrongPurple);
   color: var(--White);
 }
 .Container__Content--Information--Profile--Delete--Modal--Buttons--Cancel:hover {
   background-color: var(--White);
-  border-color: var(--StrongRed);
-  color: var(--StrongRed);
+  border-color: var(--StrongPurple);
+  color: var(--StrongPurple);
 }
 .Container__Content--Information--Profile--Delete--Modal--Buttons--Confirm {
   background-color: var(--WeakGray);

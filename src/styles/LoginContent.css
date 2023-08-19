@@ -5,14 +5,8 @@
   font-weight: 800;
 }
 .Container__Login__Content--Profile {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 .Container__Login__Content--Profile--Image {
@@ -23,8 +17,6 @@
   border-radius: 50%;
   border: 5px solid var(--StrongPurple);
   background-image: var(--LinearGradient);
-
-  display: -ms-grid;
 
   display: grid;
   place-items: center;
@@ -39,8 +31,6 @@
   height: 35px;
   border: none;
   background-color: transparent;
-
-  display: -ms-grid;
 
   display: grid;
   place-content: center;
@@ -63,8 +53,6 @@
   background: var(--WeakPurple);
   border-bottom: 1px solid var(--StrongPurple);
   border-radius: var(--BorderRadiusInputs);
-
-  -webkit-transition: 0.5s ease all;
 
   transition: 0.5s ease all;
 }
@@ -111,8 +99,6 @@
   color: var(--White);
   border-radius: var(--BorderRadiusInputs);
   font-weight: 600;
-
-  -webkit-transition: 0.5s ease background-color, color;
 
   transition: 0.5s ease background-color, color;
 }

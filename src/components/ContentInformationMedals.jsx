@@ -2,6 +2,7 @@ import { useState } from "react";
 import { imagesMedals } from "./Const";
 
 import "../styles/ContentInformationMedals.css";
+import "../styles/Responsive/ContentInformationMedals.css";
 
 export function ContentInformationMedals({ contentDataUser }) {
   const totalMedals = Object.entries(contentDataUser.userMedals);

@@ -4,22 +4,12 @@
   padding: 15px 20px 20px 20px;
   background: var(--White);
   border-radius: var(--BorderRadius);
-  -webkit-box-shadow: var(--BoxShadow);
   box-shadow: var(--BoxShadow);
   overflow: hidden;
 
-  display: -webkit-box;
-
-  display: -ms-flexbox;
-
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
   gap: 10px;
-
-  -webkit-transition: 0.5s ease all;
 
   transition: 0.5s ease all;
 }
@@ -28,64 +18,42 @@
   height: 615px;
 }
 .Container__Content--Information--Progress--Header {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 .Container__Content--Information--Progress--Header--Title {
   font-size: var(--H3);
   color: var(--StrongPurple);
   font-weight: 800;
-  -webkit-transform-origin: left;
   transform-origin: left;
-
-  -webkit-animation: loadingProgressTitle 1s forwards;
 
   animation: loadingProgressTitle 1s forwards;
 }
 .Container__Content--Information--Progress--Header--See {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
   border: none;
   background: transparent;
   color: var(--StrongPurple);
-  -webkit-transform: scale(0);
   transform: scale(0);
-
-  -webkit-animation: loadingProgressTitle 1s 0.1s forwards;
 
   animation: loadingProgressTitle 1s 0.1s forwards;
 }
 @-webkit-keyframes loadingProgressTitle {
   0% {
-    -webkit-transform: scale(0);
     transform: scale(0);
   }
   100% {
-    -webkit-transform: scale(1);
     transform: scale(1);
   }
 }
 @keyframes loadingProgressTitle {
   0% {
-    -webkit-transform: scale(0);
     transform: scale(0);
   }
   100% {
-    -webkit-transform: scale(1);
     transform: scale(1);
   }
 }

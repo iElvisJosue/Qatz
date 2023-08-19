@@ -1,0 +1,5 @@
+@media (width <= 450px) {
+  .Container__Content--Information--Progress {
+    border-radius: 0;
+  }
+}
