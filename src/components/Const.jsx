@@ -131,28 +131,42 @@ export function setDataUser(userName, userImage) {
       medalExpert: false,
       medalKingQueen: false,
     },
+    medalName: {
+      medalBeginner: "¡Esto apenas comienza!",
+      medalFeline: "¡Amante de lo curioso!",
+      medalKitty: "¿No hay algo más difícil?",
+      medalRaces: "¡Las razas no son problema!",
+      medalCuriosities: "¡Nada que no sepa!",
+      medalHealth: "¡Dueño responsable!",
+      medalMyths: "¡Lo sé todo!",
+      medalMaster: "¡Uno con los gatos!",
+      medalEnthusiastic: "¡Nada puede detenerte!",
+      medalAmazing: "¡Más más más!",
+      medalExpert: "¡Experto Felino!",
+      medalKingQueen: "¡QATZ Master!",
+    },
     medalsDescription: {
       descriptionBeginner:
-        "Responde correctamente todas las preguntas del nivel Novato",
+        "Responde correctamente todas las preguntas del nivel Novato.",
       descriptionFeline:
-        "Responde correctamente todas las preguntas del nivel Felino Curioso",
+        "Responde correctamente todas las preguntas del nivel Felino Curioso.",
       descriptionKitty:
-        "Responde correctamente todas las preguntas del nivel Gatito Experto",
+        "Responde correctamente todas las preguntas del nivel Gatito Experto.",
       descriptionRaces:
-        "Responde correctamente todas las preguntas del nivel Amante de Razas",
+        "Responde correctamente todas las preguntas del nivel Amante de Razas.",
       descriptionCuriosities:
-        "Responde correctamente todas las preguntas del nivel Curiosidades Felinas",
+        "Responde correctamente todas las preguntas del nivel Curiosidades Felinas.",
       descriptionHealth:
-        "Responde correctamente todas las preguntas del nivel Salud Gatuna",
+        "Responde correctamente todas las preguntas del nivel Salud Gatuna.",
       descriptionMyths:
-        "Responde correctamente todas las preguntas del nivel Mitos y Leyendas",
+        "Responde correctamente todas las preguntas del nivel Mitos y Leyendas.",
       descriptionMaster:
-        "Responde correctamente todas las preguntas del nivel Maestro",
-      descriptionEnthusiastic: "Completa la mitad de los niveles",
-      descriptionAmazing: "Obtén 20 preguntas correctas",
-      descriptionExpert: "Obtén 40 preguntas correctas",
+        "Responde correctamente todas las preguntas del nivel Maestro.",
+      descriptionEnthusiastic: "Completa la mitad de los niveles.",
+      descriptionAmazing: "Obtén 20 preguntas correctas.",
+      descriptionExpert: "Obtén 40 preguntas correctas.",
       descriptionKingQueen:
-        "Consigue una puntuación perfecta en todos los niveles",
+        "Consigue una puntuación perfecta en todos los niveles.",
     },
   };
   localStorage.setItem("dataUser", JSON.stringify(dataUser));

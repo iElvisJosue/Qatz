@@ -1,0 +1,6 @@
+@media (width <= 450px) {
+  .Container__Content--Information--Medals--Modal--Content {
+    width: 95%;
+    margin: auto;
+  }
+}

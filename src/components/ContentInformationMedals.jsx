@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { imagesMedals } from "./Const";
+import { ContentInformationMedalDetails } from "./ContentInformationMedalDetails";
 
 import "../styles/ContentInformationMedals.css";
 import "../styles/Responsive/ContentInformationMedals.css";
 
 export function ContentInformationMedals({ contentDataUser }) {
   const [seeMedals, setSeeMedals] = useState(false);
-  const [seeModalMedals, setSeeModalMedals] = useState(false);
+  const [seeModalMedal, setSeeModalMedal] = useState(false);
+  const [idMedal, setIdMedal] = useState();
 
   const totalMedals = Object.entries(contentDataUser.userMedals);
   const sortTotalMedals = totalMedals.sort((a, b) => b[1] - a[1]);
@@ -19,24 +21,38 @@ export function ContentInformationMedals({ contentDataUser }) {
         key={index}
         id={index}
         className={classMedal}
-        onClick={showModalMedals}
+        onClick={showModalMedal}
       >
         <img src={imagesMedals[index]} alt="Medalla" />
       </picture>
     );
   });
 
-  function showModalMedals() {
-    setSeeModalMedals(true);
+  function showModalMedal(e) {
+    setSeeModalMedal(true);
+    const idMedalSelected = e.currentTarget.id;
+    setIdMedal(idMedalSelected);
+  }
+  function hiddenModalMedal() {
+    setSeeModalMedal(false);
   }
 
   const nameIconSee = seeMedals ? "chevron-up-outline" : "chevron-down-outline";
   const classContentMedals = seeMedals
     ? "Container__Content--Information--Medals Show"
     : "Container__Content--Information--Medals";
+  const classModalMedalDetails = seeModalMedal
+    ? "Container__Content--Information--Medals--Modal Show"
+    : "Container__Content--Information--Medals--Modal";
 
   return (
     <section className={classContentMedals}>
+      <ContentInformationMedalDetails
+        classModalMedalDetails={classModalMedalDetails}
+        idMedal={idMedal}
+        contentDataUser={contentDataUser}
+        hiddenModalMedal={hiddenModalMedal}
+      />
       <span className="Container__Content--Information--Medals--Header">
         <p className="Container__Content--Information--Medals--Header--Title">
           Tus medallas
