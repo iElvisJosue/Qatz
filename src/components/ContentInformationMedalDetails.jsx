@@ -8,8 +8,8 @@ export function ContentInformationMedalDetails({
   contentDataUser,
   hiddenModalMedal,
 }) {
-  const medalDescription = Object.values(contentDataUser.medalsDescription);
-  const medalName = Object.values(contentDataUser.medalName);
+  const medalDescription = Object.values(contentDataUser.medals.description);
+  const medalName = Object.values(contentDataUser.medals.name);
 
   return (
     <div className={classModalMedalDetails}>

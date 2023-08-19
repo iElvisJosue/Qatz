@@ -26,7 +26,7 @@ export function App() {
     if (currentProgressLevel < totalQuestions) {
       // dataUser.userProgressLevel[nameProgressLevel] ES EL NIVEL EL SCORE
       // DEL NIVEL SELECCIONADO
-      contentDataUser.userProgressLevel[nameProgressLevel] =
+      contentDataUser.levels.progress[nameProgressLevel] =
         currentProgressLevel + 1;
       localStorage.setItem("dataUser", JSON.stringify(contentDataUser));
       const updatedUserData = JSON.parse(localStorage.getItem("dataUser"));

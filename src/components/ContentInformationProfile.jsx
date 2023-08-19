@@ -11,12 +11,13 @@ export function ContentInformationProfile({
   updateStateIsLogin,
   hiddenMenu,
 }) {
+  console.log(contentDataUser);
   const [settings, setSettings] = useState(false);
   const [seeModalDelete, setSeeModalDelete] = useState(false);
 
   const userName = contentDataUser.userName;
   const userImage = contentDataUser.userImage;
-  const userProgressLevels = contentDataUser.userProgressLevel;
+  const userProgressLevels = contentDataUser.levels.progress;
 
   function showSettings() {
     setSettings(!settings);

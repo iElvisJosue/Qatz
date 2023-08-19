@@ -8,7 +8,7 @@ export function ContentInformationProgress({
   contentDataUser,
   updateDataUser,
 }) {
-  const totalLevels = Object.keys(contentDataUser.userProgressLevel);
+  const totalLevels = Object.keys(contentDataUser.levels.progress);
 
   const [seeProgress, setSeeProgress] = useState(false);
 

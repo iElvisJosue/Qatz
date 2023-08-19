@@ -10,7 +10,7 @@ export function ContentInformationMedals({ contentDataUser }) {
   const [seeModalMedal, setSeeModalMedal] = useState(false);
   const [idMedal, setIdMedal] = useState();
 
-  const totalMedals = Object.entries(contentDataUser.userMedals);
+  const totalMedals = Object.entries(contentDataUser.medals.userMedals);
   const sortTotalMedals = totalMedals.sort((a, b) => b[1] - a[1]);
   const contentMedals = sortTotalMedals.map((e, index) => {
     const classMedal = e[1]

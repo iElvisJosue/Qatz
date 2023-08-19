@@ -10,7 +10,7 @@ export function ContentInformationProgressLevel({
 }) {
   const levelTotalQuestions = levelDetails[level].levelQuestions;
   const currentProgressLevel =
-    contentDataUser.userProgressLevel[nameProgressLevel];
+    contentDataUser.levels.progress[nameProgressLevel];
 
   const classNameLevel = `Container__Content--Information--Progress--Level ${levelDetails[level].levelClass}`;
 
