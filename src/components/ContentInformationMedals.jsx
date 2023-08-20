@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { imagesMedals } from "./Const";
+import { IMAGES_MEDALS } from "./Const";
 import { ContentInformationMedalDetails } from "./ContentInformationMedalDetails";
 
 import "../styles/ContentInformationMedals.css";
@@ -23,7 +23,7 @@ export function ContentInformationMedals({ contentDataUser }) {
         className={classMedal}
         onClick={showModalMedal}
       >
-        <img src={imagesMedals[index]} alt="Medalla" />
+        <img src={IMAGES_MEDALS[index]} alt="Medalla" />
       </picture>
     );
   });

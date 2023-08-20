@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { imagesCats } from "./Const";
+import { IMAGES_CATS } from "./Const";
 import { ContentInformationProfileDelete } from "./ContentInformationProfileDelete";
 
 import "../styles/ContentInformationProfile.css";
@@ -82,7 +82,7 @@ export function ContentInformationProfile({
       </span>
       <span className="Container__Content--Information--Profile--Image">
         <picture className="Container__Content--Information--Profile--Image--Box">
-          <img src={imagesCats[userImage]} alt="Image Profile" />
+          <img src={IMAGES_CATS[userImage]} alt="Image Profile" />
           <b className="Container__Content--Information--Profile--Image--Box--TotalScore">
             {getTotalScore()}
           </b>

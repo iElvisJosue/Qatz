@@ -1,4 +1,4 @@
-import { imagesMedals } from "./Const";
+import { IMAGES_MEDALS } from "./Const";
 import "../styles/ContentInformationMedalsModal.css";
 import "../styles/Responsive/ContentInformationMedalsModal.css";
 
@@ -18,7 +18,7 @@ export function ContentInformationMedalDetails({
           {medalName[idMedal]}
         </b>
         <picture className="Container__Content--Information--Medals--Modal--Content--Image">
-          <img src={imagesMedals[idMedal]} alt="Modal image" />
+          <img src={IMAGES_MEDALS[idMedal]} alt="Modal image" />
         </picture>
         <p className="Container__Content--Information--Medals--Modal--Content--Details">
           {medalDescription[idMedal]}

@@ -6,7 +6,7 @@ import { Login } from "./components/Login";
 import { Content } from "./components/Content";
 import {
   setUserScores,
-  levelDetails,
+  LEVEL_DETAILS,
   USER_SCORES,
   DATA_USER,
 } from "./components/Const";
@@ -27,7 +27,7 @@ export function App() {
   }, []);
 
   const updateDataUser = (nameProgressLevel, currentProgressLevel, level) => {
-    const totalQuestions = levelDetails[level].levelQuestions;
+    const totalQuestions = LEVEL_DETAILS[level].levelQuestions;
     if (currentProgressLevel < totalQuestions) {
       // contentDataUser.levels.progress[nameProgressLevel] ES EL NIVEL DEL SCORE
       // DEL NIVEL SELECCIONADO

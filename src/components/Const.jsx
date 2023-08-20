@@ -1,7 +1,7 @@
 export const USER_SCORES = "userScores";
 export const DATA_USER = "dataUser";
 
-export const imagesCats = [
+export const IMAGES_CATS = [
   "../../public/Profile/Cat__1.png",
   "../../public/Profile/Cat__2.png",
   "../../public/Profile/Cat__3.png",
@@ -22,7 +22,7 @@ export const imagesCats = [
   "../../public/Profile/Cat__18.png",
 ];
 
-export const imagesMedals = [
+export const IMAGES_MEDALS = [
   "../../public/Medals/Novato.png",
   "../../public/Medals/FelinoCurioso.png",
   "../../public/Medals/GatitoExperto.png",
@@ -36,7 +36,7 @@ export const imagesMedals = [
   "../../public/Medals/Experto.png",
   "../../public/Medals/ReyReina.png",
 ];
-export const levelDetails = [
+export const LEVEL_DETAILS = [
   {
     levelImage: "../../public/Levels/Novato.png",
     levelAlt: "Imagen del nivel Novato",

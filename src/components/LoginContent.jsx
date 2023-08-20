@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { setDataUser, addNewUserScores } from "./Const";
-import { imagesCats, checkValueInput } from "./Const";
+import { IMAGES_CATS, checkValueInput } from "./Const";
 
 import "../styles/LoginContent.css";
 
@@ -8,9 +8,9 @@ export function LoginContent({ updateStateIsLogin }) {
   const [imageProfile, setImageProfile] = useState(0);
   const [inputUsernameValidate, setInputUsernameValidate] = useState(true);
 
-  const totalImagesCats = imagesCats.length - 1;
+  const totalImagesCats = IMAGES_CATS.length - 1;
 
-  const imageCatSelected = imagesCats[imageProfile];
+  const imageCatSelected = IMAGES_CATS[imageProfile];
 
   function previousImage() {
     imageProfile > 0
