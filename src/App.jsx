@@ -4,7 +4,12 @@ import { useState, useEffect } from "react";
 // COMPONENTS
 import { Login } from "./components/Login";
 import { Content } from "./components/Content";
-import { setUserScores, levelDetails } from "./components/Const";
+import {
+  setUserScores,
+  levelDetails,
+  USER_SCORES,
+  DATA_USER,
+} from "./components/Const";
 import { Menu } from "./components/Menu";
 
 // STYLES
@@ -24,12 +29,12 @@ export function App() {
   const updateDataUser = (nameProgressLevel, currentProgressLevel, level) => {
     const totalQuestions = levelDetails[level].levelQuestions;
     if (currentProgressLevel < totalQuestions) {
-      // dataUser.userProgressLevel[nameProgressLevel] ES EL NIVEL EL SCORE
+      // contentDataUser.levels.progress[nameProgressLevel] ES EL NIVEL DEL SCORE
       // DEL NIVEL SELECCIONADO
       contentDataUser.levels.progress[nameProgressLevel] =
         currentProgressLevel + 1;
-      localStorage.setItem("dataUser", JSON.stringify(contentDataUser));
-      const updatedUserData = JSON.parse(localStorage.getItem("dataUser"));
+      localStorage.setItem(DATA_USER, JSON.stringify(contentDataUser));
+      const updatedUserData = JSON.parse(localStorage.getItem(DATA_USER));
       updateContentDataUser(updatedUserData);
     }
   };
@@ -40,13 +45,13 @@ export function App() {
   };
 
   const checkScoresExist = () => {
-    localStorage.getItem("userScores") ? true : setUserScores();
+    localStorage.getItem(USER_SCORES) ? true : setUserScores();
   };
 
   const checkUserExist = () => {
-    if (localStorage.getItem("dataUser")) {
+    if (localStorage.getItem(DATA_USER)) {
       setIsLogin(true);
-      const dataUser = JSON.parse(localStorage.getItem("dataUser"));
+      const dataUser = JSON.parse(localStorage.getItem(DATA_USER));
       updateContentDataUser(dataUser);
     }
   };

@@ -1,3 +1,6 @@
+export const USER_SCORES = "userScores";
+export const DATA_USER = "dataUser";
+
 export const imagesCats = [
   "../../public/Profile/Cat__1.png",
   "../../public/Profile/Cat__2.png",
