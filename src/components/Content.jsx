@@ -8,12 +8,24 @@ import "../styles/Responsive/Content.css";
 export function Content({
   contentDataUser,
   updateDataUser,
+  contentUserScores,
+  updateStateScores,
   updateStateIsLogin,
 }) {
+  const contentSR = contentUserScores.map((e, index) => {
+    return (
+      <p key={index}>
+        Tu nombre de usuario es: {e[1].userName} y tu puntuación es:{" "}
+        {e[1].userScore}
+      </p>
+    );
+  });
+
   return (
     <section className="Container__Content">
       <div className="Container__Content--Game">
-        <h1>Contenido principal</h1>
+        {contentSR}
+        <button onClick={updateStateScores}>PRUEBA</button>
       </div>
       <div className="Container__Content--Information">
         <ContentInformationProfile

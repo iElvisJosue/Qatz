@@ -275,6 +275,16 @@ export function setUserScores() {
   localStorage.setItem("userScores", JSON.stringify(userScores));
 }
 
+export function setSortUserScores(userScores) {
+  const arrayDeScores = Object.entries(userScores);
+
+  const sortScores = arrayDeScores.sort(
+    (a, b) => b[1].userScore - a[1].userScore
+  );
+
+  return sortScores;
+}
+
 export function addNewUserScores(userName, userImage) {
   const userScores = JSON.parse(localStorage.getItem("userScores"));
   const totalUserScores = Object.keys(userScores).length;

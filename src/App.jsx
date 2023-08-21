@@ -6,6 +6,7 @@ import { Login } from "./components/Login";
 import { Content } from "./components/Content";
 import {
   setUserScores,
+  setSortUserScores,
   LEVEL_DETAILS,
   USER_SCORES,
   DATA_USER,
@@ -20,6 +21,7 @@ import "./styles/Responsive/Container.css";
 export function App() {
   const [isLogin, setIsLogin] = useState(false);
   const [contentDataUser, updateContentDataUser] = useState([]);
+  const [contentUserScores, updateContentUserScores] = useState([]);
 
   useEffect(() => {
     checkScoresExist();
@@ -45,7 +47,17 @@ export function App() {
   };
 
   const checkScoresExist = () => {
-    localStorage.getItem(USER_SCORES) ? true : setUserScores();
+    const userScores = JSON.parse(localStorage.getItem(USER_SCORES));
+    if (userScores) {
+      const sortUserScores = setSortUserScores(userScores);
+      updateContentUserScores(sortUserScores);
+    } else {
+      setUserScores();
+    }
+  };
+
+  const updateStateScores = () => {
+    // console.log(contentUserScores);
   };
 
   const checkUserExist = () => {
@@ -68,6 +80,8 @@ export function App() {
           <Content
             contentDataUser={contentDataUser}
             updateDataUser={updateDataUser}
+            contentUserScores={contentUserScores}
+            updateStateScores={updateStateScores}
             updateStateIsLogin={updateStateIsLogin}
           />
         </>
