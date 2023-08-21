@@ -811,13 +811,13 @@ export function setDataUser(userName, userImage) {
         name: "¡Experto Felino!",
         image: "../../public/Medals/Experto.png",
         description: "Obtén 40 preguntas correctas.",
-        isObtained: false,
+        isObtained: true,
       },
       medalKingQueen: {
         name: "¡QATZ Master!",
         image: "../../public/Medals/ReyReina.png",
         description: "Consigue una puntuación perfecta en todos los niveles.",
-        isObtained: false,
+        isObtained: true,
       },
     },
   };

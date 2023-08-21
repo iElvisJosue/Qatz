@@ -10,12 +10,11 @@ export function ContentInformationMedals({ contentDataUser }) {
   const [idMedal, setIdMedal] = useState(0);
 
   const totalMedals = Object.values(contentDataUser.medals);
-  const userMedals = totalMedals.map((medal) => {
-    return medal.isObtained;
-  });
-  const sortUserMedals = userMedals.sort((a, b) => b - a);
-  const contentMedals = sortUserMedals.map((e, index) => {
-    const classMedal = e
+  const sortUserMedals = totalMedals.sort(
+    (a, b) => b.isObtained - a.isObtained
+  );
+  const contentMedals = sortUserMedals.map((medal, index) => {
+    const classMedal = medal.isObtained
       ? "Container__Content--Information--Medals--Achieved--Box Achieved"
       : "Container__Content--Information--Medals--Achieved--Box";
     return (
@@ -25,7 +24,7 @@ export function ContentInformationMedals({ contentDataUser }) {
         className={classMedal}
         onClick={showModalMedal}
       >
-        <img src={totalMedals[index].image} alt="Medalla" />
+        <img src={medal.image} alt="Medalla" />
       </picture>
     );
   });
