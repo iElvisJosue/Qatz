@@ -8,7 +8,7 @@ export function ContentInformationProgress({
   contentDataUser,
   updateDataUser,
 }) {
-  const totalLevels = Object.keys(contentDataUser.levels.progress);
+  const totalLevels = Object.values(contentDataUser.levels);
 
   const [seeProgress, setSeeProgress] = useState(false);
 
@@ -32,13 +32,22 @@ export function ContentInformationProgress({
           <ion-icon name={nameIconSee}></ion-icon>
         </button>
       </span>
-      {totalLevels.map((e, index) => {
+      {totalLevels.map((currentLevel, index) => {
+        const nameLevel = currentLevel.name;
+        const imageLevel = currentLevel.image;
+        const altImageLevel = currentLevel.imageAlt;
+        const classLevel = currentLevel.class;
+        const totalLevelQuestions = currentLevel.levelQuestions.length;
+
         return (
           <ContentInformationProgressLevel
             key={index}
-            level={index}
+            nameLevel={nameLevel}
+            imageLevel={imageLevel}
+            altImageLevel={altImageLevel}
+            classLevel={classLevel}
+            totalLevelQuestions={totalLevelQuestions}
             contentDataUser={contentDataUser}
-            nameProgressLevel={e}
             updateDataUser={updateDataUser}
           />
         );

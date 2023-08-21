@@ -1,23 +1,21 @@
-import { LEVEL_DETAILS } from "./Const";
-
 import "../styles/ContentInformationProgressLevel.css";
 
 export function ContentInformationProgressLevel({
-  level,
-  nameProgressLevel,
+  nameLevel,
+  imageLevel,
+  altImageLevel,
+  classLevel,
+  totalLevelQuestions,
   contentDataUser,
   updateDataUser,
 }) {
-  const levelTotalQuestions = LEVEL_DETAILS[level].levelQuestions;
-  const currentProgressLevel =
-    contentDataUser.levels.progress[nameProgressLevel];
+  const fullyNameLevel = `level${classLevel}`;
+  const currentProgressLevel = contentDataUser.levels[fullyNameLevel].progress;
 
-  const classNameLevel = `Container__Content--Information--Progress--Level ${LEVEL_DETAILS[level].levelClass}`;
+  const classNameLevel = `Container__Content--Information--Progress--Level ${classLevel}`;
 
   function calculatePercentage() {
-    const maxQuestions = levelTotalQuestions;
-    const currentProgress = currentProgressLevel;
-    const totalProgress = (currentProgress / maxQuestions) * 100;
+    const totalProgress = (currentProgressLevel / totalLevelQuestions) * 100;
     return Math.round(totalProgress);
   }
 
@@ -25,22 +23,23 @@ export function ContentInformationProgressLevel({
     <div
       className={classNameLevel}
       onClick={() =>
-        updateDataUser(nameProgressLevel, currentProgressLevel, level)
+        updateDataUser(
+          fullyNameLevel,
+          currentProgressLevel,
+          totalLevelQuestions
+        )
       }
     >
       <picture className="Container__Content--Information--Progress--Level--Box">
-        <img
-          src={LEVEL_DETAILS[level].levelImage}
-          alt={LEVEL_DETAILS[level].levelAlt}
-        />
+        <img src={imageLevel} alt={altImageLevel} />
       </picture>
       <div className="Container__Content--Information--Progress--Level--Details">
         <p className="Container__Content--Information--Progress--Level--Details--Text">
-          {LEVEL_DETAILS[level].levelName} <span>{calculatePercentage()}%</span>
+          {nameLevel} <span>{calculatePercentage()}%</span>
         </p>
         <progress
           className="Container__Content--Information--Progress--Level--Details--Progress"
-          max={LEVEL_DETAILS[level].levelQuestions}
+          max={totalLevelQuestions}
           value={currentProgressLevel}
         ></progress>
       </div>

@@ -16,16 +16,9 @@ export function ContentInformationProfile({
 
   const userName = contentDataUser.userName;
   const userImage = contentDataUser.userImage;
-  const userProgressLevels = contentDataUser.levels.progress;
 
   function showSettings() {
     setSettings(!settings);
-  }
-  function getTotalScore() {
-    return Object.values(userProgressLevels).reduce(
-      (total, value) => total + value,
-      0
-    );
   }
   function hiddenModalDelete() {
     setSeeModalDelete(false);
@@ -33,6 +26,17 @@ export function ContentInformationProfile({
   function deleteProfile() {
     localStorage.removeItem("dataUser");
     updateStateIsLogin(false);
+  }
+  function getUserTotalProgress() {
+    const arrTotalLevels = Object.values(contentDataUser.levels);
+    const arrLevelProgress = arrTotalLevels.map((currentLevel) => {
+      return currentLevel.progress;
+    });
+    const userTotalProgress = arrLevelProgress.reduce(
+      (total, value) => total + value,
+      0
+    );
+    return userTotalProgress;
   }
 
   const classButtonUpdate = settings
@@ -84,7 +88,7 @@ export function ContentInformationProfile({
         <picture className="Container__Content--Information--Profile--Image--Box">
           <img src={IMAGES_CATS[userImage]} alt="Image Profile" />
           <b className="Container__Content--Information--Profile--Image--Box--TotalScore">
-            {getTotalScore()}
+            {getUserTotalProgress()}
           </b>
         </picture>
       </span>

@@ -7,7 +7,6 @@ import { Content } from "./components/Content";
 import {
   setUserScores,
   setSortUserScores,
-  LEVEL_DETAILS,
   USER_SCORES,
   DATA_USER,
 } from "./components/Const";
@@ -28,12 +27,15 @@ export function App() {
     checkUserExist();
   }, []);
 
-  const updateDataUser = (nameProgressLevel, currentProgressLevel, level) => {
-    const totalQuestions = LEVEL_DETAILS[level].levelQuestions;
-    if (currentProgressLevel < totalQuestions) {
-      // contentDataUser.levels.progress[nameProgressLevel] ES EL NIVEL DEL SCORE
+  const updateDataUser = (
+    fullyNameLevel,
+    currentProgressLevel,
+    totalLevelQuestions
+  ) => {
+    if (currentProgressLevel < totalLevelQuestions) {
+      // contentDataUser.levels.progress[fullyNameLevel] ES PROGRESO
       // DEL NIVEL SELECCIONADO
-      contentDataUser.levels.progress[nameProgressLevel] =
+      contentDataUser.levels[fullyNameLevel].progress =
         currentProgressLevel + 1;
       localStorage.setItem(DATA_USER, JSON.stringify(contentDataUser));
       const updatedUserData = JSON.parse(localStorage.getItem(DATA_USER));
