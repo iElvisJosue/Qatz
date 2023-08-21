@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { IMAGES_MEDALS } from "./Const";
 import { ContentInformationMedalDetails } from "./ContentInformationMedalDetails";
 
 import "../styles/ContentInformationMedals.css";
@@ -8,12 +7,15 @@ import "../styles/Responsive/ContentInformationMedals.css";
 export function ContentInformationMedals({ contentDataUser }) {
   const [seeMedals, setSeeMedals] = useState(false);
   const [seeModalMedal, setSeeModalMedal] = useState(false);
-  const [idMedal, setIdMedal] = useState();
+  const [idMedal, setIdMedal] = useState(0);
 
-  const totalMedals = Object.entries(contentDataUser.medals.userMedals);
-  const sortTotalMedals = totalMedals.sort((a, b) => b[1] - a[1]);
-  const contentMedals = sortTotalMedals.map((e, index) => {
-    const classMedal = e[1]
+  const totalMedals = Object.values(contentDataUser.medals);
+  const userMedals = totalMedals.map((medal) => {
+    return medal.isObtained;
+  });
+  const sortUserMedals = userMedals.sort((a, b) => b - a);
+  const contentMedals = sortUserMedals.map((e, index) => {
+    const classMedal = e
       ? "Container__Content--Information--Medals--Achieved--Box Achieved"
       : "Container__Content--Information--Medals--Achieved--Box";
     return (
@@ -23,7 +25,7 @@ export function ContentInformationMedals({ contentDataUser }) {
         className={classMedal}
         onClick={showModalMedal}
       >
-        <img src={IMAGES_MEDALS[index]} alt="Medalla" />
+        <img src={totalMedals[index].image} alt="Medalla" />
       </picture>
     );
   });
@@ -49,6 +51,7 @@ export function ContentInformationMedals({ contentDataUser }) {
     <section className={classContentMedals}>
       <ContentInformationMedalDetails
         classModalMedalDetails={classModalMedalDetails}
+        totalMedals={totalMedals}
         idMedal={idMedal}
         contentDataUser={contentDataUser}
         hiddenModalMedal={hiddenModalMedal}

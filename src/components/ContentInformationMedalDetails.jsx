@@ -1,27 +1,27 @@
-import { IMAGES_MEDALS } from "./Const";
 import "../styles/ContentInformationMedalsModal.css";
 import "../styles/Responsive/ContentInformationMedalsModal.css";
 
 export function ContentInformationMedalDetails({
   classModalMedalDetails,
+  totalMedals,
   idMedal,
-  contentDataUser,
   hiddenModalMedal,
 }) {
-  const medalDescription = Object.values(contentDataUser.medals.description);
-  const medalName = Object.values(contentDataUser.medals.name);
+  const medalName = totalMedals[idMedal].name;
+  const medalImage = totalMedals[idMedal].image;
+  const medalDescription = totalMedals[idMedal].description;
 
   return (
     <div className={classModalMedalDetails}>
       <div className="Container__Content--Information--Medals--Modal--Content">
         <b className="Container__Content--Information--Medals--Modal--Content--Title">
-          {medalName[idMedal]}
+          {medalName}
         </b>
         <picture className="Container__Content--Information--Medals--Modal--Content--Image">
-          <img src={IMAGES_MEDALS[idMedal]} alt="Modal image" />
+          <img src={medalImage} alt="Medal Image" />
         </picture>
         <p className="Container__Content--Information--Medals--Modal--Content--Details">
-          {medalDescription[idMedal]}
+          {medalDescription}
         </p>
         <button
           className="Container__Content--Information--Medals--Modal--Content--Details--Button"

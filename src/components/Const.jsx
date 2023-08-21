@@ -22,21 +22,6 @@ export const IMAGES_CATS = [
   "../../public/Profile/Cat__18.png",
 ];
 
-export const IMAGES_MEDALS = [
-  "../../public/Medals/Novato.png",
-  "../../public/Medals/FelinoCurioso.png",
-  "../../public/Medals/GatitoExperto.png",
-  "../../public/Medals/AmanteDeRazas.png",
-  "../../public/Medals/CuriosidadesFelinas.png",
-  "../../public/Medals/SaludGatuna.png",
-  "../../public/Medals/MitosLeyendas.png",
-  "../../public/Medals/Maestro.png",
-  "../../public/Medals/Entusiasta.png",
-  "../../public/Medals/Impresionante.png",
-  "../../public/Medals/Experto.png",
-  "../../public/Medals/ReyReina.png",
-];
-
 export function setDataUser(userName, userImage) {
   const dataUser = {
     userName,
@@ -754,56 +739,85 @@ export function setDataUser(userName, userImage) {
       },
     },
     medals: {
-      userMedals: {
-        medalBeginner: false,
-        medalFeline: false,
-        medalKitty: false,
-        medalRaces: false,
-        medalCuriosities: false,
-        medalHealth: false,
-        medalMyths: false,
-        medalMaster: false,
-        medalEnthusiastic: false,
-        medalAmazing: false,
-        medalExpert: false,
-        medalKingQueen: false,
-      },
-      name: {
-        medalBeginner: "¡Esto apenas comienza!",
-        medalFeline: "¡Amante de lo curioso!",
-        medalKitty: "¿No hay algo más difícil?",
-        medalRaces: "¡Las razas no son problema!",
-        medalCuriosities: "¡Nada que no sepa!",
-        medalHealth: "¡Veterinario Gatuno!",
-        medalMyths: "¡Lo sé todo!",
-        medalMaster: "¡Uno con los gatos!",
-        medalEnthusiastic: "¡Nada puede detenerte!",
-        medalAmazing: "¡Más más más!",
-        medalExpert: "¡Experto Felino!",
-        medalKingQueen: "¡QATZ Master!",
-      },
-      description: {
-        descriptionBeginner:
+      medalBeginner: {
+        name: "¡Esto apenas comienza!",
+        image: "../../public/Medals/Novato.png",
+        description:
           "Responde correctamente todas las preguntas del nivel Novato.",
-        descriptionFeline:
+        isObtained: false,
+      },
+      medalFeline: {
+        name: "¡Amante de lo curioso!",
+        image: "../../public/Medals/FelinoCurioso.png",
+        description:
           "Responde correctamente todas las preguntas del nivel Felino Curioso.",
-        descriptionKitty:
+        isObtained: true,
+      },
+      medalKitty: {
+        name: "¿No hay algo más difícil?",
+        image: "../../public/Medals/GatitoExperto.png",
+        description:
           "Responde correctamente todas las preguntas del nivel Gatito Experto.",
-        descriptionRaces:
+        isObtained: false,
+      },
+      medalRaces: {
+        name: "¡Las razas no son problema!",
+        image: "../../public/Medals/AmanteDeRazas.png",
+        description:
           "Responde correctamente todas las preguntas del nivel Amante de Razas.",
-        descriptionCuriosities:
+        isObtained: false,
+      },
+      medalCuriosities: {
+        name: "¡Nada que no sepa!",
+        image: "../../public/Medals/CuriosidadesFelinas.png",
+        description:
           "Responde correctamente todas las preguntas del nivel Curiosidades Felinas.",
-        descriptionHealth:
+        isObtained: false,
+      },
+      medalHealth: {
+        name: "¡Veterinario Gatuno!",
+        image: "../../public/Medals/SaludGatuna.png",
+        description:
           "Responde correctamente todas las preguntas del nivel Salud Gatuna.",
-        descriptionMyths:
+        isObtained: false,
+      },
+      medalMyths: {
+        name: "¡Lo sé todo!",
+        image: "../../public/Medals/MitosLeyendas.png",
+        description:
           "Responde correctamente todas las preguntas del nivel Mitos y Leyendas.",
-        descriptionMaster:
+        isObtained: true,
+      },
+      medalMaster: {
+        name: "¡Uno con los gatos!",
+        image: "../../public/Medals/Maestro.png",
+        description:
           "Responde correctamente todas las preguntas del nivel Maestro.",
-        descriptionEnthusiastic: "Completa la mitad de los niveles.",
-        descriptionAmazing: "Obtén 20 preguntas correctas.",
-        descriptionExpert: "Obtén 40 preguntas correctas.",
-        descriptionKingQueen:
-          "Consigue una puntuación perfecta en todos los niveles.",
+        isObtained: false,
+      },
+      medalEnthusiastic: {
+        name: "¡Nada puede detenerme!",
+        image: "../../public/Medals/Entusiasta.png",
+        description: "Completa la mitad de los niveles.",
+        isObtained: false,
+      },
+      medalAmazing: {
+        name: "¡Más, más, más!",
+        image: "../../public/Medals/Impresionante.png",
+        description: "Obtén 20 preguntas correctas.",
+        isObtained: false,
+      },
+      medalExpert: {
+        name: "¡Experto Felino!",
+        image: "../../public/Medals/Experto.png",
+        description: "Obtén 40 preguntas correctas.",
+        isObtained: false,
+      },
+      medalKingQueen: {
+        name: "¡QATZ Master!",
+        image: "../../public/Medals/ReyReina.png",
+        description: "Consigue una puntuación perfecta en todos los niveles.",
+        isObtained: false,
       },
     },
   };
