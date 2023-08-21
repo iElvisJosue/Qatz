@@ -751,7 +751,7 @@ export function setDataUser(userName, userImage) {
         image: "../../public/Medals/FelinoCurioso.png",
         description:
           "Responde correctamente todas las preguntas del nivel Felino Curioso.",
-        isObtained: true,
+        isObtained: false,
       },
       medalKitty: {
         name: "¿No hay algo más difícil?",
@@ -786,7 +786,7 @@ export function setDataUser(userName, userImage) {
         image: "../../public/Medals/MitosLeyendas.png",
         description:
           "Responde correctamente todas las preguntas del nivel Mitos y Leyendas.",
-        isObtained: true,
+        isObtained: false,
       },
       medalMaster: {
         name: "¡Uno con los gatos!",
