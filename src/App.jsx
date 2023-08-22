@@ -6,7 +6,7 @@ import { Login } from "./components/Login";
 import { Content } from "./components/Content";
 import {
   setUserScores,
-  setSortUserScores,
+  getUserTotalScore,
   USER_SCORES,
   DATA_USER,
 } from "./components/Const";
@@ -20,7 +20,7 @@ import "./styles/Responsive/Container.css";
 export function App() {
   const [isLogin, setIsLogin] = useState(false);
   const [contentDataUser, updateContentDataUser] = useState([]);
-  const [contentUserScores, updateContentUserScores] = useState([]);
+  const [contentUserScores, updateContentUserScores] = useState();
 
   useEffect(() => {
     checkScoresExist();
@@ -49,17 +49,33 @@ export function App() {
   };
 
   const checkScoresExist = () => {
-    const userScores = JSON.parse(localStorage.getItem(USER_SCORES));
-    if (userScores) {
-      const sortUserScores = setSortUserScores(userScores);
-      updateContentUserScores(sortUserScores);
+    const checkUserScores = JSON.parse(localStorage.getItem(USER_SCORES));
+    if (checkUserScores) {
+      updateContentUserScores(checkUserScores);
     } else {
       setUserScores();
     }
   };
 
-  const updateStateScores = () => {
-    // console.log(contentUserScores);
+  const updateUserScoreLevel = () => {
+    const oldScoreLevel = contentDataUser.levels.levelBeginner.score;
+    const newScoreLevel = oldScoreLevel + 10;
+    contentDataUser.levels.levelBeginner.score = newScoreLevel;
+    localStorage.setItem(DATA_USER, JSON.stringify(contentDataUser));
+    const updatedUserData = JSON.parse(localStorage.getItem(DATA_USER));
+    updateContentDataUser(updatedUserData);
+    updateLeadBoard();
+  };
+
+  const updateLeadBoard = () => {
+    const newUserTotalScore = getUserTotalScore(contentDataUser);
+    const getUserScores = JSON.parse(localStorage.getItem(USER_SCORES));
+    const getTotalUserScores = Object.keys(getUserScores).length;
+    const getNameUser = `user${getTotalUserScores}`;
+    getUserScores[getNameUser].userScore = newUserTotalScore;
+    localStorage.setItem(USER_SCORES, JSON.stringify(getUserScores));
+    const updatedUserScores = JSON.parse(localStorage.getItem(USER_SCORES));
+    updateContentUserScores(updatedUserScores);
   };
 
   const checkUserExist = () => {
@@ -83,7 +99,7 @@ export function App() {
             contentDataUser={contentDataUser}
             updateDataUser={updateDataUser}
             contentUserScores={contentUserScores}
-            updateStateScores={updateStateScores}
+            updateUserScoreLevel={updateUserScoreLevel}
             updateStateIsLogin={updateStateIsLogin}
           />
         </>

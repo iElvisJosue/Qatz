@@ -1,5 +1,6 @@
 export const USER_SCORES = "userScores";
 export const DATA_USER = "dataUser";
+export const MAX_RATING = 18;
 
 export const IMAGES_CATS = [
   "../../public/Profile/Cat__1.png",
@@ -834,90 +835,102 @@ export function setUserScores() {
     user2: {
       userName: "Ronroneo",
       userImage: 1,
-      userScore: 520,
+      userScore: 460,
     },
     user3: {
       userName: "MiauFelino",
       userImage: 2,
-      userScore: 420,
+      userScore: 450,
     },
     user4: {
       userName: "BigotesCat",
       userImage: 3,
-      userScore: 300,
+      userScore: 420,
     },
     user5: {
       userName: "GarraSuave",
       userImage: 4,
-      userScore: 120,
+      userScore: 400,
     },
     user6: {
       userName: "GatitoPardo",
       userImage: 5,
-      userScore: 510,
+      userScore: 390,
     },
     user7: {
       userName: "PurrfectCat",
       userImage: 6,
-      userScore: 490,
+      userScore: 480,
     },
     user8: {
       userName: "PataVeloz",
       userImage: 7,
-      userScore: 540,
+      userScore: 360,
     },
     user9: {
       userName: "PelusaMiau",
       userImage: 8,
-      userScore: 280,
+      userScore: 430,
     },
     user10: {
       userName: "MeowMaster",
       userImage: 9,
-      userScore: 500,
+      userScore: 330,
     },
     user11: {
       userName: "HolaMiau",
       userImage: 10,
-      userScore: 80,
+      userScore: 340,
     },
     user12: {
       userName: "RonrónFino",
       userImage: 11,
-      userScore: 310,
+      userScore: 350,
     },
     user13: {
       userName: "GatoGris",
       userImage: 12,
-      userScore: 150,
+      userScore: 370,
     },
     user14: {
       userName: "MiauChispa",
       userImage: 13,
-      userScore: 530,
+      userScore: 490,
     },
     user15: {
       userName: "ColaEsponja",
       userImage: 14,
-      userScore: 440,
+      userScore: 380,
     },
     user16: {
       userName: "GarraÁgil",
       userImage: 15,
-      userScore: 550,
+      userScore: 410,
     },
     user17: {
       userName: "GatitoSano",
       userImage: 15,
-      userScore: 470,
+      userScore: 440,
     },
     user18: {
       userName: "Ronroneador",
       userImage: 15,
-      userScore: 400,
+      userScore: 470,
     },
   };
   localStorage.setItem("userScores", JSON.stringify(userScores));
+}
+
+export function getUserTotalScore(contentDataUser) {
+  const arrTotalLevels = Object.values(contentDataUser.levels);
+  const arrLevelScore = arrTotalLevels.map((currentLevel) => {
+    return currentLevel.score;
+  });
+  const userTotalScore = arrLevelScore.reduce(
+    (total, value) => total + value,
+    0
+  );
+  return userTotalScore;
 }
 
 export function setSortUserScores(userScores) {
