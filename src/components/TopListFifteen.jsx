@@ -3,7 +3,6 @@ import { IMAGES_CATS } from "./Const";
 export function TopListFifteen({ topFifteen }) {
   const setTopFifteen = topFifteen.map((user, index) => {
     const userImage = user[1].userImage;
-    console.log(userImage);
     const userScore = user[1].userScore;
     const userName = user[1].userName;
     const userPlace = index + 4;
