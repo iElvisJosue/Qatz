@@ -1,0 +1,358 @@
+.Container__TopList {
+  position: absolute;
+  top: 0;
+  left: -360px;
+  width: 360px;
+  height: 100vh;
+  overflow: auto;
+  background: var(--WeakPurple);
+  box-shadow: var(--BoxShadow);
+  padding: 10px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  transition: 0.5s ease-in-out all;
+}
+/* STYLES FOR <button> */
+.Container__TopList.Show {
+  z-index: 10;
+  left: 0;
+}
+.Container__TopList--Button {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: scale(0);
+  width: 50px;
+  height: 50px;
+  background-color: var(--StrongPurple);
+  color: var(--White);
+  border: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: 0.5s ease-in-out all;
+  transform-origin: left;
+  animation: loadingContentTopList 1s forwards;
+}
+.Container__TopList--Button.Hidden {
+  left: -50px;
+}
+.Container__TopList--Button:hover {
+  cursor: pointer;
+  background-color: var(--White);
+  color: var(--StrongPurple);
+}
+/* START STYLES FOR COMPONENT <TopListThree> */
+.Container__TopList--TopThree {
+  position: relative;
+  background-color: var(--White);
+  border-radius: var(--BorderRadius);
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  box-shadow: var(--BoxShadow);
+}
+.Container__TopList--TopThree--Close {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: var(--BorderRadius) 0 0 0;
+  background-color: var(--StrongPurple);
+  color: var(--White);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: 0.3s ease-in-out all;
+}
+.Container__TopList--TopThree--Close:hover {
+  cursor: pointer;
+  background-color: var(--White);
+  color: var(--StrongPurple);
+}
+.Container__TopList--TopThree--User {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.Container__TopList--TopThree--User:nth-child(1) {
+  grid-column: span 2;
+  height: 150px;
+}
+.Container__TopList--TopThree--User:nth-child(2) {
+  grid-column: span 1;
+  height: 150px;
+}
+.Container__TopList--TopThree--User:nth-child(3) {
+  grid-column: span 1;
+  height: 150px;
+}
+.Container__TopList--TopThree--User--Box {
+  position: relative;
+  border-radius: 50%;
+  padding: 10px;
+  width: 80px;
+  height: 80px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Container__TopList--TopThree--User:nth-child(1)
+  .Container__TopList--TopThree--User--Box {
+  border: 5px solid var(--Gold);
+  background-color: var(--StrongPurple);
+}
+.Container__TopList--TopThree--User:nth-child(2)
+  .Container__TopList--TopThree--User--Box {
+  border: 5px solid #89c7ff;
+  background-color: var(--StrongBlue);
+}
+.Container__TopList--TopThree--User:nth-child(3)
+  .Container__TopList--TopThree--User--Box {
+  border: 5px solid #efc2d4;
+  background-color: var(--StrongLila);
+}
+.Container__TopList--TopThree--User--Box--Image {
+  width: 90%;
+  height: 90%;
+}
+.Container__TopList--TopThree--User--Box--Place {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  left: 4px;
+  bottom: 0;
+  border-radius: 50%;
+  color: var(--White);
+  font-size: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Container__TopList--TopThree--User:nth-child(1)
+  .Container__TopList--TopThree--User--Box--Place {
+  background-color: var(--Gold);
+}
+.Container__TopList--TopThree--User:nth-child(2)
+  .Container__TopList--TopThree--User--Box--Place {
+  background-color: #89c7ff;
+}
+.Container__TopList--TopThree--User:nth-child(3)
+  .Container__TopList--TopThree--User--Box--Place {
+  background-color: #efc2d4;
+}
+.Container__TopList--TopThree--User--Box--Crown {
+  position: absolute;
+  top: -22px;
+  width: 25px;
+  height: 25px;
+}
+.Container__TopList--TopThree--User--Box--Name {
+  color: var(--White);
+  font-size: 12px;
+  border-radius: var(--BorderRadius);
+
+  padding: 2px 10px;
+}
+.Container__TopList--TopThree--User:nth-child(1)
+  .Container__TopList--TopThree--User--Box--Name {
+  background-color: var(--Gold);
+}
+.Container__TopList--TopThree--User:nth-child(2)
+  .Container__TopList--TopThree--User--Box--Name {
+  background-color: var(--StrongBlue);
+}
+.Container__TopList--TopThree--User:nth-child(3)
+  .Container__TopList--TopThree--User--Box--Name {
+  background-color: var(--StrongLila);
+}
+.Container__TopList--TopThree--User--Box--Score {
+  font-weight: 800;
+}
+.Container__TopList--TopThree--User:nth-child(1)
+  .Container__TopList--TopThree--User--Box--Score {
+  color: var(--Gold);
+}
+.Container__TopList--TopThree--User:nth-child(2)
+  .Container__TopList--TopThree--User--Box--Score {
+  color: var(--StrongBlue);
+}
+.Container__TopList--TopThree--User:nth-child(3)
+  .Container__TopList--TopThree--User--Box--Score {
+  color: var(--StrongLila);
+}
+
+/* START STYLES FOR COMPONENT <TopListFifteen> */
+.Container__TopList--TopFifteen {
+  height: auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.Container__TopList--TopFifteen--User {
+  background-color: var(--White);
+  border-radius: var(--BorderRadius);
+  padding: 10px;
+  box-shadow: var(--BoxShadow);
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.Container__TopList--TopFifteen--User--Box {
+  min-width: 50px;
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Container__TopList--TopFifteen--User:nth-child(5n + 1)
+  .Container__TopList--TopFifteen--User--Box {
+  background-color: var(--StrongPurple);
+}
+.Container__TopList--TopFifteen--User:nth-child(5n + 2)
+  .Container__TopList--TopFifteen--User--Box {
+  background-color: var(--StrongBlue);
+}
+.Container__TopList--TopFifteen--User:nth-child(5n + 3)
+  .Container__TopList--TopFifteen--User--Box {
+  background-color: var(--Gold);
+}
+.Container__TopList--TopFifteen--User:nth-child(5n + 4)
+  .Container__TopList--TopFifteen--User--Box {
+  background-color: var(--StrongGreen);
+}
+.Container__TopList--TopFifteen--User:nth-child(5n + 5)
+  .Container__TopList--TopFifteen--User--Box {
+  background-color: var(--StrongRed);
+}
+.Container__TopList--TopFifteen--User--Box--Image {
+  width: 100%;
+  height: 100%;
+}
+.Container__TopList--TopFifteen--User-Box--Details {
+  width: 100%;
+}
+.Container__TopList--TopFifteen--User--Box--Name {
+  color: var(--StrongPurple);
+}
+.Container__TopList--TopFifteen--User:nth-child(5n + 1)
+  .Container__TopList--TopFifteen--User--Box--Name {
+  color: var(--StrongPurple);
+}
+.Container__TopList--TopFifteen--User:nth-child(5n + 2)
+  .Container__TopList--TopFifteen--User--Box--Name {
+  color: var(--StrongBlue);
+}
+.Container__TopList--TopFifteen--User:nth-child(5n + 3)
+  .Container__TopList--TopFifteen--User--Box--Name {
+  color: var(--Gold);
+}
+.Container__TopList--TopFifteen--User:nth-child(5n + 4)
+  .Container__TopList--TopFifteen--User--Box--Name {
+  color: var(--StrongGreen);
+}
+.Container__TopList--TopFifteen--User:nth-child(5n + 5)
+  .Container__TopList--TopFifteen--User--Box--Name {
+  color: var(--StrongRed);
+}
+.Container__TopList--TopFifteen--User--Box--Score {
+  font-size: 14px;
+}
+.Container__TopList--TopFifteen--User:nth-child(5n + 1)
+  .Container__TopList--TopFifteen--User--Box--Score {
+  color: var(--StrongPurple);
+}
+.Container__TopList--TopFifteen--User:nth-child(5n + 2)
+  .Container__TopList--TopFifteen--User--Box--Score {
+  color: var(--StrongBlue);
+}
+.Container__TopList--TopFifteen--User:nth-child(5n + 3)
+  .Container__TopList--TopFifteen--User--Box--Score {
+  color: var(--Gold);
+}
+.Container__TopList--TopFifteen--User:nth-child(5n + 4)
+  .Container__TopList--TopFifteen--User--Box--Score {
+  color: var(--StrongGreen);
+}
+.Container__TopList--TopFifteen--User:nth-child(5n + 5)
+  .Container__TopList--TopFifteen--User--Box--Score {
+  color: var(--StrongRed);
+}
+.Container__TopList--TopFifteen--User--Box--Place {
+  min-width: 35px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Container__TopList--TopFifteen--User:nth-child(5n + 1)
+  .Container__TopList--TopFifteen--User--Box--Place {
+  border: 2px solid var(--StrongPurple);
+  color: var(--StrongPurple);
+}
+.Container__TopList--TopFifteen--User:nth-child(5n + 2)
+  .Container__TopList--TopFifteen--User--Box--Place {
+  border: 2px solid var(--StrongBlue);
+  color: var(--StrongBlue);
+}
+.Container__TopList--TopFifteen--User:nth-child(5n + 3)
+  .Container__TopList--TopFifteen--User--Box--Place {
+  border: 2px solid var(--Gold);
+  color: var(--Gold);
+}
+.Container__TopList--TopFifteen--User:nth-child(5n + 4)
+  .Container__TopList--TopFifteen--User--Box--Place {
+  border: 2px solid var(--StrongGreen);
+  color: var(--StrongGreen);
+}
+.Container__TopList--TopFifteen--User:nth-child(5n + 5)
+  .Container__TopList--TopFifteen--User--Box--Place {
+  border: 2px solid var(--StrongRed);
+  color: var(--StrongRed);
+}
+
+/* ANIMATIONS */
+@keyframes loadingContentTopList {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* RESPONSIVE */
+@media (width <= 450px) {
+  .Container__TopList {
+    width: 100%;
+    left: -100%;
+    padding: 0;
+    background-color: var(--White);
+  }
+  .Container__TopList--TopThree--Close {
+    border-radius: 0;
+  }
+}

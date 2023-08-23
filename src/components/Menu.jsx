@@ -7,7 +7,12 @@ import { ContentInformationProgress } from "./ContentInformationProgress";
 import "../styles/ContainerMenu.css";
 import "../styles/Responsive/ContainerMenu.css";
 
-export function Menu({ contentDataUser, updateDataUser, updateStateIsLogin }) {
+export function Menu({
+  contentDataUser,
+  updateDataUser,
+  setSeeModalDelete,
+  updateStateIsLogin,
+}) {
   const [seeMenu, setSeeMenu] = useState(false);
 
   const classMenuIcon = seeMenu
@@ -30,6 +35,7 @@ export function Menu({ contentDataUser, updateDataUser, updateStateIsLogin }) {
         <aside className="Container__Menu--Content--Details">
           <ContentInformationProfile
             showMenu={true}
+            setSeeModalDelete={setSeeModalDelete}
             contentDataUser={contentDataUser}
             updateStateIsLogin={updateStateIsLogin}
             hiddenMenu={hiddenMenu}

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { IMAGES_CATS, getUserTotalScore } from "./Const";
-import { ContentInformationProfileDelete } from "./ContentInformationProfileDelete";
+import { ModalDeleteProfile } from "./ModalDeleteProfile";
 
 import "../styles/ContentInformationProfile.css";
 import "../styles/Responsive/ContentInformationProfile.css";
@@ -29,23 +29,21 @@ export function ContentInformationProfile({
   }
 
   const classButtonUpdate = settings
-    ? "Container__Content--Information--Profile--Button--Update Show"
-    : "Container__Content--Information--Profile--Button--Update";
+    ? "Container__Content--Information--Profile--Button--Top Show"
+    : "Container__Content--Information--Profile--Button--Top";
   const classButtonDelete = settings
     ? "Container__Content--Information--Profile--Button--Delete Show"
     : "Container__Content--Information--Profile--Button--Delete";
   const classModalDeleteProfile = seeModalDelete
     ? "Container__Content--Information--Profile--Delete Show"
     : "Container__Content--Information--Profile--Delete";
-
   return (
     <section className="Container__Content--Information--Profile">
-      <ContentInformationProfileDelete
+      <ModalDeleteProfile
         classModalDeleteProfile={classModalDeleteProfile}
         deleteProfile={deleteProfile}
         hiddenModalDelete={hiddenModalDelete}
       />
-
       <span className="Container__Content--Information--Profile--Button">
         {showMenu ? (
           <button
@@ -64,7 +62,7 @@ export function ContentInformationProfile({
           <ion-icon name="settings-outline"></ion-icon>
         </button>
         <button className={classButtonUpdate}>
-          <ion-icon name="create-outline"></ion-icon>
+          <ion-icon name="bug-outline"></ion-icon>
         </button>
         <button
           className={classButtonDelete}

@@ -38,7 +38,7 @@
   color: var(--StrongPurple);
 }
 .Container__Content--Information--Profile--Button--Settings,
-.Container__Content--Information--Profile--Button--Update,
+.Container__Content--Information--Profile--Button--Top,
 .Container__Content--Information--Profile--Button--Delete {
   position: absolute;
   top: -20px;
@@ -79,11 +79,11 @@
     rotate: 360deg;
   }
 }
-.Container__Content--Information--Profile--Button--Update,
+.Container__Content--Information--Profile--Button--Top,
 .Container__Content--Information--Profile--Button--Delete {
   background-color: var(--White);
 }
-.Container__Content--Information--Profile--Button--Update.Show {
+.Container__Content--Information--Profile--Button--Top.Show {
   z-index: 1;
   transform: translateY(40px);
   background-color: var(--StrongPurple);
@@ -94,7 +94,7 @@
   background-color: var(--StrongPurple);
 }
 .Container__Content--Information--Profile--Button--Settings:hover,
-.Container__Content--Information--Profile--Button--Update:hover,
+.Container__Content--Information--Profile--Button--Top:hover,
 .Container__Content--Information--Profile--Button--Delete:hover {
   cursor: pointer;
   background: var(--White);

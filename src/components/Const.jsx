@@ -909,12 +909,12 @@ export function setUserScores() {
     },
     user17: {
       userName: "GatitoSano",
-      userImage: 15,
+      userImage: 16,
       userScore: 440,
     },
     user18: {
       userName: "Ronroneador",
-      userImage: 15,
+      userImage: 17,
       userScore: 470,
     },
   };

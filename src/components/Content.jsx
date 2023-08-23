@@ -1,7 +1,7 @@
 import { ContentInformationProfile } from "./ContentInformationProfile";
 import { ContentInformationMedals } from "./ContentInformationMedals";
 import { ContentInformationProgress } from "./ContentInformationProgress";
-import { setSortUserScores, MAX_RATING } from "./Const";
+import { TopList } from "./TopList";
 
 import "../styles/Content.css";
 import "../styles/Responsive/Content.css";
@@ -10,30 +10,21 @@ export function Content({
   contentDataUser,
   updateDataUser,
   contentUserScores,
-  updateUserScoreLevel,
+  // updateUserScoreLevel,
   updateStateIsLogin,
+  setSeeModalDelete,
 }) {
-  const sortUserScores = setSortUserScores(contentUserScores);
-  const contentSR = sortUserScores.map((e, index) => {
-    if (index < MAX_RATING) {
-      return (
-        <p key={index}>
-          Tu nombre de usuario es: {e[1].userName} y tu puntuación es:{" "}
-          {e[1].userScore}
-        </p>
-      );
-    }
-  });
-
   return (
     <section className="Container__Content">
+      <TopList contentUserScores={contentUserScores} />
       <div className="Container__Content--Game">
-        {contentSR}
-        <button onClick={() => updateUserScoreLevel()}>PRUEBA</button>
+        <h1>CONTENT</h1>
+        {/* <ContentGameLeadBoard contentUserScores={contentUserScores} /> */}
       </div>
       <div className="Container__Content--Information">
         <ContentInformationProfile
           showMenu={false}
+          setSeeModalDelete={setSeeModalDelete}
           contentDataUser={contentDataUser}
           updateStateIsLogin={updateStateIsLogin}
         />

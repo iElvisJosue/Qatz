@@ -1,14 +1,14 @@
-import "../styles/LoginModal.css";
-import "../styles/Responsive/LoginModal.css";
+import "../styles/LoginDetails.css";
+import "../styles/Responsive/LoginDetails.css";
 
-export function LoginModal({ seeHelpModal }) {
-  const classLoginModal = seeHelpModal
+export function LoginDetails({ seeHelpModal }) {
+  const classLoginDetails = seeHelpModal
     ? "Container__Login__Modal Show"
     : "Container__Login__Modal";
 
   return (
     <>
-      <article className={classLoginModal}>
+      <article className={classLoginDetails}>
         <p className="Container__Login__Modal--Title">¿QUE ES QATZ? 😮</p>
         <p className="Container__Login__Modal--Details">
           <b>QATZ</b> es un emocionante juego de preguntas y respuestas diseñado

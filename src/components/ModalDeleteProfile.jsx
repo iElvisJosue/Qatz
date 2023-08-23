@@ -1,7 +1,7 @@
-import "../styles/ContentInformationProfileDelete.css";
-import "../styles/Responsive/ContentInformationProfileDelete.css";
+import "../styles/ModalDeleteProfile.css";
+import "../styles/Responsive/ModalDeleteProfile.css";
 
-export function ContentInformationProfileDelete({
+export function ModalDeleteProfile({
   classModalDeleteProfile,
   deleteProfile,
   hiddenModalDelete,
