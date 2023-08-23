@@ -53,7 +53,7 @@ CHILDREN COMPONENT
   gap: 20px;
 
   overflow-y: auto;
-  transition: 0.3s ease-in-out all;
+  transition: 0.5s ease-in-out all;
 }
 .Container__Menu--Content.Show .Container__Menu--Content--Details {
   right: 0;

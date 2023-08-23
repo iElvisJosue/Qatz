@@ -368,7 +368,11 @@ COMPONENT <ContentInformationProgressLevel>
 }
 .Container__Content--Information--Progress--Level--Box {
   min-width: 40px;
+  width: 40px;
+  min-height: 40px;
   height: 40px;
+  overflow: hidden;
+
   padding: 5px;
   border-radius: 50%;
 }
