@@ -15,14 +15,21 @@
 
   transition: 0.5s ease-in-out all;
 }
-/* STYLES FOR <button> */
+
+/*
+***********************************
+START STYLES FOR 
+<button> 
+***********************************
+*/
+
 .Container__TopList.Show {
   z-index: 10;
   left: 0;
 }
 .Container__TopList--Button {
   position: fixed;
-  top: 50%;
+  top: calc(50% - 25px);
   left: 0;
   transform: scale(0);
   width: 50px;
@@ -47,7 +54,14 @@
   background-color: var(--White);
   color: var(--StrongPurple);
 }
-/* START STYLES FOR COMPONENT <TopListThree> */
+
+/*
+***********************************
+START STYLES FOR 
+COMPONENT <TopListThree> 
+***********************************
+*/
+
 .Container__TopList--TopThree {
   position: relative;
   background-color: var(--White);
@@ -195,7 +209,13 @@
   color: var(--StrongLila);
 }
 
-/* START STYLES FOR COMPONENT <TopListFifteen> */
+/*
+***********************************
+START STYLES FOR 
+COMPONENT <TopListFifteen> 
+***********************************
+*/
+
 .Container__TopList--TopFifteen {
   height: auto;
 
@@ -333,7 +353,12 @@
   color: var(--StrongRed);
 }
 
-/* ANIMATIONS */
+/*
+***********************************
+START ANIMATIONS
+***********************************
+*/
+
 @keyframes loadingContentTopList {
   0% {
     transform: scale(0);
@@ -344,7 +369,12 @@
   }
 }
 
-/* RESPONSIVE */
+/*
+***********************************
+START RESPONSIVE
+***********************************
+*/
+
 @media (width <= 450px) {
   .Container__TopList {
     width: 100%;
