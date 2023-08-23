@@ -23,18 +23,21 @@ MAIN COMPONENT
 */
 
 .Container__Login {
+  grid-column: span 4;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Container__Login--Box {
   position: relative;
   width: 500px;
   height: auto;
   padding: 40px 20px 20px 20px;
-  overflow: hidden;
 
-  background: var(--White);
+  background-color: var(--White);
   box-shadow: var(--BoxShadow);
-
-  display: -webkit-box;
-
-  display: -ms-flexbox;
 
   display: flex;
   flex-direction: column;
@@ -42,7 +45,6 @@ MAIN COMPONENT
 
   animation: loadingContainerLogin 1s;
 }
-
 /*
 ***********************************
 START STYLES FOR 
@@ -60,10 +62,6 @@ START STYLES FOR
   border: none;
   cursor: pointer;
   color: var(--White);
-
-  display: -webkit-box;
-
-  display: -ms-flexbox;
 
   display: flex;
   align-items: center;

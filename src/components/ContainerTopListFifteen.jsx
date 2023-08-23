@@ -1,6 +1,6 @@
-import { IMAGES_CATS } from "./Const";
+import { IMAGES_CATS } from "../Const";
 
-export function TopListFifteen({ topFifteen }) {
+export function ContainerTopListFifteen({ topFifteen }) {
   const setTopFifteen = topFifteen.map((user, index) => {
     const userImage = user[1].userImage;
     const userScore = user[1].userScore;

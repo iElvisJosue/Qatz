@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { IMAGES_CATS, getUserTotalScore } from "./Const";
-import { ModalDeleteProfile } from "./ModalDeleteProfile";
+import { IMAGES_CATS, getUserTotalScore } from "../Const";
+import { ContainerInformationProfileModal } from "./ContainerInformationProfileModal";
 
-export function ContentInformationProfile({
+export function ContainerInformationProfile({
   showMenu,
   contentDataUser,
   updateStateIsLogin,
@@ -26,25 +26,25 @@ export function ContentInformationProfile({
   }
 
   const classButtonUpdate = settings
-    ? "Container__Content--Information--Profile--Button--Top Show"
-    : "Container__Content--Information--Profile--Button--Top";
+    ? "Container__Information--Profile--Button--Top Show"
+    : "Container__Information--Profile--Button--Top";
   const classButtonDelete = settings
-    ? "Container__Content--Information--Profile--Button--Delete Show"
-    : "Container__Content--Information--Profile--Button--Delete";
+    ? "Container__Information--Profile--Button--Delete Show"
+    : "Container__Information--Profile--Button--Delete";
   const classModalDeleteProfile = seeModalDelete
-    ? "Container__Content--Information--Profile--Delete Show"
-    : "Container__Content--Information--Profile--Delete";
+    ? "Container__Information--Profile--Delete Show"
+    : "Container__Information--Profile--Delete";
   return (
-    <section className="Container__Content--Information--Profile">
-      <ModalDeleteProfile
+    <section className="Container__Information--Profile">
+      <ContainerInformationProfileModal
         classModalDeleteProfile={classModalDeleteProfile}
         deleteProfile={deleteProfile}
         hiddenModalDelete={hiddenModalDelete}
       />
-      <span className="Container__Content--Information--Profile--Button">
+      <span className="Container__Information--Profile--Button">
         {showMenu ? (
           <button
-            className="Container__Content--Information--Profile--Button--Close"
+            className="Container__Information--Profile--Button--Close"
             onClick={hiddenMenu}
           >
             <ion-icon name="close"></ion-icon>
@@ -53,7 +53,7 @@ export function ContentInformationProfile({
           false
         )}
         <button
-          className="Container__Content--Information--Profile--Button--Settings"
+          className="Container__Information--Profile--Button--Settings"
           onClick={showSettings}
         >
           <ion-icon name="settings-outline"></ion-icon>
@@ -68,15 +68,15 @@ export function ContentInformationProfile({
           <ion-icon name="trash-outline"></ion-icon>
         </button>
       </span>
-      <span className="Container__Content--Information--Profile--Image">
-        <picture className="Container__Content--Information--Profile--Image--Box">
+      <span className="Container__Information--Profile--Image">
+        <picture className="Container__Information--Profile--Image--Box">
           <img src={IMAGES_CATS[userImage]} alt="Image Profile" />
-          <b className="Container__Content--Information--Profile--Image--Box--TotalScore">
+          <b className="Container__Information--Profile--Image--Box--TotalScore">
             {getUserTotalScore(contentDataUser)}
           </b>
         </picture>
       </span>
-      <p className="Container__Content--Information--Profile--Username">
+      <p className="Container__Information--Profile--Username">
         ¡Hola, <b>{userName}</b>! Bienvenido/a ✨
       </p>
     </section>

@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { ContentInformationMedalDetails } from "./ContentInformationMedalDetails";
+import { ContainerInformationMedalsDetails } from "./ContainerInformationMedalsDetails";
 
-export function ContentInformationMedals({ contentDataUser }) {
+export function ContainerInformationMedals({ contentDataUser }) {
   const [seeMedals, setSeeMedals] = useState(false);
   const [seeModalMedal, setSeeModalMedal] = useState(false);
   const [idMedal, setIdMedal] = useState(0);
@@ -12,8 +12,8 @@ export function ContentInformationMedals({ contentDataUser }) {
   );
   const contentMedals = sortUserMedals.map((medal, index) => {
     const classMedal = medal.isObtained
-      ? "Container__Content--Information--Medals--Achieved--Box Achieved"
-      : "Container__Content--Information--Medals--Achieved--Box";
+      ? "Container__Information--Medals--Achieved--Box Achieved"
+      : "Container__Information--Medals--Achieved--Box";
     return (
       <picture
         key={index}
@@ -37,33 +37,33 @@ export function ContentInformationMedals({ contentDataUser }) {
 
   const nameIconSee = seeMedals ? "chevron-up-outline" : "chevron-down-outline";
   const classContentMedals = seeMedals
-    ? "Container__Content--Information--Medals Show"
-    : "Container__Content--Information--Medals";
+    ? "Container__Information--Medals Show"
+    : "Container__Information--Medals";
   const classModalMedalDetails = seeModalMedal
-    ? "Container__Content--Information--Medals--Modal Show"
-    : "Container__Content--Information--Medals--Modal";
+    ? "Container__Information--Medals--Modal Show"
+    : "Container__Information--Medals--Modal";
 
   return (
     <section className={classContentMedals}>
-      <ContentInformationMedalDetails
+      <ContainerInformationMedalsDetails
         classModalMedalDetails={classModalMedalDetails}
         totalMedals={totalMedals}
         idMedal={idMedal}
         contentDataUser={contentDataUser}
         hiddenModalMedal={hiddenModalMedal}
       />
-      <span className="Container__Content--Information--Medals--Header">
-        <p className="Container__Content--Information--Medals--Header--Title">
+      <span className="Container__Information--Medals--Header">
+        <p className="Container__Information--Medals--Header--Title">
           Tus medallas
         </p>
         <button
-          className="Container__Content--Information--Medals--Header--See"
+          className="Container__Information--Medals--Header--See"
           onClick={() => setSeeMedals(!seeMedals)}
         >
           <ion-icon name={nameIconSee}></ion-icon>
         </button>
       </span>
-      <span className="Container__Content--Information--Medals--Achieved">
+      <span className="Container__Information--Medals--Achieved">
         {contentMedals}
       </span>
     </section>

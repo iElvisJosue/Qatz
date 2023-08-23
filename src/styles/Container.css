@@ -19,16 +19,15 @@ MAIN COMPONENT
 */
 
 .Container {
+  position: relative;
   width: 1440px;
-  min-height: 100vh;
-  height: auto;
+  height: 100vh;
   margin: auto;
   background-image: var(--LinearGradient);
   overflow: hidden;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
 }
 
 /*
@@ -40,6 +39,11 @@ START RESPONSIVE DESIGN
 @media (width <=1440px) {
   .Container {
     width: 100%;
+  }
+}
+@media (width <= 1000px) {
+  .Container {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 @media (width <=500px) {

@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { setSortUserScores, MAX_RATING } from "./Const";
-import { TopListThree } from "./TopListThree";
-import { TopListFifteen } from "./TopListFifteen";
+import { setSortUserScores, MAX_RATING } from "../Const";
+import { ContainerTopListThree } from "./ContainerTopListThree";
+import { ContainerTopListFifteen } from "./ContainerTopListFifteen";
 
 import "../styles/ContainerTopList.css";
 
-export function TopList({ contentUserScores }) {
+export function ContainerTopList({ contentUserScores }) {
   const [seeToplist, setSeeToplist] = useState(false);
 
   const sortUserScores = setSortUserScores(contentUserScores);
@@ -27,8 +27,11 @@ export function TopList({ contentUserScores }) {
         <ion-icon name="podium-outline"></ion-icon>
       </button>
 
-      <TopListThree topThree={getTopThree} setSeeToplist={setSeeToplist} />
-      <TopListFifteen topFifteen={getTopFifteen} />
+      <ContainerTopListThree
+        topThree={getTopThree}
+        setSeeToplist={setSeeToplist}
+      />
+      <ContainerTopListFifteen topFifteen={getTopFifteen} />
     </section>
   );
 }

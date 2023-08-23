@@ -17,7 +17,7 @@ START STYLES FOR
 MAIN COMPONENT
 ***********************************
 */
-.Container__Content--Information--Profile--Delete {
+.Container__Information--Profile--Delete {
   position: fixed;
   top: 0;
   left: 0;
@@ -33,12 +33,12 @@ MAIN COMPONENT
 
   z-index: -1;
 }
-.Container__Content--Information--Profile--Delete.Show {
+.Container__Information--Profile--Delete.Show {
   opacity: 1;
   z-index: 1000;
 }
 
-.Container__Content--Information--Profile--Delete--Modal {
+.Container__Information--Profile--Delete--Modal {
   width: 350px;
   height: auto;
   padding: 20px;
@@ -50,31 +50,31 @@ MAIN COMPONENT
   flex-direction: column;
   gap: 20px;
 }
-.Container__Content--Information--Profile--Delete--Modal--Title {
+.Container__Information--Profile--Delete--Modal--Title {
   font-size: var(--H3);
   color: var(--StrongPurple);
   text-align: center;
 }
-.Container__Content--Information--Profile--Delete--Modal--Image {
+.Container__Information--Profile--Delete--Modal--Image {
   width: 100%;
   height: auto;
   text-align: center;
 }
-.Container__Content--Information--Profile--Delete--Modal--Image img {
+.Container__Information--Profile--Delete--Modal--Image img {
   width: 100px;
   height: 100px;
 }
-.Container__Content--Information--Profile--Delete--Modal--Details {
+.Container__Information--Profile--Delete--Modal--Details {
   color: var(--StrongGray);
   text-align: center;
 }
-.Container__Content--Information--Profile--Delete--Modal--Buttons {
+.Container__Information--Profile--Delete--Modal--Buttons {
   display: flex;
   gap: 20px;
 }
 
-.Container__Content--Information--Profile--Delete--Modal--Buttons--Cancel,
-.Container__Content--Information--Profile--Delete--Modal--Buttons--Confirm {
+.Container__Information--Profile--Delete--Modal--Buttons--Cancel,
+.Container__Information--Profile--Delete--Modal--Buttons--Confirm {
   width: 50%;
   height: 40px;
   font-weight: 600;
@@ -83,20 +83,20 @@ MAIN COMPONENT
 
   transition: 0.5s ease-in-out all;
 }
-.Container__Content--Information--Profile--Delete--Modal--Buttons--Cancel {
+.Container__Information--Profile--Delete--Modal--Buttons--Cancel {
   background-color: var(--StrongPurple);
   color: var(--White);
 }
-.Container__Content--Information--Profile--Delete--Modal--Buttons--Cancel:hover {
+.Container__Information--Profile--Delete--Modal--Buttons--Cancel:hover {
   background-color: var(--White);
   border-color: var(--StrongPurple);
   color: var(--StrongPurple);
 }
-.Container__Content--Information--Profile--Delete--Modal--Buttons--Confirm {
+.Container__Information--Profile--Delete--Modal--Buttons--Confirm {
   background-color: var(--WeakGray);
   color: var(--StrongGray);
 }
-.Container__Content--Information--Profile--Delete--Modal--Buttons--Confirm:hover {
+.Container__Information--Profile--Delete--Modal--Buttons--Confirm:hover {
   background-color: var(--White);
   border-color: var(--StrongGray);
 }
@@ -108,7 +108,7 @@ START RESPONSIVE DESIGN
 */
 
 @media (width <= 450px) {
-  .Container__Content--Information--Profile--Delete--Modal {
+  .Container__Information--Profile--Delete--Modal {
     width: 95%;
     margin: auto;
   }

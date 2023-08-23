@@ -18,7 +18,7 @@ MAIN COMPONENT
 ***********************************
 */
 
-.Container__Content--Information--Medals--Modal {
+.Container__Information--Medals--Modal {
   position: fixed;
   top: 0;
   left: 0;
@@ -34,11 +34,11 @@ MAIN COMPONENT
 
   z-index: -1;
 }
-.Container__Content--Information--Medals--Modal.Show {
+.Container__Information--Medals--Modal.Show {
   opacity: 1;
   z-index: 1000;
 }
-.Container__Content--Information--Medals--Modal--Content {
+.Container__Information--Medals--Modal--Content {
   width: 350px;
   height: auto;
   padding: 20px;
@@ -50,27 +50,27 @@ MAIN COMPONENT
   flex-direction: column;
   gap: 20px;
 }
-.Container__Content--Information--Medals--Modal--Content--Title {
+.Container__Information--Medals--Modal--Content--Title {
   font-size: var(--H3);
   color: var(--StrongPurple);
   text-align: center;
 }
-.Container__Content--Information--Medals--Modal--Content--Image {
+.Container__Information--Medals--Modal--Content--Image {
   width: 100%;
   height: auto;
   text-align: center;
 }
-.Container__Content--Information--Medals--Modal--Content--Image img {
+.Container__Information--Medals--Modal--Content--Image img {
   border: 2px dashed var(--StrongPurple);
   border-radius: 50%;
   width: 75px;
   height: 75px;
 }
-.Container__Content--Information--Medals--Modal--Content--Details {
+.Container__Information--Medals--Modal--Content--Details {
   color: var(--StrongGray);
   text-align: center;
 }
-.Container__Content--Information--Medals--Modal--Content--Details--Button {
+.Container__Information--Medals--Modal--Content--Details--Button {
   height: 40px;
   font-weight: 600;
   border: 2px solid transparent;
@@ -79,7 +79,7 @@ MAIN COMPONENT
 
   transition: 0.5s ease-in-out all;
 }
-.Container__Content--Information--Medals--Modal--Content--Details--Button:hover {
+.Container__Information--Medals--Modal--Content--Details--Button:hover {
   background-color: var(--White);
   border-color: var(--StrongPurple);
   color: var(--StrongPurple);
@@ -92,7 +92,7 @@ START RESPONSIVE DESIGN
 ***********************************
 */
 @media (width <= 450px) {
-  .Container__Content--Information--Medals--Modal--Content {
+  .Container__Information--Medals--Modal--Content {
     width: 95%;
     margin: auto;
   }

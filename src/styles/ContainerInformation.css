@@ -24,38 +24,18 @@ MAIN COMPONENT
 ***********************************
 */
 
-.Container__Content {
+.Container__Information {
   position: relative;
-  width: 1440px;
-  min-height: 100vh;
-  height: auto;
-  background-color: var(--WeakPurple);
-
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-}
-
-/*
-***********************************
-START STYLES FOR
-CHILD COMPONENT
-***********************************
-*/
-
-.Container__Content--Game {
-  grid-column: span 3;
-  padding: 10px;
-}
-.Container__Content--Information {
-  padding: 10px;
-  grid-column: span 1;
   min-width: 360px;
+  grid-column: span 1;
   height: 100vh;
-  overflow-y: auto;
+  background-color: var(--WeakPurple);
+  padding: 10px;
+  overflow: auto;
 
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
 }
 
 /*
@@ -65,7 +45,7 @@ COMPONENT <ContentInformationProfile>
 ***********************************
 */
 
-.Container__Content--Information--Profile {
+.Container__Information--Profile {
   min-height: 200px;
   height: 200px;
   padding: 20px;
@@ -78,12 +58,12 @@ COMPONENT <ContentInformationProfile>
   flex-direction: column;
   gap: 20px;
 }
-.Container__Content--Information--Profile--Button {
+.Container__Information--Profile--Button {
   position: relative;
   width: 100%;
   height: auto;
 }
-.Container__Content--Information--Profile--Button--Close {
+.Container__Information--Profile--Button--Close {
   position: absolute;
   top: -20px;
   left: -20px;
@@ -99,14 +79,14 @@ COMPONENT <ContentInformationProfile>
 
   transition: 0.3s ease-in-out all;
 }
-.Container__Content--Information--Profile--Button--Close:hover {
+.Container__Information--Profile--Button--Close:hover {
   cursor: pointer;
   background: var(--White);
   color: var(--StrongPurple);
 }
-.Container__Content--Information--Profile--Button--Settings,
-.Container__Content--Information--Profile--Button--Top,
-.Container__Content--Information--Profile--Button--Delete {
+.Container__Information--Profile--Button--Settings,
+.Container__Information--Profile--Button--Top,
+.Container__Information--Profile--Button--Delete {
   position: absolute;
   top: -20px;
   right: -20px;
@@ -122,36 +102,36 @@ COMPONENT <ContentInformationProfile>
 
   transition: 0.3s ease-in-out all;
 }
-.Container__Content--Information--Profile--Button--Settings {
+.Container__Information--Profile--Button--Settings {
   transform-origin: right;
   animation: loadingContentProfile 1s forwards;
   z-index: 2;
 }
-.Container__Content--Information--Profile--Button--Settings ion-icon {
+.Container__Information--Profile--Button--Settings ion-icon {
   animation: settingRotation 5s linear infinite;
 }
-.Container__Content--Information--Profile--Button--Top,
-.Container__Content--Information--Profile--Button--Delete {
+.Container__Information--Profile--Button--Top,
+.Container__Information--Profile--Button--Delete {
   background-color: var(--White);
 }
-.Container__Content--Information--Profile--Button--Top.Show {
+.Container__Information--Profile--Button--Top.Show {
   z-index: 1;
   transform: translateY(40px);
   background-color: var(--StrongPurple);
 }
-.Container__Content--Information--Profile--Button--Delete.Show {
+.Container__Information--Profile--Button--Delete.Show {
   z-index: 1;
   transform: translateY(80px);
   background-color: var(--StrongPurple);
 }
-.Container__Content--Information--Profile--Button--Settings:hover,
-.Container__Content--Information--Profile--Button--Top:hover,
-.Container__Content--Information--Profile--Button--Delete:hover {
+.Container__Information--Profile--Button--Settings:hover,
+.Container__Information--Profile--Button--Top:hover,
+.Container__Information--Profile--Button--Delete:hover {
   cursor: pointer;
   background: var(--White);
   color: var(--StrongPurple);
 }
-.Container__Content--Information--Profile--Image {
+.Container__Information--Profile--Image {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -159,7 +139,7 @@ COMPONENT <ContentInformationProfile>
 
   animation: loadingContentProfile 1s 0.4s forwards;
 }
-.Container__Content--Information--Profile--Image--Box {
+.Container__Information--Profile--Image--Box {
   position: relative;
   width: 100px;
   height: 100px;
@@ -174,11 +154,11 @@ COMPONENT <ContentInformationProfile>
   display: grid;
   place-items: center;
 }
-.Container__Content--Information--Profile--Image--Box img {
+.Container__Information--Profile--Image--Box img {
   width: 90%;
   height: 90%;
 }
-.Container__Content--Information--Profile--Image--Box--TotalScore {
+.Container__Information--Profile--Image--Box--TotalScore {
   position: absolute;
   bottom: -10px;
   font-size: 12px;
@@ -188,7 +168,7 @@ COMPONENT <ContentInformationProfile>
   background: var(--StrongPurple);
   border-radius: var(--BorderRadius);
 }
-.Container__Content--Information--Profile--Username {
+.Container__Information--Profile--Username {
   text-align: center;
   color: var(--StrongPurple);
   transform: scale(0);
@@ -203,7 +183,7 @@ COMPONENT <ContentInformationMedals>
 ***********************************
 */
 
-.Container__Content--Information--Medals {
+.Container__Information--Medals {
   min-height: 125px;
   height: 125px;
   padding: 20px;
@@ -218,16 +198,16 @@ COMPONENT <ContentInformationMedals>
 
   transition: 0.5s ease all;
 }
-.Container__Content--Information--Medals.Show {
+.Container__Information--Medals.Show {
   min-height: 275px;
   height: 275px;
 }
-.Container__Content--Information--Medals--Header {
+.Container__Information--Medals--Header {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.Container__Content--Information--Medals--Header--Title {
+.Container__Information--Medals--Header--Title {
   font-size: var(--H3);
   color: var(--StrongPurple);
   font-weight: 800;
@@ -235,7 +215,7 @@ COMPONENT <ContentInformationMedals>
 
   animation: loadingContentMedals 1s forwards;
 }
-.Container__Content--Information--Medals--Header--See {
+.Container__Information--Medals--Header--See {
   border: none;
   background: transparent;
   color: var(--StrongPurple);
@@ -247,13 +227,13 @@ COMPONENT <ContentInformationMedals>
 
   animation: loadingContentMedals 1s 0.1s forwards;
 }
-.Container__Content--Information--Medals--Achieved {
+.Container__Information--Medals--Achieved {
   display: grid;
   place-items: center;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
 }
-.Container__Content--Information--Medals--Achieved--Box {
+.Container__Information--Medals--Achieved--Box {
   grid-column: span 1;
   width: 60px;
   height: 60px;
@@ -271,23 +251,23 @@ COMPONENT <ContentInformationMedals>
 
   animation: loadingContentMedals 1s forwards;
 }
-.Container__Content--Information--Medals--Achieved--Box.Achieved {
+.Container__Information--Medals--Achieved--Box.Achieved {
   filter: grayscale(0);
 }
-.Container__Content--Information--Medals--Achieved--Box img {
+.Container__Information--Medals--Achieved--Box img {
   width: 100%;
   height: 100%;
 }
-.Container__Content--Information--Medals--Achieved--Box:nth-child(1) {
+.Container__Information--Medals--Achieved--Box:nth-child(1) {
   animation-delay: 0.2s;
 }
-.Container__Content--Information--Medals--Achieved--Box:nth-child(2) {
+.Container__Information--Medals--Achieved--Box:nth-child(2) {
   animation-delay: 0.4s;
 }
-.Container__Content--Information--Medals--Achieved--Box:nth-child(3) {
+.Container__Information--Medals--Achieved--Box:nth-child(3) {
   animation-delay: 0.6s;
 }
-.Container__Content--Information--Medals--Achieved--Box:nth-child(4) {
+.Container__Information--Medals--Achieved--Box:nth-child(4) {
   animation-delay: 0.8s;
 }
 
@@ -298,7 +278,7 @@ COMPONENT <ContentInformationProgress>
 ***********************************
 */
 
-.Container__Content--Information--Progress {
+.Container__Information--Progress {
   min-height: 190px;
   height: 190px;
   padding: 15px 20px 20px 20px;
@@ -313,16 +293,16 @@ COMPONENT <ContentInformationProgress>
 
   transition: 0.5s ease all;
 }
-.Container__Content--Information--Progress.Show {
+.Container__Information--Progress.Show {
   min-height: 615px;
   height: 615px;
 }
-.Container__Content--Information--Progress--Header {
+.Container__Information--Progress--Header {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.Container__Content--Information--Progress--Header--Title {
+.Container__Information--Progress--Header--Title {
   font-size: var(--H3);
   color: var(--StrongPurple);
   font-weight: 800;
@@ -330,7 +310,7 @@ COMPONENT <ContentInformationProgress>
 
   animation: loadingProgressTitle 1s forwards;
 }
-.Container__Content--Information--Progress--Header--See {
+.Container__Information--Progress--Header--See {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -349,7 +329,7 @@ COMPONENT <ContentInformationProgressLevel>
 ***********************************
 */
 
-.Container__Content--Information--Progress--Level {
+.Container__Information--Progress--Level {
   height: 60px;
   padding: 10px;
   border-radius: var(--BorderRadius);
@@ -366,7 +346,7 @@ COMPONENT <ContentInformationProgressLevel>
   transition: 0.3s ease-in-out border-color;
   transform-origin: left;
 }
-.Container__Content--Information--Progress--Level--Box {
+.Container__Information--Progress--Level--Box {
   min-width: 40px;
   width: 40px;
   min-height: 40px;
@@ -376,190 +356,190 @@ COMPONENT <ContentInformationProgressLevel>
   padding: 5px;
   border-radius: 50%;
 }
-.Container__Content--Information--Progress--Level--Box img {
+.Container__Information--Progress--Level--Box img {
   width: 100%;
   height: 100%;
 }
-.Container__Content--Information--Progress--Level--Details {
+.Container__Information--Progress--Level--Details {
   font-size: 14px;
   width: 100%;
 
   display: flex;
   flex-direction: column;
 }
-.Container__Content--Information--Progress--Level--Details--Text {
+.Container__Information--Progress--Level--Details--Text {
   display: flex;
   justify-content: space-between;
   font-weight: 600;
 }
-.Container__Content--Information--Progress--Level--Details--Progress {
+.Container__Information--Progress--Level--Details--Progress {
   width: 100%;
   height: 10px;
   border-radius: var(--BorderRadius);
 }
-.Container__Content--Information--Progress--Level--Details--Progress::-webkit-progress-value {
+.Container__Information--Progress--Level--Details--Progress::-webkit-progress-value {
   border-radius: var(--BorderRadius);
 }
-.Container__Content--Information--Progress--Level--Details--Progress::-webkit-progress-bar {
+.Container__Information--Progress--Level--Details--Progress::-webkit-progress-bar {
   background-color: var(--White);
   border-radius: var(--BorderRadius);
 }
 
 /* CLASS ADDED BY REACT */
-.Container__Content--Information--Progress--Level.Beginner {
+.Container__Information--Progress--Level.Beginner {
   background: var(--WeakOrange);
   animation-delay: 0.1s;
 }
-.Container__Content--Information--Progress--Level.Beginner:hover {
+.Container__Information--Progress--Level.Beginner:hover {
   border-color: var(--StrongOrange);
 }
-.Container__Content--Information--Progress--Level.Feline {
+.Container__Information--Progress--Level.Feline {
   background: var(--WeakPurple);
   animation-delay: 0.2s;
 }
-.Container__Content--Information--Progress--Level.Feline:hover {
+.Container__Information--Progress--Level.Feline:hover {
   border-color: var(--StrongPurple);
 }
-.Container__Content--Information--Progress--Level.Kitty {
+.Container__Information--Progress--Level.Kitty {
   background: var(--WeakBlue);
   animation-delay: 0.3s;
 }
-.Container__Content--Information--Progress--Level.Kitty:hover {
+.Container__Information--Progress--Level.Kitty:hover {
   border-color: var(--StrongBlue);
 }
-.Container__Content--Information--Progress--Level.Races {
+.Container__Information--Progress--Level.Races {
   background: var(--WeakGreen);
   animation-delay: 0.4s;
 }
-.Container__Content--Information--Progress--Level.Races:hover {
+.Container__Information--Progress--Level.Races:hover {
   border-color: var(--StrongGreen);
 }
-.Container__Content--Information--Progress--Level.Curiosities {
+.Container__Information--Progress--Level.Curiosities {
   background: var(--WeakGray);
   animation-delay: 0.5s;
 }
-.Container__Content--Information--Progress--Level.Curiosities:hover {
+.Container__Information--Progress--Level.Curiosities:hover {
   border-color: var(--StrongGray);
 }
-.Container__Content--Information--Progress--Level.Health {
+.Container__Information--Progress--Level.Health {
   background: var(--WeakRed);
   animation-delay: 0.6s;
 }
-.Container__Content--Information--Progress--Level.Health:hover {
+.Container__Information--Progress--Level.Health:hover {
   border-color: var(--StrongRed);
 }
-.Container__Content--Information--Progress--Level.Myths {
+.Container__Information--Progress--Level.Myths {
   background: var(--WeakLila);
   animation-delay: 0.7s;
 }
-.Container__Content--Information--Progress--Level.Myths:hover {
+.Container__Information--Progress--Level.Myths:hover {
   border-color: var(--StrongLila);
 }
-.Container__Content--Information--Progress--Level.Master {
+.Container__Information--Progress--Level.Master {
   background: var(--WeakGold);
   animation-delay: 0.8s;
 }
-.Container__Content--Information--Progress--Level.Master:hover {
+.Container__Information--Progress--Level.Master:hover {
   border-color: var(--Gold);
 }
-.Container__Content--Information--Progress--Level.Beginner
-  .Container__Content--Information--Progress--Level--Box {
+.Container__Information--Progress--Level.Beginner
+  .Container__Information--Progress--Level--Box {
   background: var(--StrongOrange);
 }
-.Container__Content--Information--Progress--Level.Feline
-  .Container__Content--Information--Progress--Level--Box {
+.Container__Information--Progress--Level.Feline
+  .Container__Information--Progress--Level--Box {
   background: var(--StrongPurple);
 }
-.Container__Content--Information--Progress--Level.Kitty
-  .Container__Content--Information--Progress--Level--Box {
+.Container__Information--Progress--Level.Kitty
+  .Container__Information--Progress--Level--Box {
   background: var(--StrongBlue);
 }
-.Container__Content--Information--Progress--Level.Races
-  .Container__Content--Information--Progress--Level--Box {
+.Container__Information--Progress--Level.Races
+  .Container__Information--Progress--Level--Box {
   background: var(--StrongGreen);
 }
-.Container__Content--Information--Progress--Level.Curiosities
-  .Container__Content--Information--Progress--Level--Box {
+.Container__Information--Progress--Level.Curiosities
+  .Container__Information--Progress--Level--Box {
   background: var(--StrongGray);
 }
-.Container__Content--Information--Progress--Level.Health
-  .Container__Content--Information--Progress--Level--Box {
+.Container__Information--Progress--Level.Health
+  .Container__Information--Progress--Level--Box {
   background: var(--StrongRed);
 }
-.Container__Content--Information--Progress--Level.Myths
-  .Container__Content--Information--Progress--Level--Box {
+.Container__Information--Progress--Level.Myths
+  .Container__Information--Progress--Level--Box {
   background: var(--StrongLila);
 }
-.Container__Content--Information--Progress--Level.Master
-  .Container__Content--Information--Progress--Level--Box {
+.Container__Information--Progress--Level.Master
+  .Container__Information--Progress--Level--Box {
   background: var(--Gold);
 }
-.Container__Content--Information--Progress--Level.Beginner
-  .Container__Content--Information--Progress--Level--Details--Text {
+.Container__Information--Progress--Level.Beginner
+  .Container__Information--Progress--Level--Details--Text {
   color: var(--StrongOrange);
 }
-.Container__Content--Information--Progress--Level.Feline
-  .Container__Content--Information--Progress--Level--Details--Text {
+.Container__Information--Progress--Level.Feline
+  .Container__Information--Progress--Level--Details--Text {
   color: var(--StrongPurple);
 }
-.Container__Content--Information--Progress--Level.Kitty
-  .Container__Content--Information--Progress--Level--Details--Text {
+.Container__Information--Progress--Level.Kitty
+  .Container__Information--Progress--Level--Details--Text {
   color: var(--StrongBlue);
 }
-.Container__Content--Information--Progress--Level.Races
-  .Container__Content--Information--Progress--Level--Details--Text {
+.Container__Information--Progress--Level.Races
+  .Container__Information--Progress--Level--Details--Text {
   color: var(--StrongGreen);
 }
-.Container__Content--Information--Progress--Level.Curiosities
-  .Container__Content--Information--Progress--Level--Details--Text {
+.Container__Information--Progress--Level.Curiosities
+  .Container__Information--Progress--Level--Details--Text {
   color: var(--StrongGray);
 }
-.Container__Content--Information--Progress--Level.Health
-  .Container__Content--Information--Progress--Level--Details--Text {
+.Container__Information--Progress--Level.Health
+  .Container__Information--Progress--Level--Details--Text {
   color: var(--StrongRed);
 }
-.Container__Content--Information--Progress--Level.Health
-  .Container__Content--Information--Progress--Level--Details--Text {
+.Container__Information--Progress--Level.Health
+  .Container__Information--Progress--Level--Details--Text {
   color: var(--StrongRed);
 }
-.Container__Content--Information--Progress--Level.Myths
-  .Container__Content--Information--Progress--Level--Details--Text {
+.Container__Information--Progress--Level.Myths
+  .Container__Information--Progress--Level--Details--Text {
   color: var(--StrongLila);
 }
-.Container__Content--Information--Progress--Level.Master
-  .Container__Content--Information--Progress--Level--Details--Text {
+.Container__Information--Progress--Level.Master
+  .Container__Information--Progress--Level--Details--Text {
   color: var(--Gold);
 }
-.Container__Content--Information--Progress--Level.Beginner
-  .Container__Content--Information--Progress--Level--Details--Progress::-webkit-progress-value {
+.Container__Information--Progress--Level.Beginner
+  .Container__Information--Progress--Level--Details--Progress::-webkit-progress-value {
   background-color: var(--StrongOrange);
 }
-.Container__Content--Information--Progress--Level.Feline
-  .Container__Content--Information--Progress--Level--Details--Progress::-webkit-progress-value {
+.Container__Information--Progress--Level.Feline
+  .Container__Information--Progress--Level--Details--Progress::-webkit-progress-value {
   background-color: var(--StrongPurple);
 }
-.Container__Content--Information--Progress--Level.Kitty
-  .Container__Content--Information--Progress--Level--Details--Progress::-webkit-progress-value {
+.Container__Information--Progress--Level.Kitty
+  .Container__Information--Progress--Level--Details--Progress::-webkit-progress-value {
   background-color: var(--StrongBlue);
 }
-.Container__Content--Information--Progress--Level.Races
-  .Container__Content--Information--Progress--Level--Details--Progress::-webkit-progress-value {
+.Container__Information--Progress--Level.Races
+  .Container__Information--Progress--Level--Details--Progress::-webkit-progress-value {
   background-color: var(--StrongGreen);
 }
-.Container__Content--Information--Progress--Level.Curiosities
-  .Container__Content--Information--Progress--Level--Details--Progress::-webkit-progress-value {
+.Container__Information--Progress--Level.Curiosities
+  .Container__Information--Progress--Level--Details--Progress::-webkit-progress-value {
   background-color: var(--StrongGray);
 }
-.Container__Content--Information--Progress--Level.Health
-  .Container__Content--Information--Progress--Level--Details--Progress::-webkit-progress-value {
+.Container__Information--Progress--Level.Health
+  .Container__Information--Progress--Level--Details--Progress::-webkit-progress-value {
   background-color: var(--StrongRed);
 }
-.Container__Content--Information--Progress--Level.Myths
-  .Container__Content--Information--Progress--Level--Details--Progress::-webkit-progress-value {
+.Container__Information--Progress--Level.Myths
+  .Container__Information--Progress--Level--Details--Progress::-webkit-progress-value {
   background-color: var(--StrongLila);
 }
-.Container__Content--Information--Progress--Level.Master
-  .Container__Content--Information--Progress--Level--Details--Progress::-webkit-progress-value {
+.Container__Information--Progress--Level.Master
+  .Container__Information--Progress--Level--Details--Progress::-webkit-progress-value {
   background-color: var(--Gold);
 }
 
@@ -618,35 +598,23 @@ START ANIMATIONS
 START RESPONSIVE DESIGN
 ***********************************
 */
-
-@media (width <=1440px) {
-  .Container__Content {
-    width: 100%;
-  }
-}
 @media (width <= 1000px) {
-  .Container__Content {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .Container__Content--Game {
-    grid-column: span 3;
-  }
-  .Container__Content--Information {
+  .Container__Information {
     display: none;
   }
 }
 @media (width <= 450px) {
-  .Container__Content--Information--Profile,
-  .Container__Content--Information--Medals,
-  .Container__Content--Information--Progress {
+  .Container__Information--Profile,
+  .Container__Information--Medals,
+  .Container__Information--Progress {
     border-radius: 0;
   }
 }
 @media (width <= 350px) {
-  .Container__Content--Information--Medals--Achieved {
+  .Container__Information--Medals--Achieved {
     grid-template-columns: repeat(3, 1fr);
   }
-  .Container__Content--Information--Medals.Show {
+  .Container__Information--Medals.Show {
     min-height: 350px;
     height: 350px;
   }

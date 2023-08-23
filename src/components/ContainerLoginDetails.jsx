@@ -1,4 +1,4 @@
-export function LoginDetails({ seeHelpDetails }) {
+export function ContainerLoginDetails({ seeHelpDetails }) {
   const classLoginDetails = seeHelpDetails
     ? "Container__Login__Details Show"
     : "Container__Login__Details";

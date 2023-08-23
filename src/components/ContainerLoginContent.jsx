@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { setDataUser, addNewUserScores } from "./Const";
-import { IMAGES_CATS, checkValueInput } from "./Const";
+import { setDataUser, addNewUserScores } from "../Const";
+import { IMAGES_CATS, checkValueInput } from "../Const";
 
-export function LoginContent({ updateStateIsLogin }) {
+export function ContainerLoginContent({ updateStateIsLogin }) {
   const [imageProfile, setImageProfile] = useState(0);
   const [inputUsernameValidate, setInputUsernameValidate] = useState(true);
 

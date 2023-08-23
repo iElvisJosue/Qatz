@@ -1,0 +1,11 @@
+.Container__Game {
+  grid-column: span 3;
+  height: 100vh;
+  background: purple;
+}
+
+@media (width <= 1000px) {
+  .Container__Game {
+    grid-column: span 3;
+  }
+}

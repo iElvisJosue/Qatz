@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { ContentInformationProgressLevel } from "./ContentInformationProgressLevel";
+import { ContainerInformationProgressLevel } from "./ContainerInformationProgressLevel";
 
-export function ContentInformationProgress({
+export function ContainerInformationProgress({
   contentDataUser,
   updateDataUser,
 }) {
@@ -13,17 +13,17 @@ export function ContentInformationProgress({
     ? "chevron-up-outline"
     : "chevron-down-outline";
   const classContentMedals = seeProgress
-    ? "Container__Content--Information--Progress Show"
-    : "Container__Content--Information--Progress";
+    ? "Container__Information--Progress Show"
+    : "Container__Information--Progress";
 
   return (
     <section className={classContentMedals}>
-      <span className="Container__Content--Information--Progress--Header">
-        <p className="Container__Content--Information--Progress--Header--Title">
+      <span className="Container__Information--Progress--Header">
+        <p className="Container__Information--Progress--Header--Title">
           Progreso actual
         </p>
         <button
-          className="Container__Content--Information--Progress--Header--See"
+          className="Container__Information--Progress--Header--See"
           onClick={() => setSeeProgress(!seeProgress)}
         >
           <ion-icon name={nameIconSee}></ion-icon>
@@ -37,7 +37,7 @@ export function ContentInformationProgress({
         const totalLevelQuestions = currentLevel.levelQuestions.length;
 
         return (
-          <ContentInformationProgressLevel
+          <ContainerInformationProgressLevel
             key={index}
             nameLevel={nameLevel}
             imageLevel={imageLevel}

@@ -2,15 +2,17 @@
 import { useState, useEffect } from "react";
 
 // COMPONENTS
-import { Login } from "./components/Login";
-import { Content } from "./components/Content";
+import { ContainerLogin } from "./components/ContainerLogin";
 import {
   setUserScores,
-  getUserTotalScore,
+  // getUserTotalScore,
   USER_SCORES,
   DATA_USER,
-} from "./components/Const";
-import { Menu } from "./components/Menu";
+} from "./Const";
+import { ContainerMenu } from "./components/ContainerMenu";
+import { ContainerTopList } from "./components/ContainerTopList";
+import { ContainerInformation } from "./components/ContainerInformation";
+import { ContainerGame } from "./components/ContainerGame";
 
 // STYLES
 import "./styles/General.css";
@@ -54,26 +56,26 @@ export function App() {
       : setUserScores();
   };
 
-  const updateUserScoreLevel = () => {
-    const oldScoreLevel = contentDataUser.levels.levelBeginner.score;
-    const newScoreLevel = oldScoreLevel + 10;
-    contentDataUser.levels.levelBeginner.score = newScoreLevel;
-    localStorage.setItem(DATA_USER, JSON.stringify(contentDataUser));
-    const updatedUserData = JSON.parse(localStorage.getItem(DATA_USER));
-    updateContentDataUser(updatedUserData);
-    updateLeadBoard();
-  };
+  // const updateUserScoreLevel = () => {
+  //   const oldScoreLevel = contentDataUser.levels.levelBeginner.score;
+  //   const newScoreLevel = oldScoreLevel + 10;
+  //   contentDataUser.levels.levelBeginner.score = newScoreLevel;
+  //   localStorage.setItem(DATA_USER, JSON.stringify(contentDataUser));
+  //   const updatedUserData = JSON.parse(localStorage.getItem(DATA_USER));
+  //   updateContentDataUser(updatedUserData);
+  //   updateLeadBoard();
+  // };
 
-  const updateLeadBoard = () => {
-    const newUserTotalScore = getUserTotalScore(contentDataUser);
-    const getUserScores = JSON.parse(localStorage.getItem(USER_SCORES));
-    const getTotalUserScores = Object.keys(getUserScores).length;
-    const getNameUser = `user${getTotalUserScores}`;
-    getUserScores[getNameUser].userScore = newUserTotalScore;
-    localStorage.setItem(USER_SCORES, JSON.stringify(getUserScores));
-    const updatedUserScores = JSON.parse(localStorage.getItem(USER_SCORES));
-    updateContentUserScores(updatedUserScores);
-  };
+  // const updateLeadBoard = () => {
+  //   const newUserTotalScore = getUserTotalScore(contentDataUser);
+  //   const getUserScores = JSON.parse(localStorage.getItem(USER_SCORES));
+  //   const getTotalUserScores = Object.keys(getUserScores).length;
+  //   const getNameUser = `user${getTotalUserScores}`;
+  //   getUserScores[getNameUser].userScore = newUserTotalScore;
+  //   localStorage.setItem(USER_SCORES, JSON.stringify(getUserScores));
+  //   const updatedUserScores = JSON.parse(localStorage.getItem(USER_SCORES));
+  //   updateContentUserScores(updatedUserScores);
+  // };
 
   const checkUserExist = () => {
     if (localStorage.getItem(DATA_USER)) {
@@ -87,21 +89,22 @@ export function App() {
     <main className="Container">
       {isLogin ? (
         <>
-          <Menu
+          <ContainerMenu
             contentDataUser={contentDataUser}
             updateDataUser={updateDataUser}
             updateStateIsLogin={updateStateIsLogin}
           />
-          <Content
+          <ContainerTopList contentUserScores={contentUserScores} />
+          <ContainerGame />
+          <ContainerInformation
+            updateStateIsLogin={updateStateIsLogin}
             contentDataUser={contentDataUser}
             updateDataUser={updateDataUser}
-            contentUserScores={contentUserScores}
-            updateUserScoreLevel={updateUserScoreLevel}
-            updateStateIsLogin={updateStateIsLogin}
+            // updateUserScoreLevel={updateUserScoreLevel}
           />
         </>
       ) : (
-        <Login updateStateIsLogin={updateStateIsLogin} />
+        <ContainerLogin updateStateIsLogin={updateStateIsLogin} />
       )}
     </main>
   );

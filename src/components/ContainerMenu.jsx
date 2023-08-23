@@ -1,12 +1,12 @@
 import { useState } from "react";
 
-import { ContentInformationProfile } from "./ContentInformationProfile";
-import { ContentInformationMedals } from "./ContentInformationMedals";
-import { ContentInformationProgress } from "./ContentInformationProgress";
+import { ContainerInformationProfile } from "./ContainerInformationProfile";
+import { ContainerInformationMedals } from "./ContainerInformationMedals";
+import { ContainerInformationProgress } from "./ContainerInformationProgress";
 
 import "../styles/ContainerMenu.css";
 
-export function Menu({
+export function ContainerMenu({
   contentDataUser,
   updateDataUser,
   setSeeModalDelete,
@@ -32,15 +32,15 @@ export function Menu({
       </button>
       <section className={classMenuContent}>
         <aside className="Container__Menu--Content--Details">
-          <ContentInformationProfile
+          <ContainerInformationProfile
             showMenu={true}
             setSeeModalDelete={setSeeModalDelete}
             contentDataUser={contentDataUser}
             updateStateIsLogin={updateStateIsLogin}
             hiddenMenu={hiddenMenu}
           />
-          <ContentInformationMedals contentDataUser={contentDataUser} />
-          <ContentInformationProgress
+          <ContainerInformationMedals contentDataUser={contentDataUser} />
+          <ContainerInformationProgress
             contentDataUser={contentDataUser}
             updateDataUser={updateDataUser}
           />

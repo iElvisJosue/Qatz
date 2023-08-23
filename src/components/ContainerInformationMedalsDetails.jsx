@@ -1,6 +1,6 @@
 import "../styles/ModalMedalDetails.css";
 
-export function ContentInformationMedalDetails({
+export function ContainerInformationMedalsDetails({
   classModalMedalDetails,
   totalMedals,
   idMedal,
@@ -12,18 +12,18 @@ export function ContentInformationMedalDetails({
 
   return (
     <div className={classModalMedalDetails}>
-      <div className="Container__Content--Information--Medals--Modal--Content">
-        <b className="Container__Content--Information--Medals--Modal--Content--Title">
+      <div className="Container__Information--Medals--Modal--Content">
+        <b className="Container__Information--Medals--Modal--Content--Title">
           {medalName}
         </b>
-        <picture className="Container__Content--Information--Medals--Modal--Content--Image">
-          <img src={medalImage} alt="Medal Image" />
+        <picture className="Container__Information--Medals--Modal--Content--Image">
+          <img src={medalImage} alt={medalName} />
         </picture>
-        <p className="Container__Content--Information--Medals--Modal--Content--Details">
+        <p className="Container__Information--Medals--Modal--Content--Details">
           {medalDescription}
         </p>
         <button
-          className="Container__Content--Information--Medals--Modal--Content--Details--Button"
+          className="Container__Information--Medals--Modal--Content--Details--Button"
           onClick={hiddenModalMedal}
         >
           Entendido
