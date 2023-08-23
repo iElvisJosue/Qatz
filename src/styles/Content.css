@@ -1,3 +1,29 @@
+/*
+***********************************
+TO FIND THE STYLES QUICKLY, PRESS CTRL + F 
+AND TYPE THE FOLLOWING:
+
+(FOR MAIN CONTAINER COMPONENT)
+  MAIN COMPONENT
+(FOR CHILD CONTAINER COMPONENT)
+  CHILD COMPONENT
+(FOR COMPONENT STYLES)
+  <NameComponent>
+(FOR ANIMATIONS STYLES)
+  ANIMATIONS
+(FOR RESPONSIVE DESIGN)
+  RESPONSIVE
+
+***********************************
+*/
+
+/*
+***********************************
+START STYLES FOR
+MAIN COMPONENT
+***********************************
+*/
+
 .Container__Content {
   position: relative;
   width: 1440px;
@@ -8,6 +34,14 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 }
+
+/*
+***********************************
+START STYLES FOR
+CHILD COMPONENT
+***********************************
+*/
+
 .Container__Content--Game {
   grid-column: span 3;
   padding: 10px;
@@ -22,4 +56,594 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+/*
+***********************************
+START STYLES FOR 
+COMPONENT <ContentInformationProfile> 
+***********************************
+*/
+
+.Container__Content--Information--Profile {
+  min-height: 200px;
+  height: 200px;
+  padding: 20px;
+  background: var(--White);
+  border-radius: var(--BorderRadius);
+  overflow: hidden;
+  box-shadow: var(--BoxShadow);
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.Container__Content--Information--Profile--Button {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+.Container__Content--Information--Profile--Button--Close {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 40px;
+  height: 40px;
+  background: var(--StrongPurple);
+  border: none;
+  color: var(--White);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: 0.3s ease-in-out all;
+}
+.Container__Content--Information--Profile--Button--Close:hover {
+  cursor: pointer;
+  background: var(--White);
+  color: var(--StrongPurple);
+}
+.Container__Content--Information--Profile--Button--Settings,
+.Container__Content--Information--Profile--Button--Top,
+.Container__Content--Information--Profile--Button--Delete {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 40px;
+  height: 40px;
+  background: var(--StrongPurple);
+  border: none;
+  color: var(--White);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: 0.3s ease-in-out all;
+}
+.Container__Content--Information--Profile--Button--Settings {
+  transform-origin: right;
+  animation: loadingContentProfile 1s forwards;
+  z-index: 2;
+}
+.Container__Content--Information--Profile--Button--Settings ion-icon {
+  animation: settingRotation 5s linear infinite;
+}
+.Container__Content--Information--Profile--Button--Top,
+.Container__Content--Information--Profile--Button--Delete {
+  background-color: var(--White);
+}
+.Container__Content--Information--Profile--Button--Top.Show {
+  z-index: 1;
+  transform: translateY(40px);
+  background-color: var(--StrongPurple);
+}
+.Container__Content--Information--Profile--Button--Delete.Show {
+  z-index: 1;
+  transform: translateY(80px);
+  background-color: var(--StrongPurple);
+}
+.Container__Content--Information--Profile--Button--Settings:hover,
+.Container__Content--Information--Profile--Button--Top:hover,
+.Container__Content--Information--Profile--Button--Delete:hover {
+  cursor: pointer;
+  background: var(--White);
+  color: var(--StrongPurple);
+}
+.Container__Content--Information--Profile--Image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: scale(0);
+
+  animation: loadingContentProfile 1s 0.4s forwards;
+}
+.Container__Content--Information--Profile--Image--Box {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  padding: 10px;
+
+  border-radius: 50%;
+  border: 5px solid var(--StrongPurple);
+  background-image: var(--LinearGradient);
+
+  display: -ms-grid;
+
+  display: grid;
+  place-items: center;
+}
+.Container__Content--Information--Profile--Image--Box img {
+  width: 90%;
+  height: 90%;
+}
+.Container__Content--Information--Profile--Image--Box--TotalScore {
+  position: absolute;
+  bottom: -10px;
+  font-size: 12px;
+
+  padding: 2px 10px;
+  color: var(--White);
+  background: var(--StrongPurple);
+  border-radius: var(--BorderRadius);
+}
+.Container__Content--Information--Profile--Username {
+  text-align: center;
+  color: var(--StrongPurple);
+  transform: scale(0);
+
+  animation: loadingContentProfile 1s 0.8s forwards;
+}
+
+/*
+***********************************
+START STYLES FOR 
+COMPONENT <ContentInformationMedals> 
+***********************************
+*/
+
+.Container__Content--Information--Medals {
+  min-height: 125px;
+  height: 125px;
+  padding: 20px;
+  background: var(--White);
+  border-radius: var(--BorderRadius);
+  box-shadow: var(--BoxShadow);
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  transition: 0.5s ease all;
+}
+.Container__Content--Information--Medals.Show {
+  min-height: 275px;
+  height: 275px;
+}
+.Container__Content--Information--Medals--Header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.Container__Content--Information--Medals--Header--Title {
+  font-size: var(--H3);
+  color: var(--StrongPurple);
+  font-weight: 800;
+  transform-origin: left;
+
+  animation: loadingContentMedals 1s forwards;
+}
+.Container__Content--Information--Medals--Header--See {
+  border: none;
+  background: transparent;
+  color: var(--StrongPurple);
+  transform: scale(0);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  animation: loadingContentMedals 1s 0.1s forwards;
+}
+.Container__Content--Information--Medals--Achieved {
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+.Container__Content--Information--Medals--Achieved--Box {
+  grid-column: span 1;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px dashed var(--StrongPurple);
+  transform: scale(0);
+  filter: grayscale(1);
+  transform-origin: left;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  animation: loadingContentMedals 1s forwards;
+}
+.Container__Content--Information--Medals--Achieved--Box.Achieved {
+  filter: grayscale(0);
+}
+.Container__Content--Information--Medals--Achieved--Box img {
+  width: 100%;
+  height: 100%;
+}
+.Container__Content--Information--Medals--Achieved--Box:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.Container__Content--Information--Medals--Achieved--Box:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.Container__Content--Information--Medals--Achieved--Box:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.Container__Content--Information--Medals--Achieved--Box:nth-child(4) {
+  animation-delay: 0.8s;
+}
+
+/*
+***********************************
+START STYLES FOR 
+COMPONENT <ContentInformationProgress> 
+***********************************
+*/
+
+.Container__Content--Information--Progress {
+  min-height: 190px;
+  height: 190px;
+  padding: 15px 20px 20px 20px;
+  background: var(--White);
+  border-radius: var(--BorderRadius);
+  box-shadow: var(--BoxShadow);
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  transition: 0.5s ease all;
+}
+.Container__Content--Information--Progress.Show {
+  min-height: 615px;
+  height: 615px;
+}
+.Container__Content--Information--Progress--Header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.Container__Content--Information--Progress--Header--Title {
+  font-size: var(--H3);
+  color: var(--StrongPurple);
+  font-weight: 800;
+  transform-origin: left;
+
+  animation: loadingProgressTitle 1s forwards;
+}
+.Container__Content--Information--Progress--Header--See {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  color: var(--StrongPurple);
+  transform: scale(0);
+
+  animation: loadingProgressTitle 1s 0.1s forwards;
+}
+
+/*
+***********************************
+START STYLES FOR 
+COMPONENT <ContentInformationProgressLevel> 
+***********************************
+*/
+
+.Container__Content--Information--Progress--Level {
+  height: 60px;
+  padding: 10px;
+  border-radius: var(--BorderRadius);
+  border: 2px solid transparent;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  opacity: 0;
+  cursor: pointer;
+
+  animation: loadingProgressDetails 1s forwards;
+  transition: 0.3s ease-in-out border-color;
+  transform-origin: left;
+}
+.Container__Content--Information--Progress--Level--Box {
+  min-width: 40px;
+  height: 40px;
+  padding: 5px;
+  border-radius: 50%;
+}
+.Container__Content--Information--Progress--Level--Box img {
+  width: 100%;
+  height: 100%;
+}
+.Container__Content--Information--Progress--Level--Details {
+  font-size: 14px;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+.Container__Content--Information--Progress--Level--Details--Text {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+}
+.Container__Content--Information--Progress--Level--Details--Progress {
+  width: 100%;
+  height: 10px;
+  border-radius: var(--BorderRadius);
+}
+.Container__Content--Information--Progress--Level--Details--Progress::-webkit-progress-value {
+  border-radius: var(--BorderRadius);
+}
+.Container__Content--Information--Progress--Level--Details--Progress::-webkit-progress-bar {
+  background-color: var(--White);
+  border-radius: var(--BorderRadius);
+}
+
+/* CLASS ADDED BY REACT */
+.Container__Content--Information--Progress--Level.Beginner {
+  background: var(--WeakOrange);
+  animation-delay: 0.1s;
+}
+.Container__Content--Information--Progress--Level.Beginner:hover {
+  border-color: var(--StrongOrange);
+}
+.Container__Content--Information--Progress--Level.Feline {
+  background: var(--WeakPurple);
+  animation-delay: 0.2s;
+}
+.Container__Content--Information--Progress--Level.Feline:hover {
+  border-color: var(--StrongPurple);
+}
+.Container__Content--Information--Progress--Level.Kitty {
+  background: var(--WeakBlue);
+  animation-delay: 0.3s;
+}
+.Container__Content--Information--Progress--Level.Kitty:hover {
+  border-color: var(--StrongBlue);
+}
+.Container__Content--Information--Progress--Level.Races {
+  background: var(--WeakGreen);
+  animation-delay: 0.4s;
+}
+.Container__Content--Information--Progress--Level.Races:hover {
+  border-color: var(--StrongGreen);
+}
+.Container__Content--Information--Progress--Level.Curiosities {
+  background: var(--WeakGray);
+  animation-delay: 0.5s;
+}
+.Container__Content--Information--Progress--Level.Curiosities:hover {
+  border-color: var(--StrongGray);
+}
+.Container__Content--Information--Progress--Level.Health {
+  background: var(--WeakRed);
+  animation-delay: 0.6s;
+}
+.Container__Content--Information--Progress--Level.Health:hover {
+  border-color: var(--StrongRed);
+}
+.Container__Content--Information--Progress--Level.Myths {
+  background: var(--WeakLila);
+  animation-delay: 0.7s;
+}
+.Container__Content--Information--Progress--Level.Myths:hover {
+  border-color: var(--StrongLila);
+}
+.Container__Content--Information--Progress--Level.Master {
+  background: var(--WeakGold);
+  animation-delay: 0.8s;
+}
+.Container__Content--Information--Progress--Level.Master:hover {
+  border-color: var(--Gold);
+}
+.Container__Content--Information--Progress--Level.Beginner
+  .Container__Content--Information--Progress--Level--Box {
+  background: var(--StrongOrange);
+}
+.Container__Content--Information--Progress--Level.Feline
+  .Container__Content--Information--Progress--Level--Box {
+  background: var(--StrongPurple);
+}
+.Container__Content--Information--Progress--Level.Kitty
+  .Container__Content--Information--Progress--Level--Box {
+  background: var(--StrongBlue);
+}
+.Container__Content--Information--Progress--Level.Races
+  .Container__Content--Information--Progress--Level--Box {
+  background: var(--StrongGreen);
+}
+.Container__Content--Information--Progress--Level.Curiosities
+  .Container__Content--Information--Progress--Level--Box {
+  background: var(--StrongGray);
+}
+.Container__Content--Information--Progress--Level.Health
+  .Container__Content--Information--Progress--Level--Box {
+  background: var(--StrongRed);
+}
+.Container__Content--Information--Progress--Level.Myths
+  .Container__Content--Information--Progress--Level--Box {
+  background: var(--StrongLila);
+}
+.Container__Content--Information--Progress--Level.Master
+  .Container__Content--Information--Progress--Level--Box {
+  background: var(--Gold);
+}
+.Container__Content--Information--Progress--Level.Beginner
+  .Container__Content--Information--Progress--Level--Details--Text {
+  color: var(--StrongOrange);
+}
+.Container__Content--Information--Progress--Level.Feline
+  .Container__Content--Information--Progress--Level--Details--Text {
+  color: var(--StrongPurple);
+}
+.Container__Content--Information--Progress--Level.Kitty
+  .Container__Content--Information--Progress--Level--Details--Text {
+  color: var(--StrongBlue);
+}
+.Container__Content--Information--Progress--Level.Races
+  .Container__Content--Information--Progress--Level--Details--Text {
+  color: var(--StrongGreen);
+}
+.Container__Content--Information--Progress--Level.Curiosities
+  .Container__Content--Information--Progress--Level--Details--Text {
+  color: var(--StrongGray);
+}
+.Container__Content--Information--Progress--Level.Health
+  .Container__Content--Information--Progress--Level--Details--Text {
+  color: var(--StrongRed);
+}
+.Container__Content--Information--Progress--Level.Health
+  .Container__Content--Information--Progress--Level--Details--Text {
+  color: var(--StrongRed);
+}
+.Container__Content--Information--Progress--Level.Myths
+  .Container__Content--Information--Progress--Level--Details--Text {
+  color: var(--StrongLila);
+}
+.Container__Content--Information--Progress--Level.Master
+  .Container__Content--Information--Progress--Level--Details--Text {
+  color: var(--Gold);
+}
+.Container__Content--Information--Progress--Level.Beginner
+  .Container__Content--Information--Progress--Level--Details--Progress::-webkit-progress-value {
+  background-color: var(--StrongOrange);
+}
+.Container__Content--Information--Progress--Level.Feline
+  .Container__Content--Information--Progress--Level--Details--Progress::-webkit-progress-value {
+  background-color: var(--StrongPurple);
+}
+.Container__Content--Information--Progress--Level.Kitty
+  .Container__Content--Information--Progress--Level--Details--Progress::-webkit-progress-value {
+  background-color: var(--StrongBlue);
+}
+.Container__Content--Information--Progress--Level.Races
+  .Container__Content--Information--Progress--Level--Details--Progress::-webkit-progress-value {
+  background-color: var(--StrongGreen);
+}
+.Container__Content--Information--Progress--Level.Curiosities
+  .Container__Content--Information--Progress--Level--Details--Progress::-webkit-progress-value {
+  background-color: var(--StrongGray);
+}
+.Container__Content--Information--Progress--Level.Health
+  .Container__Content--Information--Progress--Level--Details--Progress::-webkit-progress-value {
+  background-color: var(--StrongRed);
+}
+.Container__Content--Information--Progress--Level.Myths
+  .Container__Content--Information--Progress--Level--Details--Progress::-webkit-progress-value {
+  background-color: var(--StrongLila);
+}
+.Container__Content--Information--Progress--Level.Master
+  .Container__Content--Information--Progress--Level--Details--Progress::-webkit-progress-value {
+  background-color: var(--Gold);
+}
+
+/*
+***********************************
+START ANIMATIONS
+***********************************
+*/
+
+@keyframes settingRotation {
+  0% {
+    rotate: 0;
+  }
+  100% {
+    rotate: 360deg;
+  }
+}
+@keyframes loadingContentProfile {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes loadingContentMedals {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes loadingProgressTitle {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes loadingProgressDetails {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/*
+***********************************
+START RESPONSIVE DESIGN
+***********************************
+*/
+
+@media (width <=1440px) {
+  .Container__Content {
+    width: 100%;
+  }
+}
+@media (width <= 1000px) {
+  .Container__Content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .Container__Content--Game {
+    grid-column: span 3;
+  }
+  .Container__Content--Information {
+    display: none;
+  }
+}
+@media (width <= 450px) {
+  .Container__Content--Information--Profile,
+  .Container__Content--Information--Medals,
+  .Container__Content--Information--Progress {
+    border-radius: 0;
+  }
+}
+@media (width <= 350px) {
+  .Container__Content--Information--Medals--Achieved {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .Container__Content--Information--Medals.Show {
+    min-height: 350px;
+    height: 350px;
+  }
 }

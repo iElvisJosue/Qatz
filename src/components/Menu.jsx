@@ -5,7 +5,6 @@ import { ContentInformationMedals } from "./ContentInformationMedals";
 import { ContentInformationProgress } from "./ContentInformationProgress";
 
 import "../styles/ContainerMenu.css";
-import "../styles/Responsive/ContainerMenu.css";
 
 export function Menu({
   contentDataUser,

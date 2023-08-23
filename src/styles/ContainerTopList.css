@@ -1,3 +1,26 @@
+/*
+***********************************
+TO FIND THE STYLES QUICKLY, PRESS CTRL + F 
+AND TYPE THE FOLLOWING:
+
+(FOR MAIN CONTAINER COMPONENT)
+  MAIN COMPONENT
+(FOR COMPONENT STYLES)
+  <NameComponent>
+(FOR ANIMATIONS STYLES)
+  ANIMATIONS
+(FOR RESPONSIVE DESIGN)
+  RESPONSIVE
+
+***********************************
+*/
+
+/*
+***********************************
+START STYLES FOR
+MAIN COMPONENT
+***********************************
+*/
 .Container__TopList {
   position: absolute;
   top: 0;

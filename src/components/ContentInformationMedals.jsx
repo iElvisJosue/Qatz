@@ -1,9 +1,6 @@
 import { useState } from "react";
 import { ContentInformationMedalDetails } from "./ContentInformationMedalDetails";
 
-import "../styles/ContentInformationMedals.css";
-import "../styles/Responsive/ContentInformationMedals.css";
-
 export function ContentInformationMedals({ contentDataUser }) {
   const [seeMedals, setSeeMedals] = useState(false);
   const [seeModalMedal, setSeeModalMedal] = useState(false);

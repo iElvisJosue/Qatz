@@ -4,7 +4,6 @@ import { ContentInformationProgress } from "./ContentInformationProgress";
 import { TopList } from "./TopList";
 
 import "../styles/Content.css";
-import "../styles/Responsive/Content.css";
 
 export function Content({
   contentDataUser,
@@ -19,7 +18,6 @@ export function Content({
       <TopList contentUserScores={contentUserScores} />
       <div className="Container__Content--Game">
         <h1>CONTENT</h1>
-        {/* <ContentGameLeadBoard contentUserScores={contentUserScores} /> */}
       </div>
       <div className="Container__Content--Information">
         <ContentInformationProfile

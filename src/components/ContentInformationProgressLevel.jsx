@@ -1,5 +1,3 @@
-import "../styles/ContentInformationProgressLevel.css";
-
 export function ContentInformationProgressLevel({
   nameLevel,
   imageLevel,

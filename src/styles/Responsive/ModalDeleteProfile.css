@@ -1,6 +1,0 @@
-@media (width <= 450px) {
-  .Container__Content--Information--Profile--Delete--Modal {
-    width: 95%;
-    margin: auto;
-  }
-}

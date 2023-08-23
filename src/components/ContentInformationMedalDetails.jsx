@@ -1,5 +1,4 @@
-import "../styles/ContentInformationMedalsModal.css";
-import "../styles/Responsive/ContentInformationMedalsModal.css";
+import "../styles/ModalMedalDetails.css";
 
 export function ContentInformationMedalDetails({
   classModalMedalDetails,

@@ -2,9 +2,6 @@ import { useState } from "react";
 import { IMAGES_CATS, getUserTotalScore } from "./Const";
 import { ModalDeleteProfile } from "./ModalDeleteProfile";
 
-import "../styles/ContentInformationProfile.css";
-import "../styles/Responsive/ContentInformationProfile.css";
-
 export function ContentInformationProfile({
   showMenu,
   contentDataUser,

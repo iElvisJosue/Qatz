@@ -2,18 +2,18 @@ import { useState } from "react";
 import { setDataUser, addNewUserScores } from "./Const";
 import { IMAGES_CATS, checkValueInput } from "./Const";
 
-import "../styles/LoginContent.css";
-
 export function LoginContent({ updateStateIsLogin }) {
   const [imageProfile, setImageProfile] = useState(0);
   const [inputUsernameValidate, setInputUsernameValidate] = useState(true);
 
   const totalImagesCats = IMAGES_CATS.length - 1;
-
   const imageCatSelected = IMAGES_CATS[imageProfile];
+  const FIRST_IMAGE = 0;
+  const KEY_SPACE = 32;
+  const KEY_ENTER = 13;
 
   function previousImage() {
-    imageProfile > 0
+    imageProfile > FIRST_IMAGE
       ? setImageProfile(imageProfile - 1)
       : setImageProfile(totalImagesCats);
   }
@@ -23,8 +23,8 @@ export function LoginContent({ updateStateIsLogin }) {
       : setImageProfile(0);
   }
   function checkKeyPressed(e) {
-    if (e.keyCode === 32) e.preventDefault();
-    if (e.keyCode === 13) inputValidate();
+    if (e.keyCode === KEY_SPACE) e.preventDefault();
+    if (e.keyCode === KEY_ENTER) inputValidate();
   }
   function inputValidate() {
     const inputUsername = document.querySelector(".Container__InputsText");

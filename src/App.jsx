@@ -15,7 +15,6 @@ import { Menu } from "./components/Menu";
 // STYLES
 import "./styles/General.css";
 import "./styles/Container.css";
-import "./styles/Responsive/Container.css";
 
 export function App() {
   const [isLogin, setIsLogin] = useState(false);

@@ -1,3 +1,23 @@
+/*
+***********************************
+TO FIND THE STYLES QUICKLY, PRESS CTRL + F 
+AND TYPE THE FOLLOWING:
+
+(FOR MAIN CONTAINER COMPONENT)
+  MAIN COMPONENT
+(FOR RESPONSIVE DESIGN)
+  RESPONSIVE
+
+***********************************
+*/
+
+/*
+***********************************
+START STYLES FOR
+MAIN COMPONENT
+***********************************
+*/
+
 .Container__Content--Information--Medals--Modal {
   position: fixed;
   top: 0;
@@ -64,4 +84,16 @@
   border-color: var(--StrongPurple);
   color: var(--StrongPurple);
   cursor: pointer;
+}
+
+/*
+***********************************
+START RESPONSIVE DESIGN
+***********************************
+*/
+@media (width <= 450px) {
+  .Container__Content--Information--Medals--Modal--Content {
+    width: 95%;
+    margin: auto;
+  }
 }

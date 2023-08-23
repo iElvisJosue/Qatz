@@ -5,9 +5,9 @@ import { LoginDetails } from "./LoginDetails";
 import "../styles/Login.css";
 
 export function Login({ updateStateIsLogin }) {
-  const [seeHelpModal, setHelpModal] = useState(false);
+  const [seeHelpDetails, setHelpDetails] = useState(false);
 
-  const iconModal = seeHelpModal
+  const iconDetails = seeHelpDetails
     ? "remove-circle-outline"
     : "help-circle-outline";
 
@@ -15,12 +15,12 @@ export function Login({ updateStateIsLogin }) {
     <section className="Container__Login">
       <button
         className="Container__Login--Help"
-        onClick={() => setHelpModal(!seeHelpModal)}
+        onClick={() => setHelpDetails(!seeHelpDetails)}
       >
-        <ion-icon name={iconModal}></ion-icon>
+        <ion-icon name={iconDetails}></ion-icon>
       </button>
       <LoginContent updateStateIsLogin={() => updateStateIsLogin(true)} />
-      <LoginDetails seeHelpModal={seeHelpModal} />
+      <LoginDetails seeHelpDetails={seeHelpDetails} />
     </section>
   );
 }
