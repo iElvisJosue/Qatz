@@ -40,7 +40,7 @@
   position: relative;
   width: 400px;
   right: -100%;
-  padding: 20px;
+  padding: 10px;
   background-color: var(--WeakPurple);
 
   display: flex;
