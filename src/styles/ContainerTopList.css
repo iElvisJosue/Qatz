@@ -37,6 +37,7 @@ MAIN COMPONENT
   gap: 20px;
 
   transition: 0.5s ease-in-out all;
+  z-index: 800;
 }
 
 /*
@@ -47,7 +48,6 @@ START STYLES FOR
 */
 
 .Container__TopList.Show {
-  z-index: 10;
   left: 0;
 }
 .Container__TopList--Button {
@@ -64,6 +64,7 @@ START STYLES FOR
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 700;
 
   transition: 0.5s ease-in-out all;
   transform-origin: left;

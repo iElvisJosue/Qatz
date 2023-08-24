@@ -95,7 +95,7 @@ export function App() {
             updateStateIsLogin={updateStateIsLogin}
           />
           <ContainerTopList contentUserScores={contentUserScores} />
-          <ContainerGame />
+          <ContainerGame contentDataUser={contentDataUser} />
           <ContainerInformation
             updateStateIsLogin={updateStateIsLogin}
             contentDataUser={contentDataUser}

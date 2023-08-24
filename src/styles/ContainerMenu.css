@@ -80,14 +80,14 @@ START STYLES <button>
   align-items: center;
   justify-content: center;
 
-  z-index: 998;
+  z-index: 700;
   transition: 0.3s ease-in-out;
 }
 .Container__Menu--Button.Show {
   transform: scale(0);
 }
 .Container__Menu--Content.Show {
-  z-index: 999;
+  z-index: 900;
   opacity: 1;
 }
 

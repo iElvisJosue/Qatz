@@ -1,9 +1,34 @@
+import { useState } from "react";
+import { ContainerGameLevels } from "./ContainerGameLevels";
+import { ContainerGameContent } from "./ContainerGameContent";
+
 import "../styles/ContainerGame.css";
 
-export function ContainerGame() {
+export function ContainerGame({ contentDataUser }) {
+  const [showLevels, setShowLeves] = useState(0);
+
+  const gameTotalLevels = Object.values(contentDataUser.levels);
+
   return (
-    <div className="Container__Game">
-      <h1>GAME</h1>
-    </div>
+    <section className="Container__Game">
+      {showLevels === 0 ? (
+        gameTotalLevels.map((currentLevel, index) => {
+          const levelTotalQuestions = currentLevel.levelQuestions.length;
+          return (
+            <ContainerGameLevels
+              key={index}
+              nameLevel={currentLevel.name}
+              questionsLevel={levelTotalQuestions}
+              difficultyLevel={currentLevel.difficulty}
+              scoreLevel={currentLevel.score}
+              progressLevel={currentLevel.progress}
+              setShowLeves={setShowLeves}
+            />
+          );
+        })
+      ) : (
+        <ContainerGameContent />
+      )}
+    </section>
   );
 }
