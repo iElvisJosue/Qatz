@@ -17,6 +17,7 @@ export function ContainerGame({ contentDataUser }) {
           return (
             <ContainerGameLevels
               key={index}
+              idLevel={index + 1}
               nameLevel={currentLevel.name}
               questionsLevel={levelTotalQuestions}
               difficultyLevel={currentLevel.difficulty}
@@ -27,7 +28,11 @@ export function ContainerGame({ contentDataUser }) {
           );
         })
       ) : (
-        <ContainerGameContent />
+        <ContainerGameContent
+          gameTotalLevels={gameTotalLevels}
+          showLevels={showLevels}
+          setShowLeves={setShowLeves}
+        />
       )}
     </section>
   );
