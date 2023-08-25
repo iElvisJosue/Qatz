@@ -38,7 +38,7 @@ export function ContainerLoginContent({ updateStateIsLogin }) {
   function inputValidateCorrect(inputUsernameValue) {
     setDataUser(inputUsernameValue, imageProfile);
     addNewUserScores(inputUsernameValue, imageProfile);
-    updateStateIsLogin();
+    updateStateIsLogin(true);
   }
   function inputValidateWrong(inputUsername, inputUsernameValue) {
     inputUsername.value = "Solo letras y/o números 🚫";
