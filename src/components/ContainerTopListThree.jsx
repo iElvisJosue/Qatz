@@ -19,7 +19,7 @@ export function ContainerTopListThree({ topThree, setSeeToplist }) {
           </b>
           {index === 0 ? (
             <img
-              src="../../public/Crown.png"
+              src="./Crown.png"
               alt="First Place"
               className="Container__TopList--TopThree--User--Box--Crown"
             />

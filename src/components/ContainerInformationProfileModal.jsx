@@ -12,10 +12,7 @@ export function ContainerInformationProfileModal({
           ¿ELIMINAR PERFIL?
         </b>
         <picture className="Container__Information--Profile--Delete--Modal--Image">
-          <img
-            src="../../public/Modals/DeleteProfile.png"
-            alt="Delete profile"
-          />
+          <img src="./Modals/DeleteProfile.png" alt="Delete profile" />
         </picture>
         <p className="Container__Information--Profile--Delete--Modal--Details">
           Esta acción eliminará tu perfil de manera irreversible y todos tus
