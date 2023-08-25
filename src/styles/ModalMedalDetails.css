@@ -91,9 +91,9 @@ MAIN COMPONENT
 START RESPONSIVE DESIGN
 ***********************************
 */
-@media (width <= 450px) {
+/* @media (width <= 450px) {
   .Container__Information--Medals--Modal--Content {
     width: 95%;
     margin: auto;
   }
-}
+} */

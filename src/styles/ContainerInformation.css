@@ -598,7 +598,7 @@ START ANIMATIONS
 START RESPONSIVE DESIGN
 ***********************************
 */
-@media (width <= 1000px) {
+/* @media (width <= 1000px) {
   .Container__Information {
     display: none;
   }
@@ -618,4 +618,4 @@ START RESPONSIVE DESIGN
     min-height: 350px;
     height: 350px;
   }
-}
+} */
