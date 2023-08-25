@@ -24,7 +24,7 @@ export function App() {
   }, []);
 
   const updateStateIsLogin = (response) => {
-    response ? checkUserExist() : false;
+    response ? checkUserExist() : setIsLogin(response);
   };
 
   const checkScoresExist = () => {
@@ -33,16 +33,6 @@ export function App() {
       ? updateContentUserScores(checkUserScores)
       : setUserScores();
   };
-
-  // const updateUserScoreLevel = () => {
-  //   const oldScoreLevel = contentDataUser.levels.levelBeginner.score;
-  //   const newScoreLevel = oldScoreLevel + 10;
-  //   contentDataUser.levels.levelBeginner.score = newScoreLevel;
-  //   localStorage.setItem(DATA_USER, JSON.stringify(contentDataUser));
-  //   const updatedUserData = JSON.parse(localStorage.getItem(DATA_USER));
-  //   updateContentDataUser(updatedUserData);
-  //   updateLeadBoard();
-  // };
 
   const checkUserExist = () => {
     if (localStorage.getItem(DATA_USER)) {
