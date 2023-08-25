@@ -29,9 +29,11 @@ export function App() {
 
   const checkScoresExist = () => {
     const checkUserScores = JSON.parse(localStorage.getItem(USER_SCORES));
-    checkUserScores
-      ? updateContentUserScores(checkUserScores)
-      : setUserScores();
+    if (checkUserScores) {
+      updateContentUserScores(checkUserScores);
+    } else {
+      setUserScores(), checkScoresExist();
+    }
   };
 
   const checkUserExist = () => {

@@ -822,7 +822,7 @@ export function setDataUser(userName, userImage) {
       },
     },
   };
-  localStorage.setItem("dataUser", JSON.stringify(dataUser));
+  localStorage.setItem(DATA_USER, JSON.stringify(dataUser));
 }
 
 export function setUserScores() {
@@ -918,7 +918,7 @@ export function setUserScores() {
       userScore: 470,
     },
   };
-  localStorage.setItem("userScores", JSON.stringify(userScores));
+  localStorage.setItem(USER_SCORES, JSON.stringify(userScores));
 }
 
 export function getUserTotalScore(contentDataUser) {
