@@ -24,8 +24,8 @@ export function App() {
   }, []);
 
   const updateStateIsLogin = (response) => {
-    setIsLogin(response);
     response ? checkUserExist() : false;
+    setIsLogin(response);
   };
 
   const checkScoresExist = () => {
