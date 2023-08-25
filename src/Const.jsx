@@ -29,7 +29,7 @@ export function setDataUser(userName, userImage) {
     userImage,
     levels: {
       levelBeginner: {
-        image: "./public/Levels/Novato.png",
+        image: "./Levels/Novato.png",
         imageAlt: "Imagen del nivel Novato",
         name: "Novato",
         class: "Beginner",
@@ -86,7 +86,7 @@ export function setDataUser(userName, userImage) {
         difficulty: 1,
       },
       levelFeline: {
-        image: "./public/Levels/Curioso.png",
+        image: "./Levels/Curioso.png",
         imageAlt: "Imagen del nivel Felino Curioso",
         name: "Felino Curioso",
         class: "Feline",
@@ -158,7 +158,7 @@ export function setDataUser(userName, userImage) {
         difficulty: 3,
       },
       levelKitty: {
-        image: "./public/Levels/Experto.png",
+        image: "./Levels/Experto.png",
         imageAlt: "Imagen del nivel Gatito Experto",
         name: "Gatito Experto",
         class: "Kitty",
@@ -242,7 +242,7 @@ export function setDataUser(userName, userImage) {
         difficulty: 5,
       },
       levelRaces: {
-        image: "./public/Levels/Razas.png",
+        image: "./Levels/Razas.png",
         imageAlt: "Imagen del nivel Amante de Razas",
         name: "Amante de Razas",
         class: "Races",
@@ -344,7 +344,7 @@ export function setDataUser(userName, userImage) {
         difficulty: 4,
       },
       levelCuriosities: {
-        image: "./public/Levels/Curiosidades.png",
+        image: "./Levels/Curiosidades.png",
         imageAlt: "Imagen del nivel Curiosidades Felinas",
         name: "Curiosidades Felinas",
         class: "Curiosities",
@@ -431,7 +431,7 @@ export function setDataUser(userName, userImage) {
         difficulty: 4,
       },
       levelHealth: {
-        image: "./public/Levels/Salud.png",
+        image: "./Levels/Salud.png",
         imageAlt: "Imagen del nivel Salud Gatuna",
         name: "Salud Gatuna",
         class: "Health",
@@ -541,7 +541,7 @@ export function setDataUser(userName, userImage) {
         difficulty: 6,
       },
       levelMyths: {
-        image: "./public/Levels/Mitos.png",
+        image: "./Levels/Mitos.png",
         imageAlt: "Imagen del nivel Mitos y Leyendas",
         name: "Mitos y Leyendas",
         class: "Myths",
@@ -625,7 +625,7 @@ export function setDataUser(userName, userImage) {
         difficulty: 3,
       },
       levelMaster: {
-        image: "./public/Levels/Maestro.png",
+        image: "./Levels/Maestro.png",
         imageAlt: "Imagen del nivel Maestro Felino",
         name: "Maestro Felino",
         class: "Master",
@@ -742,81 +742,81 @@ export function setDataUser(userName, userImage) {
     medals: {
       medalBeginner: {
         name: "¡Esto apenas comienza!",
-        image: "./public/Medals/Novato.png",
+        image: "./Medals/Novato.png",
         description:
           "Responde correctamente todas las preguntas del nivel Novato.",
         isObtained: false,
       },
       medalFeline: {
         name: "¡Amante de lo curioso!",
-        image: "./public/Medals/FelinoCurioso.png",
+        image: "./Medals/FelinoCurioso.png",
         description:
           "Responde correctamente todas las preguntas del nivel Felino Curioso.",
         isObtained: false,
       },
       medalKitty: {
         name: "¿No hay algo más difícil?",
-        image: "./public/Medals/GatitoExperto.png",
+        image: "./Medals/GatitoExperto.png",
         description:
           "Responde correctamente todas las preguntas del nivel Gatito Experto.",
         isObtained: false,
       },
       medalRaces: {
         name: "¡Las razas no son problema!",
-        image: "./public/Medals/AmanteDeRazas.png",
+        image: "./Medals/AmanteDeRazas.png",
         description:
           "Responde correctamente todas las preguntas del nivel Amante de Razas.",
         isObtained: false,
       },
       medalCuriosities: {
         name: "¡Nada que no sepa!",
-        image: "./public/Medals/CuriosidadesFelinas.png",
+        image: "./Medals/CuriosidadesFelinas.png",
         description:
           "Responde correctamente todas las preguntas del nivel Curiosidades Felinas.",
         isObtained: false,
       },
       medalHealth: {
         name: "¡Veterinario Gatuno!",
-        image: "./public/Medals/SaludGatuna.png",
+        image: "./Medals/SaludGatuna.png",
         description:
           "Responde correctamente todas las preguntas del nivel Salud Gatuna.",
         isObtained: false,
       },
       medalMyths: {
         name: "¡Lo sé todo!",
-        image: "./public/Medals/MitosLeyendas.png",
+        image: "./Medals/MitosLeyendas.png",
         description:
           "Responde correctamente todas las preguntas del nivel Mitos y Leyendas.",
         isObtained: false,
       },
       medalMaster: {
         name: "¡Uno con los gatos!",
-        image: "./public/Medals/Maestro.png",
+        image: "./Medals/Maestro.png",
         description:
           "Responde correctamente todas las preguntas del nivel Maestro.",
         isObtained: false,
       },
       medalEnthusiastic: {
         name: "¡Nada puede detenerme!",
-        image: "./public/Medals/Entusiasta.png",
+        image: "./Medals/Entusiasta.png",
         description: "Completa la mitad de los niveles.",
         isObtained: false,
       },
       medalAmazing: {
         name: "¡Más, más, más!",
-        image: "./public/Medals/Impresionante.png",
+        image: "./Medals/Impresionante.png",
         description: "Obtén 20 preguntas correctas.",
         isObtained: false,
       },
       medalExpert: {
         name: "¡Experto Felino!",
-        image: "./public/Medals/Experto.png",
+        image: "./Medals/Experto.png",
         description: "Obtén 40 preguntas correctas.",
         isObtained: false,
       },
       medalKingQueen: {
         name: "¡QATZ Master!",
-        image: "./public/Medals/ReyReina.png",
+        image: "./Medals/ReyReina.png",
         description: "Consigue una puntuación perfecta en todos los niveles.",
         isObtained: false,
       },
