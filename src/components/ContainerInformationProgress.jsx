@@ -1,10 +1,7 @@
 import { useState } from "react";
 import { ContainerInformationProgressLevel } from "./ContainerInformationProgressLevel";
 
-export function ContainerInformationProgress({
-  contentDataUser,
-  updateDataUser,
-}) {
+export function ContainerInformationProgress({ contentDataUser }) {
   const totalLevels = Object.values(contentDataUser.levels);
 
   const [seeProgress, setSeeProgress] = useState(false);
@@ -45,7 +42,6 @@ export function ContainerInformationProgress({
             classLevel={classLevel}
             totalLevelQuestions={totalLevelQuestions}
             contentDataUser={contentDataUser}
-            updateDataUser={updateDataUser}
           />
         );
       })}

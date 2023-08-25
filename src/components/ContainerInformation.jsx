@@ -4,11 +4,7 @@ import { ContainerInformationProgress } from "./ContainerInformationProgress";
 
 import "../styles/ContainerInformation.css";
 
-export function ContainerInformation({
-  updateStateIsLogin,
-  contentDataUser,
-  updateDataUser,
-}) {
+export function ContainerInformation({ updateStateIsLogin, contentDataUser }) {
   return (
     <section className="Container__Information">
       <ContainerInformationProfile
@@ -17,10 +13,7 @@ export function ContainerInformation({
         updateStateIsLogin={updateStateIsLogin}
       />
       <ContainerInformationMedals contentDataUser={contentDataUser} />
-      <ContainerInformationProgress
-        contentDataUser={contentDataUser}
-        updateDataUser={updateDataUser}
-      />
+      <ContainerInformationProgress contentDataUser={contentDataUser} />
     </section>
   );
 }

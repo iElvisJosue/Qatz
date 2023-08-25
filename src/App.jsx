@@ -28,22 +28,6 @@ export function App() {
     checkUserExist();
   }, []);
 
-  const updateDataUser = (
-    fullyNameLevel,
-    currentProgressLevel,
-    totalLevelQuestions
-  ) => {
-    if (currentProgressLevel < totalLevelQuestions) {
-      // contentDataUser.levels.progress[fullyNameLevel] ES PROGRESO
-      // DEL NIVEL SELECCIONADO
-      contentDataUser.levels[fullyNameLevel].progress =
-        currentProgressLevel + 1;
-      localStorage.setItem(DATA_USER, JSON.stringify(contentDataUser));
-      const updatedUserData = JSON.parse(localStorage.getItem(DATA_USER));
-      updateContentDataUser(updatedUserData);
-    }
-  };
-
   const updateStateIsLogin = (response) => {
     setIsLogin(response);
     response ? checkUserExist() : false;
@@ -91,15 +75,16 @@ export function App() {
         <>
           <ContainerMenu
             contentDataUser={contentDataUser}
-            updateDataUser={updateDataUser}
             updateStateIsLogin={updateStateIsLogin}
           />
           <ContainerTopList contentUserScores={contentUserScores} />
-          <ContainerGame contentDataUser={contentDataUser} />
+          <ContainerGame
+            contentDataUser={contentDataUser}
+            updateContentDataUser={updateContentDataUser}
+          />
           <ContainerInformation
             updateStateIsLogin={updateStateIsLogin}
             contentDataUser={contentDataUser}
-            updateDataUser={updateDataUser}
             // updateUserScoreLevel={updateUserScoreLevel}
           />
         </>

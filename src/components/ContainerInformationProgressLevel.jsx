@@ -5,12 +5,11 @@ export function ContainerInformationProgressLevel({
   classLevel,
   totalLevelQuestions,
   contentDataUser,
-  updateDataUser,
 }) {
+  const classNameLevel = `Container__Information--Progress--Level ${classLevel}`;
+
   const fullyNameLevel = `level${classLevel}`;
   const currentProgressLevel = contentDataUser.levels[fullyNameLevel].progress;
-
-  const classNameLevel = `Container__Information--Progress--Level ${classLevel}`;
 
   function calculatePercentage() {
     const totalProgress = (currentProgressLevel / totalLevelQuestions) * 100;
@@ -18,16 +17,7 @@ export function ContainerInformationProgressLevel({
   }
 
   return (
-    <div
-      className={classNameLevel}
-      onClick={() =>
-        updateDataUser(
-          fullyNameLevel,
-          currentProgressLevel,
-          totalLevelQuestions
-        )
-      }
-    >
+    <div className={classNameLevel}>
       <picture className="Container__Information--Progress--Level--Box">
         <img src={imageLevel} alt={altImageLevel} />
       </picture>

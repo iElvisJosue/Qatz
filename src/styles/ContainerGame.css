@@ -26,12 +26,11 @@ MAIN COMPONENT
   grid-column: span 3;
   background: var(--WeakPurple);
   padding: 10px;
-  height: 100vh;
+  height: auto;
   overflow: auto;
 
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(4, 200px);
   gap: 10px;
 }
 
@@ -45,6 +44,7 @@ COMPONENT <ContainerGameLevels>
 .Container__Game--Levels {
   position: relative;
   grid-column: span 1;
+  height: 200px;
   background-color: var(--White);
   border-radius: var(--BorderRadius);
   border: 2px solid transparent;
@@ -322,6 +322,285 @@ COMPONENT <ContainerGameContent>
 ***********************************
 */
 
+.Container__Game--Content {
+  grid-column: span 2;
+  height: 600px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.Container__Game--Content--Header {
+  position: relative;
+  height: 60px;
+  background-color: var(--WeakPurple);
+  padding: 10px 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Container__Game--Content--Header--Back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  background-color: transparent;
+  border: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Container__Game--Content--Header--Back.Beginner,
+.Container__Game--Content--Header--Progress--Name.Beginner {
+  color: var(--StrongOrange);
+}
+.Container__Game--Content--Header--Back.Feline,
+.Container__Game--Content--Header--Progress--Name.Feline {
+  color: var(--StrongPurple);
+}
+.Container__Game--Content--Header--Back.Kitty,
+.Container__Game--Content--Header--Progress--Name.Kitty {
+  color: var(--StrongBlue);
+}
+.Container__Game--Content--Header--Back.Races,
+.Container__Game--Content--Header--Progress--Name.Races {
+  color: var(--StrongGreen);
+}
+.Container__Game--Content--Header--Back.Curiosities,
+.Container__Game--Content--Header--Progress--Name.Curiosities {
+  color: var(--StrongGray);
+}
+.Container__Game--Content--Header--Back.Health,
+.Container__Game--Content--Header--Progress--Name.Health {
+  color: var(--StrongRed);
+}
+.Container__Game--Content--Header--Back.Myths,
+.Container__Game--Content--Header--Progress--Name.Myths {
+  color: var(--StrongLila);
+}
+.Container__Game--Content--Header--Back.Master,
+.Container__Game--Content--Header--Progress--Name.Master {
+  color: var(--Gold);
+}
+.Container__Game--Content--Header--Progress {
+  text-align: center;
+}
+.Container__Game--Content--Header--Progress--Name {
+  font-size: var(--H3);
+  font-weight: bold;
+}
+.Container__Game--Content--Header--Progress--Bar {
+  height: 10px;
+  border-radius: var(--BorderRadius);
+}
+.Container__Game--Content--Header--Progress--Bar::-webkit-progress-bar {
+  background-color: var(--White);
+  border-radius: var(--BorderRadius);
+}
+.Container__Game--Content--Header--Progress--Bar::-webkit-progress-value {
+  border-radius: var(--BorderRadius);
+}
+.Container__Game--Content--Header--Progress--Bar.Beginner::-webkit-progress-value {
+  background-color: var(--StrongOrange);
+}
+.Container__Game--Content--Header--Progress--Bar.Feline::-webkit-progress-value {
+  background-color: var(--StrongPurple);
+}
+.Container__Game--Content--Header--Progress--Bar.Kitty::-webkit-progress-value {
+  background-color: var(--StrongBlue);
+}
+.Container__Game--Content--Header--Progress--Bar.Races::-webkit-progress-value {
+  background-color: var(--StrongGreen);
+}
+.Container__Game--Content--Header--Progress--Bar.Curiosities::-webkit-progress-value {
+  background-color: var(--StrongGray);
+}
+.Container__Game--Content--Header--Progress--Bar.Health::-webkit-progress-value {
+  background-color: var(--StrongRed);
+}
+.Container__Game--Content--Header--Progress--Bar.Myths::-webkit-progress-value {
+  background-color: var(--StrongLila);
+}
+.Container__Game--Content--Header--Progress--Bar.Master::-webkit-progress-value {
+  background-color: var(--Gold);
+}
+.Container__Game--Content--Details {
+  background: var(--White);
+  border-radius: var(--BorderRadius);
+  box-shadow: var(--BoxShadow);
+  padding: 10px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.Container__Game--Content-Details--Image {
+  width: 500px;
+  height: 300px;
+  margin: auto;
+}
+.Container__Game--Content-Details--Image img {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--BorderRadius);
+}
+.Container__Game--Content--Details--Points {
+  padding: 10px 20px;
+  text-align: center;
+  border-radius: var(--BorderRadius);
+  margin: 0 auto;
+  font-weight: bold;
+}
+.Container__Game--Content--Details--Points.Beginner {
+  background-color: var(--StrongOrange);
+  color: var(--WeakOrange);
+}
+.Container__Game--Content--Details--Points.Feline {
+  background-color: var(--StrongPurple);
+  color: var(--WeakPurple);
+}
+.Container__Game--Content--Details--Points.Kitty {
+  background-color: var(--StrongBlue);
+  color: var(--WeakBlue);
+}
+.Container__Game--Content--Details--Points.Races {
+  background-color: var(--StrongGreen);
+  color: var(--WeakGreen);
+}
+.Container__Game--Content--Details--Points.Curiosities {
+  background-color: var(--StrongGray);
+  color: var(--WeakGray);
+}
+.Container__Game--Content--Details--Points.Health {
+  background-color: var(--StrongRed);
+  color: var(--WeakRed);
+}
+.Container__Game--Content--Details--Points.Myths {
+  background-color: var(--StrongLila);
+  color: var(--WeakLila);
+}
+.Container__Game--Content--Details--Points.Master {
+  background-color: var(--Gold);
+  color: var(--WeakGold);
+}
+.Container__Game--Content--Details--Tittle {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+.Container__Game--Content--Details--Tittle.Beginner {
+  color: var(--StrongOrange);
+}
+.Container__Game--Content--Details--Tittle.Feline {
+  color: var(--StrongPurple);
+}
+.Container__Game--Content--Details--Tittle.Kitty {
+  color: var(--StrongBlue);
+}
+.Container__Game--Content--Details--Tittle.Races {
+  color: var(--StrongGreen);
+}
+.Container__Game--Content--Details--Tittle.Curiosities {
+  color: var(--StrongGray);
+}
+.Container__Game--Content--Details--Tittle.Health {
+  color: var(--StrongRed);
+}
+.Container__Game--Content--Details--Tittle.Myths {
+  color: var(--StrongLila);
+}
+.Container__Game--Content--Details--Tittle.Master {
+  color: var(--Gold);
+}
+.Container__Game--Content--Details--Answers {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+.Container__Game--Content--Details--Answers--Option {
+  grid-column: span 1;
+  min-height: 100px;
+  height: auto;
+  padding: 10px;
+  border-radius: var(--BorderRadius);
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: 0.5s ease-in-out all;
+}
+.Container__Game--Content--Details--Answers--Option.Beginner {
+  background-color: var(--WeakOrange);
+  color: var(--StrongOrange);
+}
+.Container__Game--Content--Details--Answers--Option.Beginner:hover {
+  background-color: var(--StrongOrange);
+  color: var(--White);
+}
+.Container__Game--Content--Details--Answers--Option.Feline {
+  background-color: var(--WeakPurple);
+  color: var(--StrongPurple);
+}
+.Container__Game--Content--Details--Answers--Option.Feline:hover {
+  background-color: var(--StrongPurple);
+  color: var(--White);
+}
+.Container__Game--Content--Details--Answers--Option.Kitty {
+  background-color: var(--WeakBlue);
+  color: var(--StrongBlue);
+}
+.Container__Game--Content--Details--Answers--Option.Kitty:hover {
+  background-color: var(--StrongBlue);
+  color: var(--White);
+}
+.Container__Game--Content--Details--Answers--Option.Races {
+  background-color: var(--WeakGreen);
+  color: var(--StrongGreen);
+}
+.Container__Game--Content--Details--Answers--Option.Races:hover {
+  background-color: var(--StrongGreen);
+  color: var(--White);
+}
+.Container__Game--Content--Details--Answers--Option.Curiosities {
+  background-color: var(--WeakGray);
+  color: var(--StrongGray);
+}
+.Container__Game--Content--Details--Answers--Option.Curiosities:hover {
+  background-color: var(--StrongGray);
+  color: var(--White);
+}
+.Container__Game--Content--Details--Answers--Option.Health {
+  background-color: var(--WeakRed);
+  color: var(--StrongRed);
+}
+.Container__Game--Content--Details--Answers--Option.Health:hover {
+  background-color: var(--StrongRed);
+  color: var(--White);
+}
+.Container__Game--Content--Details--Answers--Option.Myths {
+  background-color: var(--WeakLila);
+  color: var(--StrongLila);
+}
+.Container__Game--Content--Details--Answers--Option.Myths:hover {
+  background-color: var(--StrongLila);
+  color: var(--White);
+}
+.Container__Game--Content--Details--Answers--Option.Master {
+  background-color: var(--WeakGold);
+  color: var(--Gold);
+}
+.Container__Game--Content--Details--Answers--Option.Master:hover {
+  background-color: var(--Gold);
+  color: var(--White);
+}
+
 /*
 ***********************************
 START ANIMATIONS
@@ -344,14 +623,32 @@ START ANIMATIONS
 START RESPONSIVE DESIGN
 ***********************************
 */
+@media (width >= 1440px) {
+  .Container__Game--Levels {
+    height: auto;
+  }
+}
 @media (width <= 1000px) {
   .Container__Game {
     grid-column: span 3;
   }
 }
+@media (width <= 768px) {
+  .Container__Game--Content--Details--Answers {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (width <= 578px) {
+  .Container__Game--Content-Details--Image {
+    width: 100%;
+    height: auto;
+  }
+}
 @media (width <= 500px) {
   .Container__Game {
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(8, 200px);
+  }
+  .Container__Game--Content--Details--Answers {
+    grid-template-columns: 1fr;
   }
 }
