@@ -20,9 +20,7 @@ export function ContainerLogin({ updateStateIsLogin }) {
         >
           <ion-icon name={iconDetails}></ion-icon>
         </button>
-        <ContainerLoginContent
-          updateStateIsLogin={() => updateStateIsLogin(true)}
-        />
+        <ContainerLoginContent updateStateIsLogin={updateStateIsLogin} />
         <ContainerLoginDetails seeHelpDetails={seeHelpDetails} />
       </div>
     </section>
