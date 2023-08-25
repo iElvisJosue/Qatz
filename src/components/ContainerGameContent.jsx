@@ -1,8 +1,9 @@
-import { DATA_USER } from "../Const";
+import { DATA_USER, USER_SCORES, getUserTotalScore } from "../Const";
 
 export function ContainerGameContent({
   contentDataUser,
   updateContentDataUser,
+  updateContentUserScores,
   gameTotalLevels,
   showLevels,
   setShowLeves,
@@ -38,11 +39,22 @@ export function ContainerGameContent({
     updateContentDataUser(updateScoreLevel);
   }
 
+  function updateLeadBoard() {
+    const newUserTotalScore = getUserTotalScore(contentDataUser);
+    const getUserScores = JSON.parse(localStorage.getItem(USER_SCORES));
+    const getTotalUserScores = Object.keys(getUserScores).length;
+    const getNameUser = `user${getTotalUserScores}`;
+    getUserScores[getNameUser].userScore = newUserTotalScore;
+    localStorage.setItem(USER_SCORES, JSON.stringify(getUserScores));
+    const updatedUserScores = JSON.parse(localStorage.getItem(USER_SCORES));
+    updateContentUserScores(updatedUserScores);
+  }
+
   function checkAnswer(event, answerQuestion) {
     const answerSelected = Number(event.target.id);
     updateProgressLevel();
     answerSelected === answerQuestion
-      ? updateScoreLevel()
+      ? (updateScoreLevel(), updateLeadBoard())
       : alert("INCORRECTO");
   }
 

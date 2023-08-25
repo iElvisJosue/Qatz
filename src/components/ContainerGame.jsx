@@ -4,7 +4,11 @@ import { ContainerGameContent } from "./ContainerGameContent";
 
 import "../styles/ContainerGame.css";
 
-export function ContainerGame({ contentDataUser, updateContentDataUser }) {
+export function ContainerGame({
+  contentDataUser,
+  updateContentDataUser,
+  updateContentUserScores,
+}) {
   const [showLevels, setShowLeves] = useState(0);
 
   const gameTotalLevels = Object.values(contentDataUser.levels);
@@ -31,6 +35,7 @@ export function ContainerGame({ contentDataUser, updateContentDataUser }) {
         <ContainerGameContent
           contentDataUser={contentDataUser}
           updateContentDataUser={updateContentDataUser}
+          updateContentUserScores={updateContentUserScores}
           gameTotalLevels={gameTotalLevels}
           showLevels={showLevels}
           setShowLeves={setShowLeves}

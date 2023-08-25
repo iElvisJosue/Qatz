@@ -3,12 +3,7 @@ import { useState, useEffect } from "react";
 
 // COMPONENTS
 import { ContainerLogin } from "./components/ContainerLogin";
-import {
-  setUserScores,
-  // getUserTotalScore,
-  USER_SCORES,
-  DATA_USER,
-} from "./Const";
+import { setUserScores, USER_SCORES, DATA_USER } from "./Const";
 import { ContainerMenu } from "./components/ContainerMenu";
 import { ContainerTopList } from "./components/ContainerTopList";
 import { ContainerInformation } from "./components/ContainerInformation";
@@ -50,17 +45,6 @@ export function App() {
   //   updateLeadBoard();
   // };
 
-  // const updateLeadBoard = () => {
-  //   const newUserTotalScore = getUserTotalScore(contentDataUser);
-  //   const getUserScores = JSON.parse(localStorage.getItem(USER_SCORES));
-  //   const getTotalUserScores = Object.keys(getUserScores).length;
-  //   const getNameUser = `user${getTotalUserScores}`;
-  //   getUserScores[getNameUser].userScore = newUserTotalScore;
-  //   localStorage.setItem(USER_SCORES, JSON.stringify(getUserScores));
-  //   const updatedUserScores = JSON.parse(localStorage.getItem(USER_SCORES));
-  //   updateContentUserScores(updatedUserScores);
-  // };
-
   const checkUserExist = () => {
     if (localStorage.getItem(DATA_USER)) {
       setIsLogin(true);
@@ -81,6 +65,7 @@ export function App() {
           <ContainerGame
             contentDataUser={contentDataUser}
             updateContentDataUser={updateContentDataUser}
+            updateContentUserScores={updateContentUserScores}
           />
           <ContainerInformation
             updateStateIsLogin={updateStateIsLogin}
