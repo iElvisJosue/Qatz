@@ -25,7 +25,6 @@ export function App() {
 
   const updateStateIsLogin = (response) => {
     response ? checkUserExist() : false;
-    setIsLogin(response);
   };
 
   const checkScoresExist = () => {
@@ -47,9 +46,9 @@ export function App() {
 
   const checkUserExist = () => {
     if (localStorage.getItem(DATA_USER)) {
-      setIsLogin(true);
       const dataUser = JSON.parse(localStorage.getItem(DATA_USER));
       updateContentDataUser(dataUser);
+      setIsLogin(true);
     }
   };
 
