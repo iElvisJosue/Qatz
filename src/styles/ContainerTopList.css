@@ -399,7 +399,7 @@ START RESPONSIVE
 ***********************************
 */
 
-/* @media (width <= 450px) {
+@media (width <= 450px) {
   .Container__TopList {
     width: 100%;
     left: -100%;
@@ -409,4 +409,4 @@ START RESPONSIVE
   .Container__TopList--TopThree--Close {
     border-radius: 0;
   }
-} */
+}

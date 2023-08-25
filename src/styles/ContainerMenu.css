@@ -97,7 +97,7 @@ START RESPONSIVE DESIGN
 ***********************************
 */
 
-/* @media (width > 1000px) {
+@media (width > 1000px) {
   .Container__Menu--Button {
     transform: scale(0) !important;
   }
@@ -115,4 +115,4 @@ START RESPONSIVE DESIGN
     padding: 0;
     background-color: var(--White);
   }
-} */
+}

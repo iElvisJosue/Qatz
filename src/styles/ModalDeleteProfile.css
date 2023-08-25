@@ -107,9 +107,9 @@ START RESPONSIVE DESIGN
 ***********************************
 */
 
-/* @media (width <= 450px) {
+@media (width <= 450px) {
   .Container__Information--Profile--Delete--Modal {
     width: 95%;
     margin: auto;
   }
-} */
+}
