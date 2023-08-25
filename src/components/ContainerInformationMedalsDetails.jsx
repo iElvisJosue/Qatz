@@ -17,8 +17,7 @@ export function ContainerInformationMedalsDetails({
           {medalName}
         </b>
         <picture className="Container__Information--Medals--Modal--Content--Image">
-          {/* <img src={medalImage} alt={medalName} /> */}
-          <img src="../../public/Medals/AmanteDeRazas.png" alt={medalName} />
+          <img src={medalImage} alt={medalName} />
         </picture>
         <p className="Container__Information--Medals--Modal--Content--Details">
           {medalDescription}
