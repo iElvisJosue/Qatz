@@ -939,6 +939,54 @@ export function setSortUserScores(userScores) {
   return sortScores;
 }
 
+export function checkMedalQuestionsCorrect(
+  contentDataUser,
+  updateContentDataUser
+) {
+  const arrUserScore = Object.values(contentDataUser.levels);
+  const arrAllScores = arrUserScore.map((e) => {
+    return e.score;
+  });
+  const totalUserScore = arrAllScores.reduce((a, b) => a + b);
+  if (totalUserScore === 200)
+    setMedalQuestionsCorrect(
+      contentDataUser,
+      updateContentDataUser,
+      "medalAmazing"
+    );
+  if (totalUserScore === 270)
+    setMedalQuestionsCorrect(
+      contentDataUser,
+      updateContentDataUser,
+      "medalEnthusiastic"
+    );
+  if (totalUserScore === 400)
+    setMedalQuestionsCorrect(
+      contentDataUser,
+      updateContentDataUser,
+      "medalExpert"
+    );
+  if (totalUserScore === 550)
+    setMedalQuestionsCorrect(
+      contentDataUser,
+      updateContentDataUser,
+      "medalKingQueen"
+    );
+}
+
+export function setMedalQuestionsCorrect(
+  contentDataUser,
+  updateContentDataUser,
+  nameMedal
+) {
+  contentDataUser.medals[nameMedal].isObtained = true;
+  localStorage.setItem(DATA_USER, JSON.stringify(contentDataUser));
+  const updateMedalTwentyQuestionsCorrect = JSON.parse(
+    localStorage.getItem(DATA_USER)
+  );
+  updateContentDataUser(updateMedalTwentyQuestionsCorrect);
+}
+
 export function addNewUserScores(userName, userImage) {
   const userScores = JSON.parse(localStorage.getItem("userScores"));
   const totalUserScores = Object.keys(userScores).length;
