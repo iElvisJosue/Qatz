@@ -901,3 +901,16 @@ START RESPONSIVE DESIGN
     grid-template-columns: 1fr;
   }
 }
+
+@media (width <= 450px) {
+  .Container__Game--Modal--Content {
+    width: 95%;
+    margin: auto;
+  }
+  .Container__Game--Completed--Image {
+    width: 200px;
+  }
+  .Container__Game--Completed--Title {
+    font-size: 16px;
+  }
+}
