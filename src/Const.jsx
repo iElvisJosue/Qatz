@@ -45,7 +45,7 @@ export function setDataUser(userName, userImage) {
           {
             title: "¿Cuántos bigotes en promedio tiene un gato?",
             answers: ["A) 10", "B) 18", "C) 24", "D) 30"],
-            answer: 1,
+            answer: 2,
             curiousFact:
               "Los gatos tienen 12 bigotes en cada lado de su rostro. Estos bigotes, llamados 'vibrissae', son sensibles al tacto y les ayudan a navegar en su entorno y medir espacios estrechos.",
           },
@@ -381,7 +381,7 @@ export function setDataUser(userName, userImage) {
               "A) Manadas.",
               "B) Colonias.",
               "C) Clanes.",
-              "D) Clanes.",
+              "D) Bandas.",
             ],
             answer: 1,
             curiousFact:
