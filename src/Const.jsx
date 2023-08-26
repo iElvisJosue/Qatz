@@ -552,7 +552,7 @@ export function setDataUser(userName, userImage) {
               "A) Sí, siempre lo hacen.",
               "B) No, solo caen de pie a veces.",
               "C) No, los gatos no caen de pie.",
-              "D) No, los gatos no caen de pie.",
+              "D) Si, pero depende de la altura",
             ],
             answer: 1,
             curiousFact:
@@ -673,7 +673,7 @@ export function setDataUser(userName, userImage) {
           },
           {
             title:
-              "¿Cuantos años vivió es el gato más antiguo registrado en la historia?",
+              "¿Cuantos años vivió el gato más antiguo registrado en la historia?",
             answers: [
               "A) 18 años.",
               "B) 24 años.",
