@@ -799,7 +799,7 @@ export function setDataUser(userName, userImage) {
       medalEnthusiastic: {
         name: "¡Nada puede detenerme!",
         image: "./Medals/Entusiasta.png",
-        description: "Completa la mitad de los niveles.",
+        description: "Completa la mitad de las preguntas.",
         isObtained: false,
       },
       medalAmazing: {
