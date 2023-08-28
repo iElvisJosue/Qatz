@@ -73,6 +73,7 @@ export function ContainerGameContent({
   }
 
   if (progressLevelSelected < levelSelectedTotalQuestions) {
+    const imageQuestion = levelSelectedQuestions[progressLevelSelected].image;
     const titleQuestion = levelSelectedQuestions[progressLevelSelected].title;
     const arrQuestions = levelSelectedQuestions[progressLevelSelected].answers;
     const answerQuestion = levelSelectedQuestions[progressLevelSelected].answer;
@@ -132,8 +133,8 @@ export function ContainerGameContent({
           <div className="Container__Game--Content--Details">
             <picture className="Container__Game--Content-Details--Image">
               <img
-                src="https://cope-cdnmed.agilecontent.com/resources/jpg/7/0/1673121316107.jpg"
-                alt=""
+                src={imageQuestion}
+                alt="Imagen de gatos relacionada con la pregunta"
               />
             </picture>
             <span
