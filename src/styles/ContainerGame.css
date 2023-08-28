@@ -900,6 +900,9 @@ START RESPONSIVE DESIGN
   .Container__Game--Content--Details--Answers {
     grid-template-columns: 1fr;
   }
+  .Container__Game--Content--Details--Answers--Option {
+    min-height: 75px;
+  }
 }
 
 @media (width <= 450px) {
