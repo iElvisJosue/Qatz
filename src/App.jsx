@@ -61,7 +61,6 @@ export function App() {
           <ContainerInformation
             updateStateIsLogin={updateStateIsLogin}
             contentDataUser={contentDataUser}
-            // updateUserScoreLevel={updateUserScoreLevel}
           />
         </>
       ) : (

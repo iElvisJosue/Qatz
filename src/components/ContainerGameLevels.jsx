@@ -1,11 +1,7 @@
 export function ContainerGameLevels({
-  idLevel,
-  nameLevel,
-  questionsLevel,
-  difficultyLevel,
-  scoreLevel,
-  progressLevel,
-  setShowLeves,
+  index,
+  currentLevel,
+  setShowLevelContent,
 }) {
   function getDifficulty(levelDifficulty) {
     const maxDifficulty = 7;
@@ -16,13 +12,16 @@ export function ContainerGameLevels({
     )}`;
   }
 
+  const levelTotalQuestions = currentLevel.levelQuestions.length;
+  const { name, difficulty, score, progress } = currentLevel;
+
   return (
     <div
       className="Container__Game--Levels"
-      id={idLevel}
-      onClick={(e) => setShowLeves(Number(e.currentTarget.id))}
+      id={index}
+      onClick={(e) => setShowLevelContent(Number(e.currentTarget.id))}
     >
-      {progressLevel === questionsLevel ? (
+      {progress === levelTotalQuestions ? (
         <span className="Container__Game--Levels--Completed">
           <ion-icon name="checkmark-done-circle"></ion-icon>
         </span>
@@ -31,22 +30,20 @@ export function ContainerGameLevels({
       )}
       <span className="Container__Game--Levels--Details">
         <p>
-          Nivel: <b>{nameLevel}</b>
+          Nivel: <b>{name}</b>
         </p>
         <p>
-          Preguntas: <b>{questionsLevel}</b>
+          Preguntas: <b>{levelTotalQuestions}</b>
         </p>
         <p>
-          Dificultad: <b>{getDifficulty(difficultyLevel)}</b>
+          Dificultad: <b>{getDifficulty(difficulty)}</b>
         </p>
       </span>
-      <b className="Container__Game--LevelBeginner--Score">
-        Score: {scoreLevel}
-      </b>
+      <b className="Container__Game--LevelBeginner--Score">Score: {score}</b>
       <progress
         className="Container__Game--LevelBeginner--Progress"
-        max={questionsLevel}
-        value={progressLevel}
+        max={levelTotalQuestions}
+        value={progress}
       ></progress>
     </div>
   );

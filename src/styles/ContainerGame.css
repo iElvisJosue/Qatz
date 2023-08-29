@@ -715,7 +715,6 @@ COMPONENT <ContainerGameModal>
   border-color: var(--StrongPurple);
   color: var(--StrongPurple);
 }
-
 /*
 ***********************************
 START STYLES FOR 
@@ -849,6 +848,39 @@ COMPONENT <ContainerGameCompleted>
 }
 .Container__Game--Completed--Back:hover {
   background-color: var(--WeakPurple);
+}
+/*
+***********************************
+START STYLES FOR 
+COMPONENT <ContainerGameMedalNotification> 
+***********************************
+*/
+
+.Container__Game--MedalNotification {
+  position: fixed;
+  top: -60px;
+  left: calc(50% - 150px);
+  background-color: var(--Gold);
+  color: var(--White);
+  font-weight: bold;
+
+  padding: 10px;
+  width: 300px;
+  height: 60px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  transition: 0.5s ease-in-out all;
+}
+.Container__Game--MedalNotification img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+.Container__Game--MedalNotification.Show {
+  top: 0;
 }
 /*
 ***********************************

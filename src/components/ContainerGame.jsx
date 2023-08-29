@@ -9,37 +9,32 @@ export function ContainerGame({
   updateContentDataUser,
   updateContentUserScores,
 }) {
-  const [showLevels, setShowLeves] = useState(0);
+  const [showLevelContent, setShowLevelContent] = useState(false);
 
   const gameTotalLevels = Object.values(contentDataUser.levels);
 
   return (
     <section className="Container__Game">
-      {showLevels === 0 ? (
-        gameTotalLevels.map((currentLevel, index) => {
-          const levelTotalQuestions = currentLevel.levelQuestions.length;
-          return (
-            <ContainerGameLevels
-              key={index}
-              idLevel={index + 1}
-              nameLevel={currentLevel.name}
-              questionsLevel={levelTotalQuestions}
-              difficultyLevel={currentLevel.difficulty}
-              scoreLevel={currentLevel.score}
-              progressLevel={currentLevel.progress}
-              setShowLeves={setShowLeves}
-            />
-          );
-        })
-      ) : (
+      {showLevelContent !== false ? (
         <ContainerGameContent
           contentDataUser={contentDataUser}
           updateContentDataUser={updateContentDataUser}
           updateContentUserScores={updateContentUserScores}
           gameTotalLevels={gameTotalLevels}
-          showLevels={showLevels}
-          setShowLeves={setShowLeves}
+          showLevelContent={showLevelContent}
+          setShowLevelContent={setShowLevelContent}
         />
+      ) : (
+        gameTotalLevels.map((currentLevel, index) => {
+          return (
+            <ContainerGameLevels
+              key={index}
+              index={index}
+              currentLevel={currentLevel}
+              setShowLevelContent={setShowLevelContent}
+            />
+          );
+        })
       )}
     </section>
   );

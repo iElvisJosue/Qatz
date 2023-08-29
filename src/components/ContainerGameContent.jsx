@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { DATA_USER, USER_SCORES, getUserTotalScore } from "../Const";
 import { ContainerGameModal } from "./ContainerGameModal";
+import { ContainerGameMedalNotification } from "./ContainerGameMedalNotification";
+
 import Confetti from "react-confetti";
 
 export function ContainerGameContent({
@@ -8,20 +10,21 @@ export function ContainerGameContent({
   updateContentDataUser,
   updateContentUserScores,
   gameTotalLevels,
-  showLevels,
-  setShowLeves,
+  showLevelContent,
+  setShowLevelContent,
 }) {
   const [seeGameModal, setSeeGameModal] = useState(false);
+  const [seeMedalNotification, setSeeMedalNotification] = useState(false);
   const [answer, setAnswer] = useState(false);
 
-  const levelSelected = showLevels - 1;
-  const progressLevelSelected = gameTotalLevels[levelSelected].progress;
+  const progressLevelSelected = gameTotalLevels[showLevelContent].progress;
 
-  const levelSelectedName = gameTotalLevels[levelSelected].name;
-  const levelSelectedQuestions = gameTotalLevels[levelSelected].levelQuestions;
+  const levelSelectedName = gameTotalLevels[showLevelContent].name;
+  const levelSelectedQuestions =
+    gameTotalLevels[showLevelContent].levelQuestions;
   const levelSelectedTotalQuestions = levelSelectedQuestions.length;
-  const levelSelectedClass = gameTotalLevels[levelSelected].class;
-  const levelSelectedScore = gameTotalLevels[levelSelected].score;
+  const levelSelectedClass = gameTotalLevels[showLevelContent].class;
+  const levelSelectedScore = gameTotalLevels[showLevelContent].score;
 
   const levelSelectedFullyName = `level${levelSelectedClass}`;
   const levelSelectedFullyNameMedal = `medal${levelSelectedClass}`;
@@ -69,8 +72,22 @@ export function ContainerGameContent({
       localStorage.setItem(DATA_USER, JSON.stringify(contentDataUser));
       const updateLevelMedal = JSON.parse(localStorage.getItem(DATA_USER));
       updateContentDataUser(updateLevelMedal);
+      setTimeout(() => {
+        showMedalObtained();
+      }, 100);
     }
   }
+
+  function showMedalObtained() {
+    setSeeMedalNotification(true);
+    setTimeout(() => {
+      setSeeMedalNotification(false);
+    }, 4000);
+  }
+
+  const classNotificationMedal = seeMedalNotification
+    ? "Container__Game--MedalNotification Show"
+    : "Container__Game--MedalNotification";
 
   if (progressLevelSelected < levelSelectedTotalQuestions) {
     const imageQuestion = levelSelectedQuestions[progressLevelSelected].image;
@@ -113,7 +130,7 @@ export function ContainerGameContent({
           <header className="Container__Game--Content--Header">
             <button
               className={`Container__Game--Content--Header--Back ${levelSelectedClass}`}
-              onClick={() => setShowLeves(0)}
+              onClick={() => setShowLevelContent(false)}
             >
               <ion-icon name="arrow-back"></ion-icon>
             </button>
@@ -157,6 +174,9 @@ export function ContainerGameContent({
   } else {
     return (
       <div className="Container__Game--Completed">
+        <ContainerGameMedalNotification
+          classNotificationMedal={classNotificationMedal}
+        />
         <Confetti />
         <img
           src="./Done.png"
@@ -171,7 +191,7 @@ export function ContainerGameContent({
         </p>
         <button
           className={`Container__Game--Completed--Back ${levelSelectedClass}`}
-          onClick={() => setShowLeves(0)}
+          onClick={() => setShowLevelContent(false)}
         >
           Seguir jugando
         </button>
