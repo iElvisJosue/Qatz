@@ -1,4 +1,5 @@
 import { checkMedalQuestionsCorrect } from "../Const";
+import Confetti from "react-confetti";
 
 export function ContainerGameModal({
   updateScoreLevel,
@@ -45,6 +46,7 @@ export function ContainerGameModal({
 
   return (
     <div className={classGameModal}>
+      {answer && <Confetti />}
       <div className="Container__Game--Modal--Content">
         <b className="Container__Game--Modal--Content--Title">
           {titleGameModal}

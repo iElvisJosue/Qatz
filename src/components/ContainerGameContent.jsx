@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { DATA_USER, USER_SCORES, getUserTotalScore } from "../Const";
 import { ContainerGameModal } from "./ContainerGameModal";
+import Confetti from "react-confetti";
 
 export function ContainerGameContent({
   contentDataUser,
@@ -63,7 +64,6 @@ export function ContainerGameContent({
   }
 
   function checkMedal() {
-    // SE AGREGA EL 10 PORQUE EL SCORE NO DETECTA LA ACTUALIZACIÓN AQUÍ
     if (levelSelectedScore + 10 === levelSelectedTotalQuestions * 10) {
       contentDataUser.medals[levelSelectedFullyNameMedal].isObtained = true;
       localStorage.setItem(DATA_USER, JSON.stringify(contentDataUser));
@@ -157,6 +157,7 @@ export function ContainerGameContent({
   } else {
     return (
       <div className="Container__Game--Completed">
+        <Confetti />
         <img
           src="./Done.png"
           alt="Level completed"
