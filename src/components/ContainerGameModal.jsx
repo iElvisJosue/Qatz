@@ -46,7 +46,7 @@ export function ContainerGameModal({
 
   return (
     <div className={classGameModal}>
-      {answer && <Confetti />}
+      {answer && <Confetti numberOfPieces={50} />}
       <div className="Container__Game--Modal--Content">
         <b className="Container__Game--Modal--Content--Title">
           {titleGameModal}
