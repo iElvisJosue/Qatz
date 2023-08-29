@@ -260,7 +260,11 @@ START ANIMATIONS
 START RESPONSIVE DESIGN
 ***********************************
 */
-
+@media (width <= 500px) {
+  .Container__Login--Box {
+    box-shadow: none;
+  }
+}
 @media (width <=330px) {
   .Container__Login__Modal--Title {
     font-size: var(--Normal);
