@@ -592,7 +592,7 @@ export function setDataUser(userName, userImage) {
               "A) Sí, siempre lo hacen.",
               "B) No, solo caen de pie a veces.",
               "C) No, los gatos no caen de pie.",
-              "D) Si, pero depende de la altura",
+              "D) Si, pero solo cuando ellos se lanzan",
             ],
             answer: 1,
             curiousFact:
