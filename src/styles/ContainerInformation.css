@@ -137,7 +137,7 @@ COMPONENT <ContentInformationProfile>
   align-items: center;
   transform: scale(0);
 
-  animation: loadingContentProfile 1s 0.4s forwards;
+  animation: loadingContent 1s 0.4s forwards;
 }
 .Container__Information--Profile--Image--Box {
   position: relative;
@@ -173,7 +173,7 @@ COMPONENT <ContentInformationProfile>
   color: var(--StrongPurple);
   transform: scale(0);
 
-  animation: loadingContentProfile 1s 0.8s forwards;
+  animation: loadingContent 1s 0.8s forwards;
 }
 
 /*
@@ -213,7 +213,7 @@ COMPONENT <ContentInformationMedals>
   font-weight: 800;
   transform-origin: left;
 
-  animation: loadingContentMedals 1s forwards;
+  animation: loadingContent 1s forwards;
 }
 .Container__Information--Medals--Header--See {
   border: none;
@@ -225,7 +225,7 @@ COMPONENT <ContentInformationMedals>
   align-items: center;
   justify-content: center;
 
-  animation: loadingContentMedals 1s 0.1s forwards;
+  animation: loadingContent 1s 0.1s forwards;
 }
 .Container__Information--Medals--Achieved {
   display: grid;
@@ -249,7 +249,7 @@ COMPONENT <ContentInformationMedals>
   align-items: center;
   justify-content: center;
 
-  animation: loadingContentMedals 1s forwards;
+  animation: loadingContent 1s forwards;
 }
 .Container__Information--Medals--Achieved--Box.Achieved {
   filter: grayscale(0);
@@ -308,7 +308,7 @@ COMPONENT <ContentInformationProgress>
   font-weight: 800;
   transform-origin: left;
 
-  animation: loadingProgressTitle 1s forwards;
+  animation: loadingContent 1s forwards;
 }
 .Container__Information--Progress--Header--See {
   display: flex;
@@ -319,7 +319,7 @@ COMPONENT <ContentInformationProgress>
   color: var(--StrongPurple);
   transform: scale(0);
 
-  animation: loadingProgressTitle 1s 0.1s forwards;
+  animation: loadingContent 1s 0.1s forwards;
 }
 
 /*
@@ -342,7 +342,7 @@ COMPONENT <ContentInformationProgressLevel>
   opacity: 0;
   cursor: pointer;
 
-  animation: loadingProgressDetails 1s forwards;
+  animation: loadingContent 1s forwards;
   transition: 0.3s ease-in-out border-color;
   transform-origin: left;
 }
@@ -557,39 +557,13 @@ START ANIMATIONS
     rotate: 360deg;
   }
 }
-@keyframes loadingContentProfile {
+@keyframes loadingContent {
   0% {
     transform: scale(0);
   }
   100% {
     opacity: 1;
     transform: scale(1);
-  }
-}
-@keyframes loadingContentMedals {
-  0% {
-    transform: scale(0);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-@keyframes loadingProgressTitle {
-  0% {
-    transform: scale(0);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-@keyframes loadingProgressDetails {
-  0% {
-    transform: scale(0);
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
   }
 }
 
