@@ -15,6 +15,7 @@ export function ContainerGameModal({
   checkMedal,
   contentDataUser,
   updateContentDataUser,
+  showMedalObtained,
 }) {
   const classGameModal = seeGameModal
     ? "Container__Game--Modal Show"
@@ -31,15 +32,23 @@ export function ContainerGameModal({
   function nextQuestion() {
     setSeeGameModal(false);
     setTimeout(() => {
+      // SI LA RESPUESTA ES CORRECTA AUMENTA EL SCORE
+      // DEL USUARIO Y ACTUALIZA EL TABLERO
       if (answer) {
         updateScoreLevel();
         updateLeadBoard();
       }
       updateProgressLevel();
+      // UNA VEZ TERMINADO EL NIVEL, SE CHECA QUE
+      // EL USUARIO TUVO UNA PUNTUACIÓN PERFECTA
       if (levelSelectedCurrentProgress === levelSelectedTotalQuestions - 1) {
         checkMedal();
       }
-      checkMedalQuestionsCorrect(contentDataUser, updateContentDataUser);
+      checkMedalQuestionsCorrect(
+        contentDataUser,
+        updateContentDataUser,
+        showMedalObtained
+      );
       setAnswer(false);
     }, 500);
   }

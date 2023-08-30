@@ -758,7 +758,7 @@ export function setDataUser(userName, userImage) {
           },
           {
             image: "./Questions/Master/8.jpg",
-            title: "¿En qué parte del gato se encuentra la 'galera'",
+            title: "¿En qué parte del gato se encuentra la 'galera'?",
             answers: ["A) Cabeza.", "B) Pecho.", "C) Cola.", "D) Cuello."],
             answer: 3,
             curiousFact:
@@ -881,105 +881,33 @@ export function setDataUser(userName, userImage) {
 
 export function setUserScores() {
   const userScores = {
-    user1: {
-      userName: "GatoAmigo",
-      userImage: 0,
-      userScore: 500,
-    },
-    user2: {
-      userName: "Ronroneo",
-      userImage: 1,
-      userScore: 460,
-    },
-    user3: {
-      userName: "MiauFelino",
-      userImage: 2,
-      userScore: 450,
-    },
-    user4: {
-      userName: "BigotesCat",
-      userImage: 3,
-      userScore: 420,
-    },
-    user5: {
-      userName: "GarraSuave",
-      userImage: 4,
-      userScore: 400,
-    },
-    user6: {
-      userName: "GatitoPardo",
-      userImage: 5,
-      userScore: 390,
-    },
-    user7: {
-      userName: "PurrfectCat",
-      userImage: 6,
-      userScore: 480,
-    },
-    user8: {
-      userName: "PataVeloz",
-      userImage: 7,
-      userScore: 360,
-    },
-    user9: {
-      userName: "PelusaMiau",
-      userImage: 8,
-      userScore: 430,
-    },
-    user10: {
-      userName: "MeowMaster",
-      userImage: 9,
-      userScore: 330,
-    },
-    user11: {
-      userName: "HolaMiau",
-      userImage: 10,
-      userScore: 340,
-    },
-    user12: {
-      userName: "RonrónFino",
-      userImage: 11,
-      userScore: 350,
-    },
-    user13: {
-      userName: "GatoGris",
-      userImage: 12,
-      userScore: 370,
-    },
-    user14: {
-      userName: "MiauChispa",
-      userImage: 13,
-      userScore: 490,
-    },
-    user15: {
-      userName: "ColaEsponja",
-      userImage: 14,
-      userScore: 380,
-    },
-    user16: {
-      userName: "GarraÁgil",
-      userImage: 15,
-      userScore: 410,
-    },
-    user17: {
-      userName: "GatitoSano",
-      userImage: 16,
-      userScore: 440,
-    },
-    user18: {
-      userName: "Ronroneador",
-      userImage: 17,
-      userScore: 470,
-    },
+    user1: { userName: "GatoAmigo", userImage: 0, userScore: 500 },
+    user2: { userName: "Ronroneo", userImage: 1, userScore: 460 },
+    user3: { userName: "MiauFelino", userImage: 2, userScore: 450 },
+    user4: { userName: "BigotesCat", userImage: 3, userScore: 420 },
+    user5: { userName: "GarraSuave", userImage: 4, userScore: 400 },
+    user6: { userName: "GatitoPardo", userImage: 5, userScore: 390 },
+    user7: { userName: "PurrfectCat", userImage: 6, userScore: 480 },
+    user8: { userName: "PataVeloz", userImage: 7, userScore: 360 },
+    user9: { userName: "PelusaMiau", userImage: 8, userScore: 430 },
+    user10: { userName: "MeowMaster", userImage: 9, userScore: 330 },
+    user11: { userName: "HolaMiau", userImage: 10, userScore: 340 },
+    user12: { userName: "RonrónFino", userImage: 11, userScore: 350 },
+    user13: { userName: "GatoGris", userImage: 12, userScore: 370 },
+    user14: { userName: "MiauChispa", userImage: 13, userScore: 490 },
+    user15: { userName: "ColaEsponja", userImage: 14, userScore: 380 },
+    user16: { userName: "GarraÁgil", userImage: 15, userScore: 410 },
+    user17: { userName: "GatitoSano", userImage: 16, userScore: 440 },
+    user18: { userName: "Ronroneador", userImage: 17, userScore: 470 },
   };
   localStorage.setItem(USER_SCORES, JSON.stringify(userScores));
 }
 
 export function getUserTotalScore(contentDataUser) {
   const arrTotalLevels = Object.values(contentDataUser.levels);
-  const arrLevelScore = arrTotalLevels.map((currentLevel) => {
-    return currentLevel.score;
-  });
+  const arrLevelScore = arrTotalLevels.map(
+    (currentLevel) => currentLevel.score
+  );
   const userTotalScore = arrLevelScore.reduce(
     (total, value) => total + value,
     0
@@ -995,39 +923,35 @@ export function setSortUserScores(userScores) {
 
 export function checkMedalQuestionsCorrect(
   contentDataUser,
-  updateContentDataUser
+  updateContentDataUser,
+  showMedalObtained
 ) {
+  const { medals } = contentDataUser;
   const arrUserScore = Object.values(contentDataUser.levels);
-  const arrAllScores = arrUserScore.map((e) => {
-    return e.score;
-  });
+  const arrAllScores = arrUserScore.map((e) => e.score);
   const totalUserScore = arrAllScores.reduce((a, b) => a + b);
-  if (totalUserScore === 200)
-    setMedalQuestionsCorrect(
-      contentDataUser,
-      updateContentDataUser,
-      "medalAmazing"
-    );
-  if (totalUserScore === 270)
-    setMedalQuestionsCorrect(
-      contentDataUser,
-      updateContentDataUser,
-      "medalEnthusiastic"
-    );
-  if (totalUserScore === 400)
-    setMedalQuestionsCorrect(
-      contentDataUser,
-      updateContentDataUser,
-      "medalExpert"
-    );
-  if (totalUserScore === 550)
-    setMedalQuestionsCorrect(
-      contentDataUser,
-      updateContentDataUser,
-      "medalKingQueen"
-    );
-}
 
+  const medalChallenges = [
+    { score: 200, medal: "medalAmazing" },
+    { score: 270, medal: "medalEnthusiastic" },
+    { score: 400, medal: "medalExpert" },
+    { score: 550, medal: "medalKingQueen" },
+  ];
+
+  medalChallenges.forEach((medal) => {
+    if (
+      totalUserScore === medal.score &&
+      medals[medal.medal].isObtained === false
+    ) {
+      setMedalQuestionsCorrect(
+        contentDataUser,
+        updateContentDataUser,
+        medal.medal
+      );
+      showMedalObtained();
+    }
+  });
+}
 export function setMedalQuestionsCorrect(
   contentDataUser,
   updateContentDataUser,

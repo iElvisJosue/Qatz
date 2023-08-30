@@ -125,8 +125,12 @@ export function ContainerGameContent({
           checkMedal={checkMedal}
           contentDataUser={contentDataUser}
           updateContentDataUser={updateContentDataUser}
+          showMedalObtained={showMedalObtained}
         />
         <div className="Container__Game--Content">
+          <ContainerGameMedalNotification
+            classNotificationMedal={classNotificationMedal}
+          />
           <header className="Container__Game--Content--Header">
             <button
               className={`Container__Game--Content--Header--Back ${levelSelectedClass}`}
