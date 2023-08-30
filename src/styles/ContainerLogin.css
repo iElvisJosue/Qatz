@@ -21,7 +21,6 @@ START STYLES FOR
 MAIN COMPONENT
 ***********************************
 */
-
 .Container__Login {
   grid-column: span 4;
 
@@ -43,7 +42,53 @@ MAIN COMPONENT
   flex-direction: column;
   gap: 20px;
 
-  animation: loadingContainerLogin 1s;
+  animation: loadingContainerLogin 0.5s;
+}
+/*
+***********************************
+START STYLES FOR 
+<Loader>
+***********************************
+*/
+.Container__Login__Content--Loader {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  opacity: 0;
+
+  animation: loadLoader 1s forwards;
+}
+.Container__Login__Content--Loader--Text {
+  color: var(--White);
+  font-size: var(--H2);
+  text-align: center;
+  font-weight: 800;
+}
+.Loader {
+  width: calc(6 * 30px);
+  height: 50px;
+  display: flex;
+  color: var(--White);
+  filter: drop-shadow(30px 25px 0 currentColor)
+    drop-shadow(60px 0 0 currentColor) drop-shadow(120px 0 0 currentColor);
+  clip-path: inset(0 100% 0 0);
+  animation: l12 2s infinite steps(7);
+}
+.Loader:before {
+  content: "";
+  width: 30px;
+  height: 25px;
+  --c: no-repeat radial-gradient(farthest-side, currentColor 92%, #0000);
+  background: var(--c) left / 70% 70%, var(--c) right/20% 20%,
+    var(--c) top 0 right 15%/20% 20%, var(--c) bottom 0 right 15%/20% 20%;
+}
+@keyframes l12 {
+  100% {
+    clip-path: inset(0 -30px 0 0);
+  }
 }
 /*
 ***********************************
@@ -254,6 +299,14 @@ START ANIMATIONS
     left: 0;
   }
 }
+@keyframes loadLoader {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
 /*
 ***********************************
@@ -263,6 +316,12 @@ START RESPONSIVE DESIGN
 @media (width <= 500px) {
   .Container__Login--Box {
     box-shadow: none;
+  }
+  .Container__Login__Content--Loader--Text {
+    color: var(--StrongPurple);
+  }
+  .Loader {
+    color: var(--StrongPurple);
   }
 }
 @media (width <=330px) {

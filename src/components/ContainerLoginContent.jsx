@@ -2,7 +2,7 @@ import { useState } from "react";
 import { setDataUser, addNewUserScores } from "../Const";
 import { IMAGES_CATS, checkValueInput } from "../Const";
 
-export function ContainerLoginContent({ updateStateIsLogin }) {
+export function ContainerLoginContent({ updateStateIsLogin, setLoader }) {
   const [imageProfile, setImageProfile] = useState(0);
   const [inputUsernameValidate, setInputUsernameValidate] = useState(true);
 
@@ -38,7 +38,10 @@ export function ContainerLoginContent({ updateStateIsLogin }) {
   function inputValidateCorrect(inputUsernameValue) {
     setDataUser(inputUsernameValue, imageProfile);
     addNewUserScores(inputUsernameValue, imageProfile);
-    updateStateIsLogin(true);
+    setLoader(true);
+    setTimeout(() => {
+      updateStateIsLogin(true);
+    }, 3500);
   }
   function inputValidateWrong(inputUsername, inputUsernameValue) {
     inputUsername.value = "Solo letras y/o números 🚫";
