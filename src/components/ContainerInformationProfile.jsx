@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { IMAGES_CATS, getUserTotalScore } from "../Const";
 import { ContainerInformationProfileModal } from "./ContainerInformationProfileModal";
-
 export function ContainerInformationProfile({
   showMenu,
   contentDataUser,
@@ -25,9 +24,6 @@ export function ContainerInformationProfile({
     updateStateIsLogin(false);
   }
 
-  const classButtonUpdate = settings
-    ? "Container__Information--Profile--Button--Top Show"
-    : "Container__Information--Profile--Button--Top";
   const classButtonDelete = settings
     ? "Container__Information--Profile--Button--Delete Show"
     : "Container__Information--Profile--Button--Delete";
@@ -57,9 +53,6 @@ export function ContainerInformationProfile({
           onClick={showSettings}
         >
           <ion-icon name="settings-outline"></ion-icon>
-        </button>
-        <button className={classButtonUpdate}>
-          <ion-icon name="bug-outline"></ion-icon>
         </button>
         <button
           className={classButtonDelete}

@@ -110,22 +110,15 @@ COMPONENT <ContentInformationProfile>
 .Container__Information--Profile--Button--Settings ion-icon {
   animation: settingRotation 5s linear infinite;
 }
-.Container__Information--Profile--Button--Top,
 .Container__Information--Profile--Button--Delete {
   background-color: var(--White);
 }
-.Container__Information--Profile--Button--Top.Show {
+.Container__Information--Profile--Button--Delete.Show {
   z-index: 1;
   transform: translateY(40px);
   background-color: var(--StrongPurple);
 }
-.Container__Information--Profile--Button--Delete.Show {
-  z-index: 1;
-  transform: translateY(80px);
-  background-color: var(--StrongPurple);
-}
 .Container__Information--Profile--Button--Settings:hover,
-.Container__Information--Profile--Button--Top:hover,
 .Container__Information--Profile--Button--Delete:hover {
   cursor: pointer;
   background: var(--White);

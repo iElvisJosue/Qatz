@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 // COMPONENTS
 import { ContainerLogin } from "./components/ContainerLogin";
 import { setUserScores, USER_SCORES, DATA_USER } from "./Const";
+import { ContainerTutorial } from "./components/ContainerTutorial";
 import { ContainerMenu } from "./components/ContainerMenu";
 import { ContainerTopList } from "./components/ContainerTopList";
 import { ContainerInformation } from "./components/ContainerInformation";
@@ -48,6 +49,7 @@ export function App() {
     <main className="Container">
       {isLogin ? (
         <>
+          <ContainerTutorial />
           <ContainerMenu
             contentDataUser={contentDataUser}
             updateStateIsLogin={updateStateIsLogin}

@@ -23,6 +23,56 @@ export const IMAGES_CATS = [
   "./Profile/Cat__18.png",
 ];
 
+export const TUTORIAL_DETAILS = [
+  {
+    image: "./Tutorial/Bienvenido.png",
+    title: "¡Bienvenido al tutorial de Qatz!",
+    details:
+      "En este tutorial te mostramos las principales funcionalidades del juego.",
+  },
+  {
+    image: "./Tutorial/ComoJugar.png",
+    title: "¿Como jugar?",
+    details:
+      "Para empezar a jugar, debes presionar el nivel que deseas jugar (Como el de la imagen). Todos los niveles te muestran tu puntaje, su nombre, cantidad de preguntas, dificultad y tu progreso.",
+  },
+  {
+    image: "./Tutorial/ComoEscoger.png",
+    title: "¿Como escoger una respuesta?",
+    details:
+      "Para seleccionar una respuesta, solo basta con presionar una de las 4 opciones (Como se muestra en la imagen). Pero ojo, una vez presionada, te mostrará tu resultado, así que ten cuidado con los toques aleatorios.",
+  },
+  {
+    image: "./Tutorial/TuPerfil.png",
+    title: "Tus datos de perfil",
+    details:
+      "En esta sección podrás ver tus datos personales, como tu nombre, tu avatar y tu puntaje total.",
+  },
+  {
+    image: "./Tutorial/TusMedallas.png",
+    title: "Tus medallas",
+    details:
+      "En esta sección podrás ver todas las medallas disponibles en el juego. Si está en color gris, significa que no tienes esa medalla, y si está colorida, significa que tienes esa medalla.",
+  },
+  {
+    image: "./Tutorial/TuProgreso.png",
+    title: "Tu progreso por nivel",
+    details: "En esta sección podrás ver tu progreso en cada nivel del juego.",
+  },
+  {
+    image: "./Tutorial/VerTop.png",
+    title: "Top de los mejores puntajes",
+    details:
+      "En esta sección podrás ver el top 18 de los mejores puntajes. Si quieres ingresar en el, deberás superar el puntaje del último puesto. ¿Como ver el top? Solo debes presionar el botón ubicado en la parte izquierda.",
+  },
+  {
+    image: "./Tutorial/Finalizar.png",
+    title: "¡Tutorial finalizado!",
+    details:
+      "En este tutorial te mostramos lo más importante, sin embargo, hay una funcionalidades que no hemos puesto, ¡Descubrelas!",
+  },
+];
+
 export function setDataUser(userName, userImage) {
   const dataUser = {
     userName,
