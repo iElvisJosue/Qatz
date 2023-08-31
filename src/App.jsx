@@ -49,7 +49,10 @@ export function App() {
     <main className="Container">
       {isLogin ? (
         <>
-          <ContainerTutorial />
+          <ContainerTutorial
+            contentDataUser={contentDataUser}
+            updateContentDataUser={updateContentDataUser}
+          />
           <ContainerMenu
             contentDataUser={contentDataUser}
             updateStateIsLogin={updateStateIsLogin}

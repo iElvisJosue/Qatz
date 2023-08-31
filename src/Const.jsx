@@ -77,6 +77,7 @@ export function setDataUser(userName, userImage) {
   const dataUser = {
     userName,
     userImage,
+    userTutorial: true,
     levels: {
       levelBeginner: {
         image: "./Levels/Novato.png",

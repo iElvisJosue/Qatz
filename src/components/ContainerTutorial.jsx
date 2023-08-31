@@ -1,11 +1,12 @@
-import { TUTORIAL_DETAILS } from "../Const";
+import { TUTORIAL_DETAILS, DATA_USER } from "../Const";
 import { useState } from "react";
 
 import "../styles/ContainerTutorial.css";
 
-export function ContainerTutorial() {
+export function ContainerTutorial({ contentDataUser, updateContentDataUser }) {
+  const { userTutorial } = contentDataUser;
+
   const [step, setStep] = useState(0);
-  const [hideModal, setHideModal] = useState(true);
 
   const { image, title, details } = TUTORIAL_DETAILS[step];
   const totalSteps = TUTORIAL_DETAILS.length - 1;
@@ -15,10 +16,17 @@ export function ContainerTutorial() {
       setStep(step + 1);
       return;
     }
-    setHideModal(false);
+    hideModalTutorial();
   }
 
-  const classTutorial = hideModal
+  function hideModalTutorial() {
+    contentDataUser.userTutorial = false;
+    localStorage.setItem(DATA_USER, JSON.stringify(contentDataUser));
+    const updateUserTutorial = JSON.parse(localStorage.getItem(DATA_USER));
+    updateContentDataUser(updateUserTutorial);
+  }
+
+  const classTutorial = userTutorial
     ? "Container__Tutorial"
     : "Container__Tutorial Hide";
 
@@ -38,7 +46,7 @@ export function ContainerTutorial() {
           {step === 0 ? (
             <button
               className="Container__Tutorial--Modal--Buttons--Skip"
-              onClick={() => setHideModal(false)}
+              onClick={hideModalTutorial}
             >
               Omitir
             </button>
