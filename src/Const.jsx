@@ -248,7 +248,7 @@ export function setDataUser(userName, userImage) {
               "C) Pata trasera.",
               "D) Pata delantera.",
             ],
-            answer: 2,
+            answer: 3,
             curiousFact:
               "El 'pulgar' de un gato se refiere a su pata delantera, que tiene un hueso extra que le da un aspecto similar a un pulgar, conocido como 'polidactilia'.",
           },
@@ -613,17 +613,16 @@ export function setDataUser(userName, userImage) {
           },
           {
             image: "./Questions/Health/8.jpg",
-            title:
-              "¿Qué es la esterilización en gatos y cuál es uno de los beneficios de este procedimiento?",
+            title: "¿Qué es la esterilización en gatos?",
             answers: [
               "A) Un tipo de operación de corazón.",
               "B) Un tratamiento contra las pulgas.",
-              "C) La eliminación de los ovarios y el útero.",
+              "C) La eliminación de los órganos reproductores.",
               "D) Un tratamiento para el mal aliento.",
             ],
             answer: 2,
             curiousFact:
-              "La esterilización en gatos es una cirugía que implica la eliminación de los órganos reproductores femeninos, y uno de los beneficios es prevenir la reproducción no deseada.",
+              "La esterilización en gatos es una cirugía que implica la eliminación de los órganos reproductores, y uno de los beneficios es prevenir la reproducción no deseada.",
           },
         ],
         score: 0,
