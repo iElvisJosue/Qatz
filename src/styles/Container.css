@@ -1,0 +1,53 @@
+/*
+***********************************
+TO FIND THE STYLES QUICKLY, PRESS CTRL + F 
+AND TYPE THE FOLLOWING:
+
+(FOR MAIN CONTAINER COMPONENT)
+  MAIN COMPONENT
+(FOR RESPONSIVE DESIGN)
+  RESPONSIVE
+
+***********************************
+*/
+
+/*
+***********************************
+START STYLES FOR
+MAIN COMPONENT
+***********************************
+*/
+
+.Container {
+  position: relative;
+  width: 1440px;
+  height: 100vh;
+  margin: auto;
+  background-image: var(--LinearGradient);
+  overflow: hidden;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/*
+***********************************
+START RESPONSIVE DESIGN
+***********************************
+*/
+
+@media (width <=1440px) {
+  .Container {
+    width: 100%;
+  }
+}
+@media (width <= 1000px) {
+  .Container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (width <=500px) {
+  .Container {
+    background: var(--White);
+  }
+}

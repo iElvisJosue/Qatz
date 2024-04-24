@@ -1,0 +1,99 @@
+/*
+***********************************
+TO FIND THE STYLES QUICKLY, PRESS CTRL + F 
+AND TYPE THE FOLLOWING:
+
+(FOR MAIN CONTAINER COMPONENT)
+  MAIN COMPONENT
+(FOR RESPONSIVE DESIGN)
+  RESPONSIVE
+
+***********************************
+*/
+
+/*
+***********************************
+START STYLES FOR
+MAIN COMPONENT
+***********************************
+*/
+
+.Container__Information--Medals--Modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transition: 0.5s ease-in-out all;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: -1;
+}
+.Container__Information--Medals--Modal.Show {
+  opacity: 1;
+  z-index: 1000;
+}
+.Container__Information--Medals--Modal--Content {
+  width: 350px;
+  height: auto;
+  padding: 20px;
+  background-color: var(--White);
+  box-shadow: var(--BoxShadow);
+  border-radius: var(--BorderRadius);
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.Container__Information--Medals--Modal--Content--Title {
+  font-size: var(--H3);
+  color: var(--StrongPurple);
+  text-align: center;
+}
+.Container__Information--Medals--Modal--Content--Image {
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+.Container__Information--Medals--Modal--Content--Image img {
+  border: 2px dashed var(--StrongPurple);
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+}
+.Container__Information--Medals--Modal--Content--Details {
+  color: var(--StrongGray);
+  text-align: center;
+}
+.Container__Information--Medals--Modal--Content--Details--Button {
+  height: 40px;
+  font-weight: 600;
+  border: 2px solid transparent;
+  background-color: var(--StrongPurple);
+  color: var(--White);
+
+  transition: 0.5s ease-in-out all;
+}
+.Container__Information--Medals--Modal--Content--Details--Button:hover {
+  background-color: var(--White);
+  border-color: var(--StrongPurple);
+  color: var(--StrongPurple);
+  cursor: pointer;
+}
+
+/*
+***********************************
+START RESPONSIVE DESIGN
+***********************************
+*/
+@media (width <= 450px) {
+  .Container__Information--Medals--Modal--Content {
+    width: 95%;
+    margin: auto;
+  }
+}

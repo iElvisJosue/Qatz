@@ -1,0 +1,118 @@
+/*
+***********************************
+TO FIND THE STYLES QUICKLY, PRESS CTRL + F 
+AND TYPE THE FOLLOWING:
+
+(FOR MAIN CONTAINER COMPONENT)
+  MAIN COMPONENT
+(FOR CHILDREN CONTAINER COMPONENT)
+  CHILDREN COMPONENT
+(FOR RESPONSIVE DESIGN)
+  RESPONSIVE
+
+***********************************
+*/
+
+/*
+***********************************
+START STYLES FOR
+MAIN COMPONENT
+***********************************
+*/
+
+.Container__Menu--Content {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+
+  display: flex;
+  justify-content: flex-end;
+  opacity: 0;
+  z-index: -1;
+
+  transition: 0.3s ease-in-out all;
+}
+
+/*
+***********************************
+START STYLES FOR
+CHILDREN COMPONENT
+***********************************
+*/
+
+.Container__Menu--Content--Details {
+  position: relative;
+  width: 400px;
+  right: -100%;
+  padding: 10px;
+  background-color: var(--WeakPurple);
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  overflow-y: auto;
+  transition: 0.5s ease-in-out all;
+}
+.Container__Menu--Content.Show .Container__Menu--Content--Details {
+  right: 0;
+}
+
+/*
+***********************************
+START STYLES <button>
+***********************************
+*/
+
+.Container__Menu--Button {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  border: none;
+  color: var(--White);
+  background: var(--StrongPurple);
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 700;
+  transition: 0.3s ease-in-out;
+}
+.Container__Menu--Button.Show {
+  transform: scale(0);
+}
+.Container__Menu--Content.Show {
+  z-index: 900;
+  opacity: 1;
+}
+
+/*
+***********************************
+START RESPONSIVE DESIGN
+***********************************
+*/
+
+@media (width > 1000px) {
+  .Container__Menu--Button {
+    transform: scale(0) !important;
+  }
+  .Container__Menu--Content {
+    opacity: 0 !important;
+    z-index: -1 !important;
+  }
+  .Container__Menu--Content--Details {
+    right: -100% !important;
+  }
+}
+@media (width <= 450px) {
+  .Container__Menu--Content--Details {
+    width: 100%;
+    padding: 0;
+    background-color: var(--White);
+  }
+}

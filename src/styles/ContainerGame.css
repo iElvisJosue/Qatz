@@ -1,0 +1,951 @@
+/*
+***********************************
+TO FIND THE STYLES QUICKLY, PRESS CTRL + F 
+AND TYPE THE FOLLOWING:
+
+(FOR MAIN CONTAINER COMPONENT)
+  MAIN COMPONENT
+(FOR COMPONENT STYLES)
+  <NameComponent>
+(FOR ANIMATIONS STYLES)
+  ANIMATIONS
+(FOR RESPONSIVE DESIGN)
+  RESPONSIVE
+
+***********************************
+*/
+
+/*
+***********************************
+START STYLES FOR
+MAIN COMPONENT
+***********************************
+*/
+
+.Container__Game {
+  grid-column: span 3;
+  background: var(--WeakPurple);
+  padding: 10px;
+  height: auto;
+  overflow: auto;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+/*
+***********************************
+START STYLES FOR 
+COMPONENT <ContainerGameLevels> 
+***********************************
+*/
+
+.Container__Game--Levels {
+  position: relative;
+  grid-column: span 1;
+  height: 200px;
+  background-color: var(--White);
+  border-radius: var(--BorderRadius);
+  border: 2px solid transparent;
+  box-shadow: var(--BoxShadow);
+  padding: 10px;
+  overflow: hidden;
+  opacity: 0;
+  transform: scale(0);
+
+  transform-origin: left;
+  transition: 0.5s ease-in-out all;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  animation: loadGameLevels 1s forwards;
+}
+.Container__Game--Levels.Done {
+  pointer-events: none;
+  filter: grayscale(1);
+}
+.Container__Game--Levels--Completed {
+  position: absolute;
+  top: 40px;
+  left: -30px;
+  transform: rotate(-45deg);
+  transform-origin: left;
+  width: 150px;
+  height: 75px;
+  color: var(--White);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+.Container__Game--Levels--Completed ion-icon {
+  font-size: 40px;
+  transform: translate(0, 7px) rotate(45deg);
+  color: white;
+}
+.Container__Game--Levels:nth-child(1) .Container__Game--Levels--Completed {
+  background: var(--StrongOrange);
+}
+.Container__Game--Levels:nth-child(2) .Container__Game--Levels--Completed {
+  background: var(--StrongPurple);
+}
+.Container__Game--Levels:nth-child(3) .Container__Game--Levels--Completed {
+  background: var(--StrongBlue);
+}
+.Container__Game--Levels:nth-child(4) .Container__Game--Levels--Completed {
+  background: var(--StrongGreen);
+}
+.Container__Game--Levels:nth-child(5) .Container__Game--Levels--Completed {
+  background: var(--StrongGray);
+}
+.Container__Game--Levels:nth-child(6) .Container__Game--Levels--Completed {
+  background: var(--StrongRed);
+}
+.Container__Game--Levels:nth-child(7) .Container__Game--Levels--Completed {
+  background: var(--StrongLila);
+}
+.Container__Game--Levels:nth-child(8) .Container__Game--Levels--Completed {
+  background: var(--Gold);
+}
+.Container__Game--Levels:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.Container__Game--Levels:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.Container__Game--Levels:nth-child(4) {
+  animation-delay: 0.3s;
+}
+.Container__Game--Levels:nth-child(5) {
+  animation-delay: 0.4s;
+}
+.Container__Game--Levels:nth-child(6) {
+  animation-delay: 0.5s;
+}
+.Container__Game--Levels:nth-child(7) {
+  animation-delay: 0.6s;
+}
+.Container__Game--Levels:nth-child(8) {
+  animation-delay: 0.7s;
+}
+.Container__Game--Levels:hover {
+  cursor: pointer;
+  transform: translateY(-5px) !important;
+}
+.Container__Game--Levels:nth-child(1):hover {
+  background-color: var(--WeakOrange);
+  border: 2px solid var(--StrongOrange);
+}
+.Container__Game--Levels:nth-child(2):hover {
+  background-color: var(--WeakPurple);
+  border: 2px solid var(--StrongPurple);
+}
+.Container__Game--Levels:nth-child(3):hover {
+  background-color: var(--WeakBlue);
+  border: 2px solid var(--StrongBlue);
+}
+.Container__Game--Levels:nth-child(4):hover {
+  background-color: var(--WeakGreen);
+  border: 2px solid var(--StrongGreen);
+}
+.Container__Game--Levels:nth-child(5):hover {
+  background-color: var(--WeakGray);
+  border: 2px solid var(--StrongGray);
+}
+.Container__Game--Levels:nth-child(6):hover {
+  background-color: var(--WeakRed);
+  border: 2px solid var(--StrongRed);
+}
+.Container__Game--Levels:nth-child(7):hover {
+  background-color: var(--WeakLila);
+  border: 2px solid var(--StrongLila);
+}
+.Container__Game--Levels:nth-child(8):hover {
+  background-color: var(--WeakGold);
+  border: 2px solid var(--Gold);
+}
+
+.Container__Game--Levels::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.3;
+}
+.Container__Game--Levels:nth-child(1)::before {
+  background-image: url("../../public/Levels/Novato.png");
+}
+.Container__Game--Levels:nth-child(2)::before {
+  background-image: url("../../public/Levels/Curioso.png");
+}
+.Container__Game--Levels:nth-child(3)::before {
+  background-image: url("../../public/Levels/Experto.png");
+}
+.Container__Game--Levels:nth-child(4)::before {
+  background-image: url("../../public/Levels/Razas.png");
+}
+.Container__Game--Levels:nth-child(5)::before {
+  background-image: url("../../public/Levels/Curiosidades.png");
+}
+.Container__Game--Levels:nth-child(6)::before {
+  background-image: url("../../public/Levels/Salud.png");
+}
+.Container__Game--Levels:nth-child(7)::before {
+  background-image: url("../../public/Levels/Mitos.png");
+}
+.Container__Game--Levels:nth-child(8)::before {
+  background-image: url("../../public/Levels/Maestro.png");
+}
+.Container__Game--Levels--Details {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-weight: bold;
+}
+
+.Container__Game--Levels:nth-child(1) .Container__Game--Levels--Details b {
+  color: var(--StrongOrange);
+}
+.Container__Game--Levels:nth-child(2) .Container__Game--Levels--Details b {
+  color: var(--StrongPurple);
+}
+.Container__Game--Levels:nth-child(3) .Container__Game--Levels--Details b {
+  color: var(--StrongBlue);
+}
+.Container__Game--Levels:nth-child(4) .Container__Game--Levels--Details b {
+  color: var(--StrongGreen);
+}
+.Container__Game--Levels:nth-child(5) .Container__Game--Levels--Details b {
+  color: var(--StrongGray);
+}
+.Container__Game--Levels:nth-child(6) .Container__Game--Levels--Details b {
+  color: var(--StrongRed);
+}
+.Container__Game--Levels:nth-child(7) .Container__Game--Levels--Details b {
+  color: var(--StrongLila);
+}
+.Container__Game--Levels:nth-child(8) .Container__Game--Levels--Details b {
+  color: var(--Gold);
+}
+.Container__Game--LevelBeginner--Score {
+  position: absolute;
+  width: 100px;
+  height: 50px;
+  top: 0;
+  right: 0;
+  color: var(--White);
+  border-radius: 0 var(--BorderRadius) 0 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Container__Game--Levels:nth-child(1) .Container__Game--LevelBeginner--Score {
+  background-color: var(--StrongOrange);
+}
+.Container__Game--Levels:nth-child(2) .Container__Game--LevelBeginner--Score {
+  background-color: var(--StrongPurple);
+}
+.Container__Game--Levels:nth-child(3) .Container__Game--LevelBeginner--Score {
+  background-color: var(--StrongBlue);
+}
+.Container__Game--Levels:nth-child(4) .Container__Game--LevelBeginner--Score {
+  background-color: var(--StrongGreen);
+}
+.Container__Game--Levels:nth-child(5) .Container__Game--LevelBeginner--Score {
+  background-color: var(--StrongGray);
+}
+.Container__Game--Levels:nth-child(6) .Container__Game--LevelBeginner--Score {
+  background-color: var(--StrongRed);
+}
+.Container__Game--Levels:nth-child(7) .Container__Game--LevelBeginner--Score {
+  background-color: var(--StrongLila);
+}
+.Container__Game--Levels:nth-child(8) .Container__Game--LevelBeginner--Score {
+  background-color: var(--Gold);
+}
+.Container__Game--LevelBeginner--Progress {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 20px;
+  left: 0;
+  border-radius: 0;
+}
+.Container__Game--LevelBeginner--Progress::-webkit-progress-bar {
+  background: transparent;
+}
+.Container__Game--Levels:nth-child(1)
+  .Container__Game--LevelBeginner--Progress::-webkit-progress-value {
+  background: var(--StrongOrange);
+}
+.Container__Game--Levels:nth-child(2)
+  .Container__Game--LevelBeginner--Progress::-webkit-progress-value {
+  background: var(--StrongPurple);
+}
+.Container__Game--Levels:nth-child(3)
+  .Container__Game--LevelBeginner--Progress::-webkit-progress-value {
+  background: var(--StrongBlue);
+}
+.Container__Game--Levels:nth-child(4)
+  .Container__Game--LevelBeginner--Progress::-webkit-progress-value {
+  background: var(--StrongGreen);
+}
+.Container__Game--Levels:nth-child(5)
+  .Container__Game--LevelBeginner--Progress::-webkit-progress-value {
+  background: var(--StrongGray);
+}
+.Container__Game--Levels:nth-child(6)
+  .Container__Game--LevelBeginner--Progress::-webkit-progress-value {
+  background: var(--StrongRed);
+}
+.Container__Game--Levels:nth-child(7)
+  .Container__Game--LevelBeginner--Progress::-webkit-progress-value {
+  background: var(--StrongLila);
+}
+.Container__Game--Levels:nth-child(8)
+  .Container__Game--LevelBeginner--Progress::-webkit-progress-value {
+  background: var(--Gold);
+}
+
+/*
+***********************************
+START STYLES FOR 
+COMPONENT <ContainerGameContent> 
+***********************************
+*/
+
+.Container__Game--Content {
+  grid-column: span 2;
+  height: 600px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.Container__Game--Content--Header {
+  position: relative;
+  height: 60px;
+  background-color: var(--WeakPurple);
+  padding: 10px 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Container__Game--Content--Header--Back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  transform: scale(0);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  animation: loadGameLevels 1s forwards;
+}
+.Container__Game--Content--Header--Back.Beginner,
+.Container__Game--Content--Header--Progress--Name.Beginner {
+  color: var(--StrongOrange);
+}
+.Container__Game--Content--Header--Back.Feline,
+.Container__Game--Content--Header--Progress--Name.Feline {
+  color: var(--StrongPurple);
+}
+.Container__Game--Content--Header--Back.Kitty,
+.Container__Game--Content--Header--Progress--Name.Kitty {
+  color: var(--StrongBlue);
+}
+.Container__Game--Content--Header--Back.Races,
+.Container__Game--Content--Header--Progress--Name.Races {
+  color: var(--StrongGreen);
+}
+.Container__Game--Content--Header--Back.Curiosities,
+.Container__Game--Content--Header--Progress--Name.Curiosities {
+  color: var(--StrongGray);
+}
+.Container__Game--Content--Header--Back.Health,
+.Container__Game--Content--Header--Progress--Name.Health {
+  color: var(--StrongRed);
+}
+.Container__Game--Content--Header--Back.Myths,
+.Container__Game--Content--Header--Progress--Name.Myths {
+  color: var(--StrongLila);
+}
+.Container__Game--Content--Header--Back.Master,
+.Container__Game--Content--Header--Progress--Name.Master {
+  color: var(--Gold);
+}
+.Container__Game--Content--Header--Progress {
+  text-align: center;
+  opacity: 0;
+  transform: scale(0);
+
+  transform-origin: left;
+  animation: loadGameLevels 1s forwards;
+}
+.Container__Game--Content--Header--Progress--Name {
+  font-size: var(--H3);
+  font-weight: bold;
+}
+.Container__Game--Content--Header--Progress--Bar {
+  height: 10px;
+  border-radius: var(--BorderRadius);
+}
+.Container__Game--Content--Header--Progress--Bar::-webkit-progress-bar {
+  background-color: var(--White);
+  border-radius: var(--BorderRadius);
+}
+.Container__Game--Content--Header--Progress--Bar::-webkit-progress-value {
+  border-radius: var(--BorderRadius);
+}
+.Container__Game--Content--Header--Progress--Bar.Beginner::-webkit-progress-value {
+  background-color: var(--StrongOrange);
+}
+.Container__Game--Content--Header--Progress--Bar.Feline::-webkit-progress-value {
+  background-color: var(--StrongPurple);
+}
+.Container__Game--Content--Header--Progress--Bar.Kitty::-webkit-progress-value {
+  background-color: var(--StrongBlue);
+}
+.Container__Game--Content--Header--Progress--Bar.Races::-webkit-progress-value {
+  background-color: var(--StrongGreen);
+}
+.Container__Game--Content--Header--Progress--Bar.Curiosities::-webkit-progress-value {
+  background-color: var(--StrongGray);
+}
+.Container__Game--Content--Header--Progress--Bar.Health::-webkit-progress-value {
+  background-color: var(--StrongRed);
+}
+.Container__Game--Content--Header--Progress--Bar.Myths::-webkit-progress-value {
+  background-color: var(--StrongLila);
+}
+.Container__Game--Content--Header--Progress--Bar.Master::-webkit-progress-value {
+  background-color: var(--Gold);
+}
+.Container__Game--Content--Details {
+  background: var(--White);
+  border-radius: var(--BorderRadius);
+  box-shadow: var(--BoxShadow);
+  padding: 10px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.Container__Game--Content-Details--Image {
+  width: 500px;
+  height: 300px;
+  margin: auto;
+  opacity: 0;
+  transform: scale(0);
+
+  animation: loadGameLevels 1s forwards;
+}
+.Container__Game--Content-Details--Image img {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--BorderRadius);
+}
+.Container__Game--Content--Details--Points {
+  padding: 10px 20px;
+  text-align: center;
+  border-radius: var(--BorderRadius);
+  margin: 0 auto;
+  font-weight: bold;
+
+  transform-origin: left;
+  animation: loadGameLevels 1s forwards;
+}
+.Container__Game--Content--Details--Points.Beginner {
+  background-color: var(--StrongOrange);
+  color: var(--WeakOrange);
+}
+.Container__Game--Content--Details--Points.Feline {
+  background-color: var(--StrongPurple);
+  color: var(--WeakPurple);
+}
+.Container__Game--Content--Details--Points.Kitty {
+  background-color: var(--StrongBlue);
+  color: var(--WeakBlue);
+}
+.Container__Game--Content--Details--Points.Races {
+  background-color: var(--StrongGreen);
+  color: var(--WeakGreen);
+}
+.Container__Game--Content--Details--Points.Curiosities {
+  background-color: var(--StrongGray);
+  color: var(--WeakGray);
+}
+.Container__Game--Content--Details--Points.Health {
+  background-color: var(--StrongRed);
+  color: var(--WeakRed);
+}
+.Container__Game--Content--Details--Points.Myths {
+  background-color: var(--StrongLila);
+  color: var(--WeakLila);
+}
+.Container__Game--Content--Details--Points.Master {
+  background-color: var(--Gold);
+  color: var(--WeakGold);
+}
+.Container__Game--Content--Details--Tittle {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  opacity: 0;
+  transform: scale(0);
+
+  animation: loadGameLevels 1s forwards;
+}
+.Container__Game--Content--Details--Tittle.Beginner {
+  color: var(--StrongOrange);
+}
+.Container__Game--Content--Details--Tittle.Feline {
+  color: var(--StrongPurple);
+}
+.Container__Game--Content--Details--Tittle.Kitty {
+  color: var(--StrongBlue);
+}
+.Container__Game--Content--Details--Tittle.Races {
+  color: var(--StrongGreen);
+}
+.Container__Game--Content--Details--Tittle.Curiosities {
+  color: var(--StrongGray);
+}
+.Container__Game--Content--Details--Tittle.Health {
+  color: var(--StrongRed);
+}
+.Container__Game--Content--Details--Tittle.Myths {
+  color: var(--StrongLila);
+}
+.Container__Game--Content--Details--Tittle.Master {
+  color: var(--Gold);
+}
+.Container__Game--Content--Details--Answers {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+.Container__Game--Content--Details--Answers--Option {
+  grid-column: span 1;
+  min-height: 100px;
+  height: auto;
+  padding: 10px;
+  border-radius: var(--BorderRadius);
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  transform: scale(0);
+
+  transform-origin: left;
+  animation: loadGameLevels 1s forwards;
+
+  transition: 0.5s ease-in-out all;
+}
+.Container__Game--Content--Details--Answers--Option:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.Container__Game--Content--Details--Answers--Option:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.Container__Game--Content--Details--Answers--Option:nth-child(4) {
+  animation-delay: 0.9s;
+}
+.Container__Game--Content--Details--Answers--Option.Beginner {
+  background-color: var(--WeakOrange);
+  color: var(--StrongOrange);
+}
+.Container__Game--Content--Details--Answers--Option.Beginner:hover {
+  background-color: var(--StrongOrange);
+  color: var(--White);
+}
+.Container__Game--Content--Details--Answers--Option.Feline {
+  background-color: var(--WeakPurple);
+  color: var(--StrongPurple);
+}
+.Container__Game--Content--Details--Answers--Option.Feline:hover {
+  background-color: var(--StrongPurple);
+  color: var(--White);
+}
+.Container__Game--Content--Details--Answers--Option.Kitty {
+  background-color: var(--WeakBlue);
+  color: var(--StrongBlue);
+}
+.Container__Game--Content--Details--Answers--Option.Kitty:hover {
+  background-color: var(--StrongBlue);
+  color: var(--White);
+}
+.Container__Game--Content--Details--Answers--Option.Races {
+  background-color: var(--WeakGreen);
+  color: var(--StrongGreen);
+}
+.Container__Game--Content--Details--Answers--Option.Races:hover {
+  background-color: var(--StrongGreen);
+  color: var(--White);
+}
+.Container__Game--Content--Details--Answers--Option.Curiosities {
+  background-color: var(--WeakGray);
+  color: var(--StrongGray);
+}
+.Container__Game--Content--Details--Answers--Option.Curiosities:hover {
+  background-color: var(--StrongGray);
+  color: var(--White);
+}
+.Container__Game--Content--Details--Answers--Option.Health {
+  background-color: var(--WeakRed);
+  color: var(--StrongRed);
+}
+.Container__Game--Content--Details--Answers--Option.Health:hover {
+  background-color: var(--StrongRed);
+  color: var(--White);
+}
+.Container__Game--Content--Details--Answers--Option.Myths {
+  background-color: var(--WeakLila);
+  color: var(--StrongLila);
+}
+.Container__Game--Content--Details--Answers--Option.Myths:hover {
+  background-color: var(--StrongLila);
+  color: var(--White);
+}
+.Container__Game--Content--Details--Answers--Option.Master {
+  background-color: var(--WeakGold);
+  color: var(--Gold);
+}
+.Container__Game--Content--Details--Answers--Option.Master:hover {
+  background-color: var(--Gold);
+  color: var(--White);
+}
+
+/*
+***********************************
+START STYLES FOR 
+COMPONENT <ContainerGameModal> 
+***********************************
+*/
+.Container__Game--Modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transition: 0.5s ease-in-out all;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+
+  z-index: -1;
+}
+.Container__Game--Modal.Show {
+  opacity: 1;
+  z-index: 1000;
+}
+.Container__Game--Modal--Content {
+  width: 350px;
+  height: auto;
+  padding: 20px;
+  background-color: var(--White);
+  box-shadow: var(--BoxShadow);
+  border-radius: var(--BorderRadius);
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.Container__Game--Modal--Content--Title {
+  font-size: var(--H3);
+  color: var(--StrongPurple);
+  text-align: center;
+}
+.Container__Game--Modal--Content--Image {
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+.Container__Game--Modal--Content--Image img {
+  width: 100px;
+  height: 100px;
+  transform: translateX(-5px);
+}
+.Container__Game--Modal--Content--Details {
+  color: var(--StrongGray);
+  text-align: center;
+}
+.Container__Game--Modal--Content--Buttons--Next {
+  height: 40px;
+  font-weight: 600;
+  border: 2px solid transparent;
+  cursor: pointer;
+  background-color: var(--StrongPurple);
+  color: var(--White);
+
+  transition: 0.5s ease-in-out all;
+}
+.Container__Game--Modal--Content--Buttons--Next:hover {
+  background-color: var(--White);
+  border-color: var(--StrongPurple);
+  color: var(--StrongPurple);
+}
+/*
+***********************************
+START STYLES FOR 
+COMPONENT <ContainerGameCompleted> 
+***********************************
+*/
+.Container__Game--Completed {
+  grid-column: span 2;
+  height: 500px;
+  padding: 10px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  gap: 20px;
+}
+.Container__Game--Completed--Image {
+  width: 250px;
+  height: auto;
+
+  opacity: 0;
+  transform: scale(0);
+
+  animation: loadGameLevels 1s forwards;
+}
+.Container__Game--Completed--Title {
+  text-align: center;
+  font-size: var(--H3);
+  font-weight: bold;
+
+  opacity: 0;
+  transform: scale(0);
+
+  transform-origin: left;
+  animation: loadGameLevels 1s forwards;
+}
+.Container__Game--Completed--Title.Beginner {
+  color: var(--StrongOrange);
+}
+.Container__Game--Completed--Title.Feline {
+  color: var(--StrongPurple);
+}
+.Container__Game--Completed--Title.Kitty {
+  color: var(--StrongBlue);
+}
+.Container__Game--Completed--Title.Races {
+  color: var(--StrongGreen);
+}
+.Container__Game--Completed--Title.Curiosities {
+  color: var(--StrongGray);
+}
+.Container__Game--Completed--Title.Health {
+  color: var(--StrongRed);
+}
+.Container__Game--Completed--Title.Myths {
+  color: var(--StrongLila);
+}
+.Container__Game--Completed--Title.Master {
+  color: var(--Gold);
+}
+.Container__Game--Completed--Back {
+  width: 200px;
+  height: 50px;
+  font-weight: bold;
+  color: var(--White);
+  cursor: pointer;
+
+  transition: 0.5s ease-in-out all;
+
+  opacity: 0;
+  transform: scale(0);
+
+  animation: loadGameLevels 1s forwards;
+}
+.Container__Game--Completed--Back.Beginner {
+  border: 2px solid var(--StrongOrange);
+  background: var(--StrongOrange);
+}
+.Container__Game--Completed--Back.Feline {
+  border: 2px solid var(--StrongPurple);
+  background: var(--StrongPurple);
+}
+.Container__Game--Completed--Back.Kitty {
+  border: 2px solid var(--StrongBlue);
+  background: var(--StrongBlue);
+}
+.Container__Game--Completed--Back.Races {
+  border: 2px solid var(--StrongGreen);
+  background: var(--StrongGreen);
+}
+.Container__Game--Completed--Back.Curiosities {
+  border: 2px solid var(--StrongGray);
+  background: var(--StrongGray);
+}
+.Container__Game--Completed--Back.Health {
+  border: 2px solid var(--StrongRed);
+  background: var(--StrongRed);
+}
+.Container__Game--Completed--Back.Myths {
+  border: 2px solid var(--StrongLila);
+  background: var(--StrongLila);
+}
+.Container__Game--Completed--Back.Master {
+  border: 2px solid var(--Gold);
+  background: var(--Gold);
+}
+.Container__Game--Completed--Back.Beginner:hover {
+  color: var(--StrongOrange);
+}
+.Container__Game--Completed--Back.Feline:hover {
+  color: var(--StrongPurple);
+}
+.Container__Game--Completed--Back.Kitty:hover {
+  color: var(--StrongBlue);
+}
+.Container__Game--Completed--Back.Races:hover {
+  color: var(--StrongGreen);
+}
+.Container__Game--Completed--Back.Curiosities:hover {
+  color: var(--StrongGray);
+}
+.Container__Game--Completed--Back.Health:hover {
+  color: var(--StrongRed);
+}
+.Container__Game--Completed--Back.Myths:hover {
+  color: var(--StrongLila);
+}
+.Container__Game--Completed--Back.Master:hover {
+  color: var(--Gold);
+}
+.Container__Game--Completed--Back:hover {
+  background-color: var(--WeakPurple);
+}
+/*
+***********************************
+START STYLES FOR 
+COMPONENT <ContainerGameMedalNotification> 
+***********************************
+*/
+
+.Container__Game--MedalNotification {
+  position: fixed;
+  top: -60px;
+  left: calc(50% - 150px);
+  background-color: var(--Gold);
+  color: var(--White);
+  font-weight: bold;
+
+  padding: 10px;
+  width: 300px;
+  height: 60px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  transition: 0.5s ease-in-out all;
+}
+.Container__Game--MedalNotification img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+.Container__Game--MedalNotification.Show {
+  top: 0;
+}
+/*
+***********************************
+START ANIMATIONS
+***********************************
+*/
+
+@keyframes loadGameLevels {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/*
+***********************************
+START RESPONSIVE DESIGN
+***********************************
+*/
+@media (width >= 1440px) {
+  .Container__Game--Levels {
+    height: auto;
+  }
+}
+@media (width <= 1000px) {
+  .Container__Game {
+    grid-column: span 3;
+  }
+}
+@media (width <= 768px) {
+  .Container__Game--Content--Details--Answers {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (width <= 578px) {
+  .Container__Game--Content-Details--Image {
+    width: 100%;
+    height: auto;
+  }
+}
+@media (width <= 500px) {
+  .Container__Game {
+    grid-template-columns: 1fr;
+  }
+  .Container__Game--Content--Details--Answers {
+    grid-template-columns: 1fr;
+  }
+  .Container__Game--Content--Details--Answers--Option {
+    min-height: 75px;
+  }
+}
+
+@media (width <= 450px) {
+  .Container__Game--Modal--Content {
+    width: 95%;
+    margin: auto;
+  }
+  .Container__Game--Completed--Image {
+    width: 200px;
+  }
+  .Container__Game--Completed--Title {
+    font-size: 16px;
+  }
+}
